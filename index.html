@@ -615,8 +615,6 @@ html.kb .tabbar,html.kb .player{display:none}
 .set-row.danger,.set-row.danger>.ic{color:var(--danger)}
 .oauth-btns{display:grid;gap:10px}
 .oauth{background:#fff;border:1px solid var(--line);color:var(--ink);gap:10px}
-.oauth.fb{background:#1877f2;color:#fff;border-color:#1877f2}
-.oauth.fb .o-mark{color:#fff;font-size:19px}
 .o-mark{width:22px;height:22px;display:grid;place-items:center;font-weight:700;font-family:Arial,sans-serif;color:#4285f4;font-size:17px}
 .or{display:flex;align-items:center;gap:10px;color:var(--muted);font-size:12px;margin:18px 0 12px}
 .or::before,.or::after{content:'';flex:1;height:1px;background:var(--line)}
@@ -2258,7 +2256,7 @@ function openAccount(){
     if(Cloud.user){
       const u=Cloud.user,prov=(u.app_metadata&&u.app_metadata.provider)||'email';
       B.innerHTML=`<div class="acc-hero"><label class="av-xl">${await avatarHTML('xl')}<span class="av-edit">${icon('image')}</span><input type="file" accept="image/*" hidden id="avIn"></label>
-          <b>${esc(displayName())}</b><small>${esc(u.email||'')} · ${prov==='google'?'Google':prov==='facebook'?'Facebook':'Email'} 帳號</small></div>
+          <b>${esc(displayName())}</b><small>${esc(u.email||'')} · ${prov==='google'?'Google':'Email'} 帳號</small></div>
         <div class="card sync-card"><i class="sync-dot" data-s="${Cloud.status}"></i><div><b>${esc(syncText())}</b>${Cloud.status==='error'?`<small>${esc(Cloud.err)}</small>`:'<small>日記、照片與設定會自動備份到你的帳號</small>'}</div><button class="pill" data-a="sync">${icon('repeat')}同步</button></div>
         <div class="sec-h mt"><h2>${icon('user')}個人設定</h2></div>
         <div class="card set-list">
@@ -2290,8 +2288,7 @@ function openAccount(){
     }
     const expired=Cloud.status==='expired';
     B.innerHTML=`<div class="acc-hero"><span class="av-xl">${await avatarHTML('xl')}</span><b>${expired?'請重新登入':'登入你的手帳'}</b><small>${expired?'登入後會繼續同步這台裝置上的資料':'登入後資料會同步到你的帳號，換手機也不會遺失'}</small></div>
-      <div class="oauth-btns"><button class="btn btn-block oauth g" data-o="google"><span class="o-mark">G</span>使用 Google 登入</button>
-        <button class="btn btn-block oauth fb" data-o="facebook"><span class="o-mark">f</span>使用 Facebook 登入</button></div>
+      <div class="oauth-btns"><button class="btn btn-block oauth g" data-o="google"><span class="o-mark">G</span>使用 Google 登入</button></div>
       <div class="or"><span>或使用 Email</span></div>
       <div class="wtabs"><button class="${tab==='in'?'on':''}" data-t="in">登入</button><button class="${tab==='up'?'on':''}" data-t="up">註冊新帳號</button></div>
       <form class="card" id="authForm">
