@@ -686,6 +686,142 @@ html.kb .tabbar,html.kb .player{display:none}
 
 .set-info{font-size:13px;color:var(--muted);background:var(--card);border-radius:12px;padding:12px 14px;margin-bottom:14px;line-height:1.7}
 .set-btns{display:grid;gap:10px}
+/* ---------- 版面修正 ---------- */
+.sec-h.mt{margin-top:24px}
+.sh-body>.card+.sec-h,.sh-body>.chips+.card{margin-top:14px}
+.sh-body .sec-h{margin-left:2px;margin-right:2px}
+.sh-body .chips{margin-bottom:2px}
+.sh-body .tracks{margin-top:4px}
+.dh-tools{display:flex;justify-content:center;gap:8px;margin:-6px 0 12px}
+.cvr.bw .cv-art{filter:grayscale(1) contrast(1.06)}
+.cp-cap{font-size:12px;color:var(--muted);margin:6px 2px 8px;letter-spacing:.05em}
+.bw-toggle{display:inline-flex;align-items:center;gap:8px;font-size:13px;color:var(--ink2)}
+.cp-sw span{text-transform:capitalize}
+
+/* ---------- 裁剪 ---------- */
+.crop-wrap{display:flex;justify-content:center;padding:6px 0 14px}
+.crop-stage{position:relative;overflow:hidden;background:#1d1a17;border-radius:6px;touch-action:none;cursor:grab;box-shadow:var(--shadow)}
+.crop-stage img{position:absolute;left:0;top:0;transform-origin:0 0;max-width:none;-webkit-user-select:none;user-select:none;pointer-events:none}
+.crop-stage::after{content:'';position:absolute;inset:0;pointer-events:none;border:1.5px solid rgba(255,255,255,.85);background-image:linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)),linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)),linear-gradient(90deg,rgba(255,255,255,.35),rgba(255,255,255,.35)),linear-gradient(90deg,rgba(255,255,255,.35),rgba(255,255,255,.35));background-size:100% 1px,100% 1px,1px 100%,1px 100%;background-position:0 33.33%,0 66.66%,33.33% 0,66.66% 0;background-repeat:no-repeat}
+.crop-stage.circle::after{border:0;background:radial-gradient(circle closest-side,transparent 98%,rgba(20,14,10,.55) 100%)}
+.crop-ar{justify-content:center}
+.crop-zoom{display:flex;align-items:center;gap:10px;padding:0 4px}
+.crop-zoom .ic{width:18px;height:18px;color:var(--muted)}
+.v-crop{position:absolute;top:calc(var(--st) + 12px);left:14px;height:42px;padding:0 16px;border-radius:21px;background:rgba(255,255,255,.15);color:#fff;display:inline-flex;align-items:center;gap:6px;font-size:14px;z-index:2}
+.v-crop .ic{width:18px;height:18px}
+
+/* ---------- 匯出 PDF 選單 ---------- */
+.pdf-opts{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pdf-opt{background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:14px 12px;text-align:left;display:flex;flex-direction:column;gap:3px;border:1.5px solid transparent}
+.pdf-opt.on{border-color:var(--accent);background:var(--accent-soft2)}
+.pdf-opt b{font-size:14px;font-weight:600}
+.pdf-opt small{font-size:12px;color:var(--muted);line-height:1.4}
+.pdf-stack{position:relative;height:40px;margin-bottom:6px;display:block}
+.pdf-stack i{position:absolute;bottom:0;width:27px;height:37px;border-radius:3px;background:#fff repeating-linear-gradient(180deg,transparent 0 6px,#eee2d4 6px 7px);border:1px solid var(--line);box-shadow:0 1px 3px rgba(0,0,0,.08)}
+.pdf-stack i:nth-child(1){left:0;z-index:4;background:linear-gradient(180deg,#f6e0a6,#ea9165 60%,#77a9c1)}
+.pdf-stack i:nth-child(2){left:13px;z-index:3}
+.pdf-stack i:nth-child(3){left:26px;z-index:2}
+.pdf-stack i:nth-child(4){left:39px;z-index:1}
+.pdf-ready{text-align:center;padding:10px 0 18px}
+.pdf-ready>.ic{width:46px;height:46px;margin:0 auto 10px;color:#fff;background:var(--accent);border-radius:50%;padding:11px;stroke-width:2.4}
+.pdf-ready b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:6px}
+
+/* ---------- 列印版面（A5） ---------- */
+#printRoot{display:none}
+html.printing #printRoot{display:block;position:fixed;left:-30000px;top:0;width:148mm;z-index:-1}
+.pp{width:148mm;min-height:210mm;box-sizing:border-box;padding:13mm 12mm 9mm;background:#fbf8f3;color:#3a2e25;font-family:var(--sans);font-size:9.5pt;line-height:1.65;position:relative;break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pp:last-child{break-after:auto;page-break-after:auto}
+.pp *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+.pp-cover{padding:0;height:210mm;min-height:0;overflow:hidden;background:#fbf9f5}
+.pp-cover .cvr{width:148mm;height:210mm;aspect-ratio:auto}
+.pp-h{display:flex;align-items:flex-end;gap:4mm;padding-bottom:3.5mm;border-bottom:.45mm solid #3a2e25;margin-bottom:6mm}
+.pp-h>div{display:flex;flex-direction:column;gap:.5mm;padding-bottom:1.2mm}
+.pp-big{font-family:var(--serif);font-size:42pt;line-height:.9;font-weight:600;color:#2e2620;letter-spacing:-.02em}
+.pp-eyebrow{font-size:7.5pt;letter-spacing:.32em;color:#9a8b7e}
+.pp-sub{font-family:var(--serif);font-size:12pt;font-weight:600}
+.pp-mood{margin-left:auto;display:flex;flex-direction:column;align-items:center;font-size:7.5pt;gap:1mm}
+.pp-mood .ic{width:11mm;height:11mm;stroke-width:1.5}
+.pp-blk{break-inside:avoid;page-break-inside:avoid;margin-bottom:5.5mm}
+.pp-blk.flow{break-inside:auto;page-break-inside:auto}
+.pp-blk h3{font-family:var(--serif);font-size:10.5pt;font-weight:600;margin-bottom:2.2mm;display:flex;align-items:center;gap:2mm;color:#2e2620;break-after:avoid}
+.pp-blk h3::before{content:'';width:2mm;height:2mm;border-radius:50%;background:#b5724a;flex-shrink:0}
+.pp-blk h3 em{font-style:normal;font-family:var(--sans);font-size:8pt;color:#9a8b7e;font-weight:400;margin-left:auto}
+.pp-2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
+.pp-2>.pp-blk{min-width:0}
+.pp-tl,.pp-todo,.pp-star,.pp-cert ul{list-style:none}
+.pp-tl li{display:grid;grid-template-columns:18mm 2mm 1fr;gap:2mm;align-items:baseline;padding:1mm 0;border-bottom:.2mm dashed #e2d8cc}
+.pp-tl time{font-size:7.5pt;color:#8a7b6e;font-variant-numeric:tabular-nums}
+.pp-tl i{width:2mm;height:2mm;border-radius:50%;align-self:center}
+.pp-tl small{display:block;font-size:7pt;color:#9a8b7e}
+.pp-todo li{display:flex;gap:2mm;align-items:baseline;padding:.6mm 0}
+.pp-todo i{width:3mm;height:3mm;border:.3mm solid #8a7b6e;border-radius:.8mm;flex-shrink:0;position:relative;top:.4mm}
+.pp-todo .done i{background:#b5724a;border-color:#b5724a}
+.pp-todo .done span{text-decoration:line-through;color:#9a8b7e}
+.pp-metrics div{display:grid;grid-template-columns:24mm 1fr 6mm;align-items:center;gap:2mm;padding:.7mm 0}
+.pp-dots{display:flex;gap:1.2mm}
+.pp-dots i{width:2.8mm;height:2.8mm;border-radius:50%;background:#ece3d8}
+.pp-dots i.on{background:#b5724a}
+.pp-metrics b{text-align:right;font-family:var(--serif)}
+.pp-journal{font-family:var(--serif);font-size:10.5pt;line-height:7.4mm;white-space:pre-wrap;word-break:break-word;background-image:linear-gradient(transparent 7.1mm,#e6ddd1 7.1mm,#e6ddd1 7.3mm,transparent 7.3mm);background-size:100% 7.4mm}
+.pp-text{white-space:pre-wrap;word-break:break-word}
+.pp-photos{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
+.pp-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.5mm;display:block;break-inside:avoid}
+.pp-photos.n1{grid-template-columns:1fr}
+.pp-photos.n1 img{aspect-ratio:auto;max-height:95mm;object-fit:contain;background:#efe7dc}
+.pp-photos.n3 img:first-child{grid-column:1/-1;aspect-ratio:16/9}
+.pp-kpt{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
+.pp-kpt>div{border-top:.8mm solid var(--kc);background:#fff;border-radius:1.5mm;padding:2.5mm;font-size:8.5pt;min-height:22mm}
+.pp-kpt b{display:block;font-family:var(--serif);color:var(--kc);font-size:10pt;margin-bottom:1mm}
+.pp-quote{font-family:var(--serif);font-size:11.5pt;line-height:1.7;text-align:center;padding:3mm 8mm;position:relative;color:#4a3d33;white-space:pre-wrap}
+.pp-quote::before,.pp-quote::after{position:absolute;font-size:26pt;line-height:1;color:#b5724a;font-family:Georgia,serif}
+.pp-quote::before{content:'\201C';left:0;top:0}
+.pp-quote::after{content:'\201D';right:0;bottom:-3mm}
+.pp-empty{color:#9a8b7e;font-family:var(--serif);text-align:center;padding:30mm 0}
+.pp-empty.sm{padding:0;text-align:left}
+.pp-foot{display:flex;justify-content:space-between;font-size:6.5pt;letter-spacing:.28em;color:#b3a698;margin-top:6mm;padding-top:2mm;border-top:.2mm solid #e6ddd1}
+.pp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:5mm}
+.pp-stats div{background:#fff;border-radius:2mm;padding:2.5mm 3mm;font-size:8pt;color:#8a7b6e}
+.pp-stats small{display:block;font-size:7pt;color:#9a8b7e;letter-spacing:.1em}
+.pp-stats b{font-family:var(--serif);font-size:15pt;color:#2e2620}
+.pp-stats .ic{width:8mm;height:8mm;stroke-width:1.6}
+.pp-recap{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:19mm;gap:1.5mm;margin-bottom:6mm;border-radius:2mm;overflow:hidden;break-inside:avoid}
+.pp-recap img{width:100%;height:100%;object-fit:cover;display:block}
+.pp-recap.n3 img:first-child,.pp-recap.n6 img:first-child{grid-column:span 2;grid-row:span 2}
+.pp-recap.n1{grid-template-columns:1fr;grid-auto-rows:55mm}
+.pp-recap.n2{grid-template-columns:1fr 1fr;grid-auto-rows:38mm}
+.pp .chart{max-height:62mm}
+.pp-2 .pp-blk{margin-bottom:4mm}
+.pp-lbl{font-size:8pt;font-weight:600;margin:1mm 0 1.5mm}
+.pp-tags{display:flex;flex-wrap:wrap;gap:1.5mm;margin-bottom:2mm}
+.pp-tags span{padding:.5mm 2.6mm;border-radius:3mm;font-size:8.5pt}
+.pp-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;padding:1mm}
+.pp-notes div{background:var(--nc);padding:3mm;font-family:var(--serif);font-size:9pt;min-height:20mm;transform:rotate(var(--rot));box-shadow:0 .5mm 1.5mm rgba(80,55,35,.12);border-radius:.5mm .5mm 3mm .5mm}
+.pp-mm{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin-bottom:6mm}
+.pp-mm .mm{box-shadow:none;border:.2mm solid #e6ddd1;padding:2mm 1.2mm 1.5mm;border-radius:2mm;background:#fff}
+.pp-mm .mm-h{padding:0 1mm 1mm}
+.pp-mm .mm-h b{font-size:8.5pt}
+.pp-mm .mm-g{font-size:5.6pt}
+.pp-mm .mm-g span{height:3.3mm;line-height:3.3mm;width:3.3mm}
+.pp-mm .mm-g .w{font-size:5pt}
+.pp-vals{display:flex;flex-wrap:wrap;gap:2mm;margin-bottom:3mm}
+.pp-vals span{font-family:var(--serif);padding:.8mm 3mm;border-radius:3mm;background:#f3e4d7;color:#985c39}
+.pp-answers .q{font-family:var(--serif);font-weight:600;font-size:9pt;margin-top:2mm}
+.pp-plan{display:grid;grid-template-columns:1fr 32mm 9mm;gap:3mm;align-items:center;padding:1.3mm 0;border-bottom:.2mm dashed #e2d8cc}
+.pp-plan small{display:block;font-size:7pt;color:#9a8b7e}
+.pp-plan em{font-style:normal;font-family:var(--serif);color:#b5724a;text-align:right}
+.pp-bar{height:2mm;border-radius:1mm;background:#ece3d8;overflow:hidden;display:block}
+.pp-bar i{display:block;height:100%;background:#b5724a}
+.pp-star li{padding:.8mm 0 .8mm 5mm;position:relative}
+.pp-star li::before{content:'\2726';position:absolute;left:0;color:#b5724a}
+.pp-cert{border:.4mm solid #e2cdb7;border-radius:3mm;padding:4mm 5mm;background:#fffaf3}
+.pp-cert li{padding:.8mm 0;border-bottom:.2mm dashed #e2cdb7}
+.pp-cert li::before{content:'我允許自己　';color:#985c39;font-family:var(--serif);font-size:8pt}
+@media print{
+  @page{size:148mm 210mm;margin:0}
+  html.printing body>*:not(#printRoot){display:none!important}
+  html.printing,html.printing body{overflow:visible!important;height:auto!important;min-height:0!important;background:#fbf8f3!important}
+  html.printing #printRoot{position:static;left:auto;width:auto;z-index:auto}
+}
 </style>
 </head>
 <body>
@@ -793,6 +929,8 @@ const P={
   pen:'<path d="M14 5l5 5M4 20l1.5-5.5L15.5 4.5a2.1 2.1 0 0 1 3 3L8.5 17.5z"/>',
   grid:'<rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/>',
 };
+P.crop='<path d="M6.5 2.5V16a1.5 1.5 0 0 0 1.5 1.5h13.5M2.5 6.5H16a1.5 1.5 0 0 1 1.5 1.5v13.5"/>';
+P.file='<path d="M7 3.5h7l4.5 4.5v12a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1v-15.5a1 1 0 0 1 1-1z"/><path d="M14 3.5V8h4.5M9 13h6M9 16.5h4"/>';
 const icon=(n,cls='')=>`<svg class="ic ${cls}" viewBox="0 0 24 24" aria-hidden="true">${P[n]||''}</svg>`;
 
 const EYES='<circle cx="9" cy="10" r="1.1" fill="currentColor" stroke="none"/><circle cx="15" cy="10" r="1.1" fill="currentColor" stroke="none"/>';
@@ -1047,62 +1185,62 @@ function shiftCal(d){calM+=d;if(calM<0){calM=11;calY--}if(calM>11){calM=0;calY++
 function isDiaryFilled(e){return !!(e&&(e.text||(e.images&&e.images.length)||e.mood||e.keep||e.problem||e.try||e.compromise||e.anxiety!=null||(e.metrics&&Object.keys(e.metrics).length)||(e.todos&&e.todos.length)||e.upset||e.remember))}
 
 const MONTH_EN=['january','february','march','april','may','june','july','august','september','october','november','december'];
-const COVERS=[
-  'linear-gradient(180deg,#eef0f3 0%,#d5dceb 45%,#aebfd8 75%,#8ea5c6 100%)',
-  'linear-gradient(180deg,#f8e1da 0%,#efbfc0 45%,#c9a3c4 75%,#9b93c2 100%)',
-  'linear-gradient(180deg,#f6e0a6 0%,#f3cc8a 38%,#ea9165 62%,#b79ab8 80%,#77a9c1 100%)',
-  'linear-gradient(180deg,#fcebe6 0%,#f5c7cb 42%,#dca4bb 70%,#a5bddb 100%)',
-  'linear-gradient(180deg,#f5f0c9 0%,#d4e5b6 42%,#94c6ab 72%,#6aa1b6 100%)',
-  'linear-gradient(180deg,#e3eaec 0%,#bccfd8 42%,#93abc1 72%,#6c7fa6 100%)',
-  'linear-gradient(180deg,#fde7b2 0%,#f9c985 35%,#89c7c7 72%,#3f8eb0 100%)',
-  'linear-gradient(180deg,#ffd7a0 0%,#ffa36e 38%,#e36c7b 64%,#7b5c9b 100%)',
-  'linear-gradient(180deg,#f9e5bd 0%,#ebbd84 40%,#cb8d6a 70%,#8f7b90 100%)',
-  'linear-gradient(180deg,#f7dfba 0%,#e8ab7d 40%,#b8744c 68%,#6f5b70 100%)',
-  'linear-gradient(180deg,#ece2d6 0%,#cdb6aa 40%,#9089a6 70%,#4f5d7f 100%)',
-  'linear-gradient(180deg,#f5dcb3 0%,#da9e7d 35%,#7e6c9c 66%,#2f3f66 100%)',
+/* 封面漸層：前 12 款是每月 magic hour，之後是更多款式 */
+const GRADS=[
+  ['jan','linear-gradient(180deg,#eef0f3 0%,#d5dceb 45%,#aebfd8 75%,#8ea5c6 100%)'],
+  ['feb','linear-gradient(180deg,#f8e1da 0%,#efbfc0 45%,#c9a3c4 75%,#9b93c2 100%)'],
+  ['mar','linear-gradient(180deg,#f6e0a6 0%,#f3cc8a 38%,#ea9165 62%,#b79ab8 80%,#77a9c1 100%)'],
+  ['apr','linear-gradient(180deg,#fcebe6 0%,#f5c7cb 42%,#dca4bb 70%,#a5bddb 100%)'],
+  ['may','linear-gradient(180deg,#f5f0c9 0%,#d4e5b6 42%,#94c6ab 72%,#6aa1b6 100%)'],
+  ['jun','linear-gradient(180deg,#e3eaec 0%,#bccfd8 42%,#93abc1 72%,#6c7fa6 100%)'],
+  ['jul','linear-gradient(180deg,#fde7b2 0%,#f9c985 35%,#89c7c7 72%,#3f8eb0 100%)'],
+  ['aug','linear-gradient(180deg,#ffd7a0 0%,#ffa36e 38%,#e36c7b 64%,#7b5c9b 100%)'],
+  ['sep','linear-gradient(180deg,#f9e5bd 0%,#ebbd84 40%,#cb8d6a 70%,#8f7b90 100%)'],
+  ['oct','linear-gradient(180deg,#f7dfba 0%,#e8ab7d 40%,#b8744c 68%,#6f5b70 100%)'],
+  ['nov','linear-gradient(180deg,#ece2d6 0%,#cdb6aa 40%,#9089a6 70%,#4f5d7f 100%)'],
+  ['dec','linear-gradient(180deg,#f5dcb3 0%,#da9e7d 35%,#7e6c9c 66%,#2f3f66 100%)'],
+  ['霧粉','radial-gradient(at 15% 20%,#f7cfd8 0,transparent 55%),radial-gradient(at 85% 25%,#d9d2f2 0,transparent 55%),radial-gradient(at 50% 90%,#fde2c8 0,transparent 60%),linear-gradient(#f6eee9,#f6eee9)'],
+  ['薄荷','radial-gradient(at 20% 15%,#cdeee0 0,transparent 55%),radial-gradient(at 85% 40%,#d6e6f7 0,transparent 55%),radial-gradient(at 40% 90%,#fff2c9 0,transparent 60%),linear-gradient(#eef5ef,#eef5ef)'],
+  ['晚霞','radial-gradient(120% 90% at 50% 100%,#ff9a62 0%,#f4677a 35%,#7a5ea8 70%,#2c3866 100%)'],
+  ['晨曦','radial-gradient(130% 100% at 50% 0%,#fff6d8 0%,#ffd6a5 40%,#f7a8a1 75%,#c7a3c9 100%)'],
+  ['海岸','linear-gradient(180deg,#e8f1f2 0%,#bfe0e3 35%,#6fb3c2 70%,#2f6f8f 100%)'],
+  ['森林','linear-gradient(180deg,#eef0dc 0%,#c7d6a8 40%,#7fa070 70%,#3f5d45 100%)'],
+  ['沙丘','linear-gradient(160deg,#f6e7cf 0%,#e9c79d 45%,#c98f63 75%,#8a5a44 100%)'],
+  ['奶茶','linear-gradient(180deg,#f5ece2 0%,#e3cdb5 50%,#b99579 100%)'],
+  ['櫻桃','linear-gradient(180deg,#ffe3e3 0%,#ff9fb2 45%,#d64161 80%,#7a1f3d 100%)'],
+  ['檸檬','linear-gradient(180deg,#fffbe0 0%,#fff2a8 40%,#f9d65c 70%,#9fcf7f 100%)'],
+  ['糖果','linear-gradient(135deg,#ff9a9e 0%,#fad0c4 30%,#a1c4fd 70%,#c2e9fb 100%)'],
+  ['極光','linear-gradient(200deg,#0f2a3d 0%,#1e5f74 35%,#3fb39a 62%,#c6f1c9 100%)'],
+  ['夜空','radial-gradient(at 30% 20%,#3d4f8a 0,transparent 50%),radial-gradient(at 75% 70%,#6b4f8f 0,transparent 55%),linear-gradient(#141a33,#141a33)'],
+  ['紙月','radial-gradient(circle at 70% 28%,#fff8e7 0 13%,transparent 13.5%),linear-gradient(180deg,#d9c8b4,#a99482)'],
+  ['日落','radial-gradient(circle at 50% 62%,#fff1c9 0 11%,transparent 11.5%),linear-gradient(180deg,#f9c58d 0%,#f28f6b 45%,#c75b62 75%,#6a3f5f 100%)'],
+  ['雙色','linear-gradient(180deg,#f4b183 0%,#f4b183 44%,#7aa6c2 56%,#7aa6c2 100%)'],
+  ['水墨','radial-gradient(at 30% 40%,#bdbdbd 0,transparent 50%),radial-gradient(at 70% 72%,#8a8a8a 0,transparent 45%),linear-gradient(#ececec,#ececec)'],
+  ['條紋','repeating-linear-gradient(90deg,#f3e6d6 0 14px,#e8d3bb 14px 28px)'],
+  ['格紋','repeating-linear-gradient(0deg,rgba(181,114,74,.2) 0 2px,transparent 2px 22px),repeating-linear-gradient(90deg,rgba(181,114,74,.2) 0 2px,transparent 2px 22px),linear-gradient(#f7efe4,#f7efe4)'],
+  ['波點','radial-gradient(circle,#e8a873 0 4px,transparent 4.5px) 0 0/26px 26px,linear-gradient(#f6eadb,#f6eadb)'],
 ];
-/* 每月配色：[底色, 主色, 副色, 點綴] */
-const PALETTES=[
-  ['#e9eef5','#2f5da8','#f2c94c','#ffffff'],['#f6e4e1','#c2475a','#2d2a32','#f4b6a6'],['#f4efe2','#e2a23b','#5b8c5a','#e8d9b5'],
-  ['#fbeaea','#e07a8b','#7aa874','#ffffff'],['#eef3e2','#3e8e63','#f0d264','#ffffff'],['#e4ecf2','#3f6fa0','#9cc3d5','#f6f1e7'],
-  ['#fff3d6','#f2a03d','#2f9aa0','#ffffff'],['#fde2cf','#e2553d','#f4c542','#2e5e6e'],['#f3e7d3','#b5724a','#6a7f4b','#f6d7a7'],
-  ['#efe3d3','#c4602d','#4a3b52','#e9b44c'],['#e6e1db','#6b4e71','#c9a227','#f4efe8'],['#e7ecef','#21395c','#c43d3d','#ffffff'],
-];
-function rng(seed){return()=>{seed=seed+0x6D2B79F5|0;let t=Math.imul(seed^seed>>>15,1|seed);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296}}
-const f1=n=>n.toFixed(1);
-/* 生成式圖形素材（SVG） */
-const PATTERNS=[
-  ['圓點',(p,r)=>{let s=`<rect width="300" height="375" fill="${p[0]}"/>`;for(let i=0;i<9;i++)s+=`<circle cx="${f1(r()*300)}" cy="${f1(r()*375)}" r="${f1(40+r()*70)}" fill="${p[1+i%3]}" opacity="${i%3===2?1:.92}"/>`;return s}],
-  ['拱門',p=>{let s=`<rect width="300" height="375" fill="${p[0]}"/><circle cx="232" cy="78" r="30" fill="${p[2]}"/>`;const c=[p[1],p[3],p[2],p[0],p[1],p[3]];for(let i=0;i<6;i++){const R=140-i*24;s+=`<path d="M${150-R} 375V215A${R} ${R} 0 0 1 ${150+R} 215V375Z" fill="${c[i]}"/>`}return s}],
-  ['葉片',(p,r)=>{let s=`<rect width="300" height="375" fill="${p[0]}"/>`;for(let i=0;i<16;i++){const ry=36+r()*46,rx=ry*(.3+r()*.15);s+=`<g transform="translate(${f1(r()*300)} ${f1(r()*375)}) rotate(${f1(r()*180-90)})"><ellipse rx="${f1(rx)}" ry="${f1(ry)}" fill="${p[1+i%3]}"/><path d="M0 ${f1(-ry)}V${f1(ry)}" stroke="${p[0]}" stroke-width="2" opacity=".55"/></g>`}return s}],
-  ['波浪',p=>{let s=`<rect width="300" height="375" fill="${p[0]}"/>`;const c=[p[3],p[1],p[2],p[0],p[1],p[3],p[2]];for(let i=0;i<7;i++){const y=70+i*48;s+=`<path d="M0 ${y}Q37.5 ${y-26} 75 ${y}T150 ${y}T225 ${y}T300 ${y}V375H0Z" fill="${c[i]}"/>`}return s}],
-  ['幾何',(p,r)=>{let s='',d='';const W=100,H=375/4;for(let i=0;i<12;i++){const x=(i%3)*W,y=Math.floor(i/3)*H,bg=p[(i+1)%4],fg=p[(i+2+Math.floor(r()*2))%4],cx=x+(r()<.5?0:W),cy=y+(r()<.5?0:H);d+=`<clipPath id="k${i}"><rect x="${x}" y="${f1(y)}" width="${W}" height="${f1(H)}"/></clipPath>`;s+=`<rect x="${x}" y="${f1(y)}" width="${W}" height="${f1(H)}" fill="${bg}"/><circle cx="${cx}" cy="${f1(cy)}" r="${W}" fill="${fg}" clip-path="url(#k${i})"/>`}return `<defs>${d}</defs>`+s}],
-  ['星芒',(p,r)=>{let s=`<rect width="300" height="375" fill="${p[1]}"/>`;for(let i=0;i<18;i++){const z=5+r()*22;s+=`<path transform="translate(${f1(r()*300)} ${f1(r()*375)})" d="M0 ${f1(-z)}Q0 0 ${f1(z)} 0Q0 0 0 ${f1(z)}Q0 0 ${f1(-z)} 0Q0 0 0 ${f1(-z)}Z" fill="${i%3?p[3]:p[2]}"/>`}return s}],
-];
-const RF='<defs><filter id="rf" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".04" numOctaves="2" seed="5"/><feDisplacementMap in="SourceGraphic" scale="6"/></filter><filter id="wc" x="-20%" y="-20%" width="140%" height="140%"><feTurbulence type="fractalNoise" baseFrequency=".022" numOctaves="3" seed="2"/><feDisplacementMap in="SourceGraphic" scale="26"/><feGaussianBlur stdDeviation=".6"/></filter></defs>';
-PATTERNS.push(
-  ['手繪花',(p,r)=>{let s=`${RF}<rect width="300" height="375" fill="${p[0]}"/><g filter="url(#rf)">`;for(let i=0;i<7;i++){const x=30+r()*240,y=40+r()*270,R=14+r()*16,c=p[1+i%2];s+=`<path d="M${f1(x)} ${f1(y+R*.5)}q${f1(-12+r()*24)} ${f1(40+r()*30)} ${f1(-6+r()*12)} 85" stroke="${p[2]}" stroke-width="3" fill="none" stroke-linecap="round"/>`;for(let k=0;k<6;k++)s+=`<ellipse cx="${f1(x)}" cy="${f1(y-R*.9)}" rx="${f1(R*.55)}" ry="${f1(R)}" fill="${c}" transform="rotate(${f1(k*60+r()*12)} ${f1(x)} ${f1(y)})"/>`;s+=`<circle cx="${f1(x)}" cy="${f1(y)}" r="${f1(R*.42)}" fill="${p[3]==='#ffffff'?'#f4d35e':p[3]}"/>`}return s+'</g>'}],
-  ['塗鴉',(p,r)=>{let s=`${RF}<rect width="300" height="375" fill="${p[0]}"/><g filter="url(#rf)" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.2">`;for(let i=0;i<22;i++){const x=f1(r()*300),y=f1(r()*375),c=p[1+i%3]==='#ffffff'?p[1]:p[1+i%3],t=i%4,z=8+r()*16;
-    if(t===0)s+=`<circle cx="${x}" cy="${y}" r="${f1(z)}" stroke="${c}"/>`;
-    else if(t===1)s+=`<path transform="translate(${x} ${y}) rotate(${f1(r()*90)})" d="M0 ${f1(-z)}Q0 0 ${f1(z)} 0Q0 0 0 ${f1(z)}Q0 0 ${f1(-z)} 0Q0 0 0 ${f1(-z)}Z" stroke="${c}"/>`;
-    else if(t===2)s+=`<path transform="translate(${x} ${y}) rotate(${f1(r()*180)})" d="M${f1(-z*1.6)} 0q${f1(z*.4)} ${f1(-z*.7)} ${f1(z*.8)} 0t${f1(z*.8)} 0t${f1(z*.8)} 0t${f1(z*.8)} 0" stroke="${c}"/>`;
-    else s+=`<circle cx="${x}" cy="${y}" r="${f1(z*.3)}" fill="${c}" stroke="none"/>`}return s+'</g>'}],
-  ['水彩',(p,r)=>{let s=`${RF}<rect width="300" height="375" fill="#fbf7ef"/><g filter="url(#wc)">`;for(let i=0;i<8;i++){const c=p[1+i%3];s+=`<circle cx="${f1(r()*300)}" cy="${f1(r()*375)}" r="${f1(45+r()*70)}" fill="${c==='#ffffff'?p[0]:c}" opacity=".5"/>`}return s+'</g>'}],
-);
-const patternURI=(i,pal)=>'data:image/svg+xml,'+encodeURIComponent(`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 375" preserveAspectRatio="xMidYMid slice">${PATTERNS[i][1](PALETTES[pal],rng(i*97+pal*13+7))}</svg>`);
+const COVERS=GRADS.map(g=>g[1]);
 const LAYOUTS=[['frame','留白框'],['numeral','大數字'],['full','滿版'],['card','相片卡'],['dots','圓點格'],['sticker','貼紙']];
 
 function coverCfg(y,m){
   const c=(S.settings.covers||{})[ym(y,m)]||{};
-  const art=c.art||(c.img?{t:'img',id:c.img}:c.g!=null?{t:'g',i:c.g}:{t:'g',i:m});
-  return{layout:c.layout||S.settings.coverLayout||'frame',art};
+  let art=c.art||(c.img?{t:'img',id:c.img}:c.g!=null?{t:'g',i:c.g}:{t:'g',i:m});
+  if(art.t!=='img'&&art.t!=='g'||art.t==='g'&&!COVERS[art.i])art={t:'g',i:m};
+  return{layout:c.layout||S.settings.coverLayout||'frame',art,bw:!!c.bw};
 }
 async function applyArt(el,art,m){
   if(!el)return;
-  if(art.t==='p'){el.style.backgroundImage=`url("${patternURI(art.i,art.pal!=null?art.pal:m)}")`;return}
-  if(art.t==='img'){el.style.backgroundImage=COVERS[m];const u=await blobUrl(art.id);if(u)el.style.backgroundImage=`url("${u}")`;return}
-  el.style.backgroundImage=COVERS[art.i];
+  if(art.t==='img'){el.style.background=COVERS[m];const u=await blobUrl(art.id);if(u)el.style.background=`center/cover no-repeat url("${u}")`;return}
+  el.style.background=COVERS[art.i]||COVERS[m];
 }
+function paintCover(root,cfg,m){
+  if(!root)return Promise.resolve();
+  $$('.cvr',root).forEach(c=>c.classList.toggle('bw',!!cfg.bw));
+  if(root.classList&&root.classList.contains('cvr'))root.classList.toggle('bw',!!cfg.bw);
+  return Promise.all($$('.cv-art',root).map(a=>applyArt(a,cfg.art,m)));
+}
+
 function miniCal(y,m){
   const sw=new Date(y,m,1).getDay(),dim=daysIn(y,m),t=todayStr();
   let g=['S','M','T','W','T','F','S'].map(w=>`<span class="w">${w}</span>`).join('');
@@ -1136,7 +1274,7 @@ renders.cal=function renderCal(anim){
     <section class="sec"><div class="sec-h"><h2>${icon('repeat')}習慣打卡</h2><button class="pill" data-a="addHabit">${icon('plus')}習慣</button></div><div class="card" id="habitBox"></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('note')}備忘錄</h2><span class="hint">${calM+1}月</span></div><div class="card" id="memoBox"><textarea class="ta-plain grow" data-f="${mk}" rows="4" placeholder="這個月想記下的事…"></textarea></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('checkSq')}待辦清單</h2><span class="hint" id="todoCount"></span></div><div class="card" id="todoBox"></div></section>`;
-  applyArt($('#cover .cv-art'),cfg.art,calM);fitCover($('#cover'));
+  paintCover($('#cover'),cfg,calM);fitCover($('#cover'));
   bindFields($('#memoBox'),S.memo,'memo');
   renderHabits();
   listEditor($('#todoBox'),S.todos,'todos',{check:true,ph:'新增待辦…',empty:'沒有待辦，好好休息',onChange:()=>{const c=$('#todoCount');if(c)c.textContent=S.todos.length?`${S.todos.filter(x=>x.done).length} / ${S.todos.length} 完成`:''}});
@@ -1158,43 +1296,43 @@ const renderCal=renders.cal;
 
 function openCoverPicker(){
   const y=calY,m=calM,k=ym(y,m);S.settings.covers=S.settings.covers||{};
-  let cfg=coverCfg(y,m),artTab=cfg.art.t==='p'?'p':cfg.art.t==='img'?'img':'g',pal=cfg.art.t==='p'&&cfg.art.pal!=null?cfg.art.pal:m;
+  let cfg=coverCfg(y,m),artTab=cfg.art.t==='img'?'img':'g';
   const s=openSheet({title:`${m+1}月封面`,full:true,onClose:()=>{if(cur==='cal')renders.cal()}});
   const B=s.body;
   const commit=next=>{
-    const old=cfg.art;cfg=next;
-    if(old.t==='img'&&!(next.art.t==='img'&&next.art.id===old.id))dropBlob(old.id);
-    S.settings.covers[k]={layout:cfg.layout,art:cfg.art};save('settings');draw();
+    const old=cfg.art;cfg=Object.assign({},cfg,next);
+    if(old.t==='img'&&!(cfg.art.t==='img'&&cfg.art.id===old.id))dropBlob(old.id);
+    S.settings.covers[k]={layout:cfg.layout,art:cfg.art,bw:cfg.bw};save('settings');draw();
   };
+  const sw=i=>`<button class="cp-sw ${cfg.art.t==='g'&&cfg.art.i===i?'on':''}" data-g="${i}" style="background:${COVERS[i]}"><span>${GRADS[i][0]}</span></button>`;
   const draw=()=>{
     B.innerHTML=`<div class="cp-preview">${coverHTML(y,m,cfg.layout)}</div>
       <div class="sec-h"><h2>版型</h2><button class="pill" data-all>${icon('repeat')}套用到每個月</button></div>
       <div class="cp-layouts noswipe">${LAYOUTS.map(([id,l])=>`<button class="cp-l ${cfg.layout===id?'on':''}" data-l="${id}">${coverHTML(y,m,id)}<span>${l}</span></button>`).join('')}</div>
-      <div class="sec-h mt"><h2>素材</h2></div>
-      <div class="wtabs">${[['g','漸層'],['p','圖形'],['img','照片']].map(([t,l])=>`<button class="${artTab===t?'on':''}" data-tab="${t}">${l}</button>`).join('')}</div>
-      ${artTab==='g'?`<div class="cp-grid">${COVERS.map((g,i)=>`<button class="cp-sw ${cfg.art.t==='g'&&cfg.art.i===i?'on':''}" data-g="${i}" style="background-image:${g}"><span>${MONTH_EN[i].slice(0,3)}</span></button>`).join('')}</div>`
-       :artTab==='p'?`<div class="cp-pal noswipe">${PALETTES.map((p,i)=>`<button class="${pal===i?'on':''}" data-pal="${i}" style="background:linear-gradient(135deg,${p[1]} 50%,${p[2]} 50%)" aria-label="配色 ${i+1}"></button>`).join('')}</div>
-         <div class="cp-grid three">${PATTERNS.map(([l],i)=>`<button class="cp-sw ${cfg.art.t==='p'&&cfg.art.i===i&&cfg.art.pal===pal?'on':''}" data-p="${i}" style="background-image:url('${patternURI(i,pal)}')"><span>${l}</span></button>`).join('')}</div>`
-       :`<div class="cp-photo"><p class="hint">用自己的照片當封面，建議直式照片。</p><label class="btn btn-p btn-block">${icon('upload')}${cfg.art.t==='img'?'換一張照片':'上傳照片'}<input type="file" accept="image/*" hidden id="cvIn"></label></div>`}
+      <div class="sec-h mt"><h2>素材</h2><div class="bw-toggle"><span>黑白</span><button type="button" class="switch ${cfg.bw?'on':''}" data-bw role="switch" aria-checked="${cfg.bw}" aria-label="黑白"></button></div></div>
+      <div class="wtabs">${[['g','漸層'],['img','照片']].map(([t,l])=>`<button class="${artTab===t?'on':''}" data-tab="${t}">${l}</button>`).join('')}</div>
+      ${artTab==='g'?`<p class="cp-cap">每月漸層</p><div class="cp-grid">${[...Array(12).keys()].map(sw).join('')}</div>
+         <p class="cp-cap">更多款式</p><div class="cp-grid">${COVERS.slice(12).map((_,j)=>sw(j+12)).join('')}</div>`
+       :`<div class="cp-photo"><p class="hint">用自己的照片當封面，上傳後可以裁剪範圍。</p><label class="btn btn-p btn-block">${icon('upload')}${cfg.art.t==='img'?'換一張照片':'上傳照片'}<input type="file" accept="image/*" hidden id="cvIn"></label></div>`}
       <button class="btn btn-g btn-block mt" data-reset>恢復預設</button>`;
-    applyArt($('.cp-preview .cv-art',B),cfg.art,m);
-    $$('.cp-l .cv-art',B).forEach(a=>applyArt(a,cfg.art,m));
+    paintCover($('.cp-preview',B),cfg,m);$$('.cp-l',B).forEach(l=>paintCover(l,cfg,m));
     requestAnimationFrame(()=>fitCover(B));
     const fi=$('#cvIn',B);
     if(fi)fi.onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
-      try{const b=await compressImg(f,1800,.88);const id='cov_'+uid();await DB.put('blobs',id,b);commit({layout:cfg.layout,art:{t:'img',id}})}catch(err){toast('圖片無法讀取')}};
+      const a=$('.cp-preview .cv-art',B),ar=a&&a.clientHeight?a.clientWidth/a.clientHeight:5/7;
+      const b=await cropImage(f,{aspect:ar,max:1800,title:'裁剪封面'});if(!b)return;
+      const id='cov_'+uid();await DB.put('blobs',id,b);commit({art:{t:'img',id}})};
   };
   B.onclick=e=>{
-    const L=e.target.closest('[data-l]');if(L){commit({layout:L.dataset.l,art:cfg.art});return}
+    const L=e.target.closest('[data-l]');if(L){commit({layout:L.dataset.l});return}
     const tb=e.target.closest('[data-tab]');if(tb){artTab=tb.dataset.tab;draw();return}
-    const g=e.target.closest('[data-g]');if(g){commit({layout:cfg.layout,art:{t:'g',i:+g.dataset.g}});return}
-    const pl=e.target.closest('[data-pal]');if(pl){pal=+pl.dataset.pal;if(cfg.art.t==='p')commit({layout:cfg.layout,art:{t:'p',i:cfg.art.i,pal}});else draw();return}
-    const pt=e.target.closest('[data-p]');if(pt){commit({layout:cfg.layout,art:{t:'p',i:+pt.dataset.p,pal}});return}
+    const g=e.target.closest('[data-g]');if(g){commit({art:{t:'g',i:+g.dataset.g}});return}
+    if(e.target.closest('[data-bw]')){commit({bw:!cfg.bw});return}
     if(e.target.closest('[data-all]')){
       S.settings.coverLayout=cfg.layout;for(const key in S.settings.covers)delete S.settings.covers[key].layout;
       save('settings');toast(`每個月都改用「${LAYOUTS.find(x=>x[0]===cfg.layout)[1]}」版型`);return}
     if(e.target.closest('[data-reset]')){
-      if(cfg.art.t==='img')dropBlob(cfg.art.id);delete S.settings.covers[k];save('settings');cfg=coverCfg(y,m);artTab='g';pal=m;draw()}
+      if(cfg.art.t==='img')dropBlob(cfg.art.id);delete S.settings.covers[k];save('settings');cfg=coverCfg(y,m);artTab='g';draw()}
   };
   draw();
 }
@@ -1327,7 +1465,7 @@ renders.diary=function renderDiary(){
     <header class="ph dh"><button class="ibtn" data-a="prev" aria-label="前一天">${icon('chevL')}</button>
       <div class="dh-c"><div class="ph-sub">${dt.getFullYear()} · ${wd(diaryDate)}${isToday?' · 今天':''}</div><h1>${dt.getMonth()+1}月${dt.getDate()}日</h1><input type="date" class="date-ov" value="${diaryDate}" aria-label="選擇日期"></div>
       <button class="ibtn" data-a="next" aria-label="後一天">${icon('chevR')}</button></header>
-    ${isToday?'':`<div class="center" style="margin:-6px 0 12px"><button class="pill" data-a="today">回到今天</button></div>`}
+    <div class="dh-tools">${isToday?'':'<button class="pill" data-a="today">回到今天</button>'}<button class="pill" data-a="pdf">${icon('file')}匯出 PDF</button></div>
     <div id="carry"></div>
     <section class="sec" style="margin-top:14px"><div class="sec-h"><h2>${icon('clock')}今日時間表</h2><div class="nav"><button class="pill" data-a="full">${icon('expand')}展開全覽</button><button class="ibtn sm acc" data-a="addEv" aria-label="新增事項">${icon('plus')}</button></div></div><div class="card" id="tl"></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('checkSq')}今日待辦</h2><span class="hint" id="dTodoC"></span></div><div class="card"><div id="carryTodo"></div><div id="dTodo"></div></div></section>
@@ -1361,13 +1499,14 @@ renders.diary=function renderDiary(){
       else if(k==='today'){diaryDate=todayStr();renders.diary()}
       else if(k==='addEv')openEventForm(diaryDate);
       else if(k==='full')openDayView(diaryDate);
+      else if(k==='pdf')openExport(2,diaryDate);
       else if(k==='metrics')openMetricManager();
       return}
     const r=e.target.closest('[data-ev]');if(r){openEventForm(diaryDate,S.events.find(x=>x.id===r.dataset.ev));return}
     const m=e.target.closest('[data-mood]');if(m){const v=Number(m.dataset.mood);d.mood=d.mood===v?null:v;save('diary');renderMoods();return}
     const di=e.target.closest('[data-del-img]');
     if(di){if(await confirmSheet('刪除這張圖片？')){d.images=d.images.filter(x=>x!==di.dataset.delImg);dropBlob(di.dataset.delImg);save('diary');renderImgs()}return}
-    const it=e.target.closest('.img-t');if(it)openViewer(d.images,Number(it.dataset.i));
+    const it=e.target.closest('.img-t');if(it)openViewer(d.images,Number(it.dataset.i),{onCrop:recropImage});
   };
   onSwipe($('.dh',el),dir=>{diaryDate=addDays(diaryDate,dir);renders.diary()});
   onSwipe($('#tl',el),dir=>{diaryDate=addDays(diaryDate,dir);renders.diary()});
@@ -1448,14 +1587,78 @@ function compressImg(file,max=1600,q=.85){return new Promise((res,rej)=>{
   im.onerror=()=>{URL.revokeObjectURL(url);rej(new Error('img'))};
   im.src=url;
 })}
-async function addImages(files){
-  const date=diaryDate,d=getDiary(date);toast('處理圖片中…');
-  for(const f of files){try{const b=await compressImg(f);const id='img_'+uid();await DB.put('blobs',id,b);d.images.push(id)}catch(e){toast('有圖片無法讀取')}}
-  save('diary');if(diaryDate===date)renderImgs();
+/* 圖片裁剪：拖曳移動、雙指 / 滾輪 / 拉桿縮放，輸出 JPEG Blob（取消回傳 null） */
+const CROP_RATIOS=[['原圖',null],['1:1',1],['4:5',4/5],['3:4',3/4],['16:9',16/9]];
+function cropImage(src,{aspect=null,aspects=null,circle=false,max=1600,title='裁剪圖片',allowOriginal=false}={}){
+  return new Promise(async res=>{
+    const own=typeof src!=='string',url=own?URL.createObjectURL(src):src;
+    const im=new Image();im.src=url;
+    try{await im.decode()}catch(e){if(own)URL.revokeObjectURL(url);toast('圖片無法讀取');res(null);return}
+    const nat={w:im.naturalWidth,h:im.naturalHeight};
+    let ai=0,ar=aspects?(aspects[0][1]||nat.w/nat.h):(aspect||nat.w/nat.h),done=false;
+    const s=openSheet({title,full:true,onClose:()=>{if(!done)res(null);if(own)setTimeout(()=>URL.revokeObjectURL(url),500)}});
+    s.body.innerHTML=`<div class="crop-wrap"><div class="crop-stage noswipe ${circle?'circle':''}"><img alt="" draggable="false"></div></div>
+      ${aspects?`<div class="chips crop-ar noswipe">${aspects.map(([l],i)=>`<button class="chip ${i===0?'on':''}" data-ar="${i}">${l}</button>`).join('')}</div>`:''}
+      <div class="crop-zoom">${icon('image')}<input type="range" class="range noswipe" min="1" max="4" step="0.01" value="1" aria-label="縮放">${icon('expand')}</div>
+      <p class="hint center" style="margin-top:6px">拖曳移動，雙指或拉桿縮放</p>
+      <div class="row mt">${allowOriginal?'<button class="btn btn-g" data-orig>使用原圖</button>':'<button class="btn btn-g" data-cancel>取消</button>'}<button class="btn btn-p" data-ok>${icon('check')}完成</button></div>`;
+    const stage=$('.crop-stage',s.body),img=$('img',stage),zr=$('.crop-zoom input',s.body);
+    img.src=url;img.style.width=nat.w+'px';img.style.height=nat.h+'px';
+    let fw=1,fh=1,base=1,z=1,x=0,y=0;
+    const clamp=()=>{const sc=base*z;x=Math.min(0,Math.max(fw-nat.w*sc,x));y=Math.min(0,Math.max(fh-nat.h*sc,y))};
+    const apply=()=>{clamp();img.style.transform=`translate(${x}px,${y}px) scale(${base*z})`;zr.value=z;setRangeP(zr)};
+    const layout=()=>{
+      const maxW=Math.min(s.body.clientWidth-32,520),maxH=innerHeight*.52;let w=maxW,h=w/ar;if(h>maxH){h=maxH;w=h*ar}
+      fw=w;fh=h;stage.style.width=w+'px';stage.style.height=h+'px';
+      base=Math.max(fw/nat.w,fh/nat.h);z=1;x=(fw-nat.w*base)/2;y=(fh-nat.h*base)/2;apply();
+    };
+    const zoomAt=(nz,cx,cy)=>{nz=Math.min(4,Math.max(1,nz));const k=nz/z;x=cx-(cx-x)*k;y=cy-(cy-y)*k;z=nz;apply()};
+    const pts=new Map();let pinch=null;
+    stage.addEventListener('pointerdown',e=>{stage.setPointerCapture(e.pointerId);pts.set(e.pointerId,{x:e.clientX,y:e.clientY});pinch=null});
+    stage.addEventListener('pointermove',e=>{
+      const p=pts.get(e.pointerId);if(!p)return;
+      if(pts.size===1){x+=e.clientX-p.x;y+=e.clientY-p.y;p.x=e.clientX;p.y=e.clientY;apply();return}
+      p.x=e.clientX;p.y=e.clientY;const[a,b]=[...pts.values()],r=stage.getBoundingClientRect();
+      const dist=Math.hypot(a.x-b.x,a.y-b.y),cx=(a.x+b.x)/2-r.left,cy=(a.y+b.y)/2-r.top;
+      if(pinch){zoomAt(z*dist/pinch.d,cx,cy);x+=cx-pinch.cx;y+=cy-pinch.cy;apply()}
+      pinch={d:dist,cx,cy};
+    });
+    const up=e=>{pts.delete(e.pointerId);pinch=null};
+    stage.addEventListener('pointerup',up);stage.addEventListener('pointercancel',up);
+    stage.addEventListener('wheel',e=>{e.preventDefault();const r=stage.getBoundingClientRect();zoomAt(z*(1-e.deltaY*.0015),e.clientX-r.left,e.clientY-r.top)},{passive:false});
+    zr.oninput=()=>zoomAt(+zr.value,fw/2,fh/2);
+    s.body.onclick=async e=>{
+      const c=e.target.closest('[data-ar]');
+      if(c){ai=+c.dataset.ar;ar=aspects[ai][1]||nat.w/nat.h;$$('[data-ar]',s.body).forEach(b=>b.classList.toggle('on',b===c));layout();return}
+      if(e.target.closest('[data-cancel]')){s.close();return}
+      if(e.target.closest('[data-orig]')){try{const b=await compressImg(src,max);done=true;res(b)}catch(err){toast('圖片無法讀取');done=true;res(null)}s.close();return}
+      if(e.target.closest('[data-ok]')){
+        const sc=base*z,sw=fw/sc,sh=fh/sc,ow=Math.round(Math.min(max,sw,max*ar)),oh=Math.round(ow/ar);
+        const cv=document.createElement('canvas');cv.width=ow;cv.height=oh;
+        const g=cv.getContext('2d');g.imageSmoothingQuality='high';g.drawImage(im,-x/sc,-y/sc,sw,sh,0,0,ow,oh);
+        cv.toBlob(b=>{done=true;res(b);s.close()},'image/jpeg',.88);
+      }
+    };
+    requestAnimationFrame(()=>requestAnimationFrame(layout));
+  });
 }
-function openViewer(ids,idx){
+async function recropImage(id){
+  const u=await blobUrl(id);if(!u)return;
+  const b=await cropImage(u,{aspects:CROP_RATIOS,title:'裁剪圖片'});if(!b)return;
+  await DB.put('blobs',id,b);if(urlCache[id]){URL.revokeObjectURL(urlCache[id]);delete urlCache[id]}
+  renderImgs();toast('已更新圖片');
+}
+async function addImages(files){
+  const date=diaryDate,d=getDiary(date);
+  for(let i=0;i<files.length;i++){
+    const b=await cropImage(files[i],{aspects:CROP_RATIOS,allowOriginal:true,title:files.length>1?`裁剪圖片（${i+1}/${files.length}）`:'裁剪圖片'});
+    if(!b)continue;
+    const id='img_'+uid();await DB.put('blobs',id,b);d.images.push(id);save('diary');if(diaryDate===date)renderImgs();
+  }
+}
+function openViewer(ids,idx,opts={}){
   const v=document.createElement('div');v.className='viewer';
-  v.innerHTML=`<div class="v-count"></div><button class="v-close" aria-label="關閉">${icon('x')}</button><img class="v-img" alt="">`;
+  v.innerHTML=`<div class="v-count"></div>${opts.onCrop?`<button class="v-crop">${icon('crop')}裁剪</button>`:''}<button class="v-close" aria-label="關閉">${icon('x')}</button><img class="v-img" alt="">`;
   document.body.append(v);lockScroll(1);
   const img=$('.v-img',v),cnt=$('.v-count',v);
   const show=async()=>{img.style.transform='';img.src=await blobUrl(ids[idx]);cnt.textContent=ids.length>1?`${idx+1} / ${ids.length}`:''};
@@ -1463,7 +1666,7 @@ function openViewer(ids,idx){
   const close=()=>{v.classList.remove('show');setTimeout(()=>v.remove(),250);lockScroll(-1);document.removeEventListener('keydown',kd)};
   document.addEventListener('keydown',kd);
   let x0=null,y0=0,dx=0,dy=0;
-  v.addEventListener('touchstart',e=>{if(e.touches.length>1){x0=null;return}x0=e.touches[0].clientX;y0=e.touches[0].clientY;dx=dy=0;img.style.transition='none'},{passive:true});
+  v.addEventListener('touchstart',e=>{if(e.touches.length>1||e.target.closest('button')){x0=null;return}x0=e.touches[0].clientX;y0=e.touches[0].clientY;dx=dy=0;img.style.transition='none'},{passive:true});
   v.addEventListener('touchmove',e=>{e.preventDefault();if(x0==null)return;dx=e.touches[0].clientX-x0;dy=e.touches[0].clientY-y0;
     if(Math.abs(dy)>Math.abs(dx)){const p=Math.max(0,dy);img.style.transform=`translateY(${p}px) scale(${1-Math.min(.25,p/1200)})`;v.style.background=`rgba(20,14,10,${(.94-Math.min(.6,p/450)).toFixed(2)})`}
     else img.style.transform=`translateX(${dx}px)`},{passive:false});
@@ -1471,9 +1674,13 @@ function openViewer(ids,idx){
     if(dy>110&&Math.abs(dy)>Math.abs(dx)){close();return}
     if(Math.abs(dx)>60&&Math.abs(dx)>Math.abs(dy)){const n=idx+(dx<0?1:-1);if(n>=0&&n<ids.length){idx=n;show();return}}
     img.style.transform=''});
-  v.onclick=e=>{if(e.target===v||e.target.closest('.v-close'))close()};
+  v.onclick=e=>{
+    if(e.target.closest('.v-crop')){const id=ids[idx];close();opts.onCrop(id);return}
+    if(e.target===v||e.target.closest('.v-close'))close();
+  };
   requestAnimationFrame(()=>v.classList.add('show'));show();
 }
+
 
 /* =========================================================
    背景音樂：YouTube（含 YouTube Music）/ 本機音檔
@@ -1820,7 +2027,7 @@ renders.month=function renderMonth(){
   const axes=S.settings.radarAxes||(S.settings.radarAxes=[...DEFAULT_AXES]);
   el.innerHTML=`
     <header class="ph"><div><div class="ph-sub">${monY} · MONTHLY REVIEW</div><h1>${monM+1}月 月結</h1></div>
-      <div class="nav"><button class="ibtn" data-a="prev" aria-label="上個月">${icon('chevL')}</button><button class="ibtn" data-a="next" aria-label="下個月">${icon('chevR')}</button></div></header>
+      <div class="nav"><button class="ibtn" data-a="pdf" aria-label="匯出 PDF">${icon('file')}</button><button class="ibtn" data-a="prev" aria-label="上個月">${icon('chevL')}</button><button class="ibtn" data-a="next" aria-label="下個月">${icon('chevR')}</button></div></header>
     <div id="recap"></div>
     <div class="stats">
       <div class="stat"><small>寫日記</small><b>${days}</b><span>天</span></div>
@@ -1873,6 +2080,7 @@ renders.month=function renderMonth(){
     const w=e.target.closest('[data-w]');if(w){monWriteTab=w.dataset.w;drawWrite();return}
     const mt=e.target.closest('[data-metric]');if(mt){monMetric=mt.dataset.metric;refresh();return}
     const a=e.target.closest('[data-a]');if(!a)return;
+    if(a.dataset.a==='pdf'){const t=todayStr();openExport(3,t.startsWith(ym(monY,monM))?t:ym(monY,monM)+'-01');return}
     if(a.dataset.a==='radar'){radarOpen=!radarOpen;$('#rdPanel').classList.toggle('hide',!radarOpen);a.innerHTML=`${icon(radarOpen?'chevD':'sliders')}<span>${radarOpen?'收起':'調整分數與反思'}</span>`;if(radarOpen)growAll($('#rdPanel'));return}
     monM+=a.dataset.a==='prev'?-1:1;if(monM<0){monM=11;monY--}if(monM>11){monM=0;monY++}renders.month();
   };
@@ -1894,11 +2102,11 @@ function getYearly(y){
 renders.year=function renderYear(){
   const el=$('#pg-year'),o=getYearly(yearY);
   el.innerHTML=`<header class="ph"><div><div class="ph-sub">YEAR PLANNER</div><h1>${yearY} 年</h1></div>
-      <div class="nav"><button class="ibtn" data-a="prev" aria-label="上一年">${icon('chevL')}</button><button class="ibtn" data-a="next" aria-label="下一年">${icon('chevR')}</button><button class="ibtn" data-a="set" aria-label="設定與備份">${icon('sliders')}</button></div></header>
+      <div class="nav"><button class="ibtn" data-a="pdf" aria-label="匯出 PDF">${icon('file')}</button><button class="ibtn" data-a="prev" aria-label="上一年">${icon('chevL')}</button><button class="ibtn" data-a="next" aria-label="下一年">${icon('chevR')}</button><button class="ibtn" data-a="set" aria-label="設定與備份">${icon('sliders')}</button></div></header>
     <div class="seg">${YTABS.map(([k,l])=>`<button class="${yearTab===k?'on':''}" data-a="tab" data-t="${k}">${l}</button>`).join('')}</div><div id="yrBody"></div>`;
   el.onclick=e=>{const a=e.target.closest('[data-a]');if(!a)return;const k=a.dataset.a;
     if(k==='prev'){yearY--;renders.year()}else if(k==='next'){yearY++;renders.year()}
-    else if(k==='tab'){yearTab=a.dataset.t;renders.year()}else if(k==='set')openSettings()};
+    else if(k==='tab'){yearTab=a.dataset.t;renders.year()}else if(k==='set')openSettings();else if(k==='pdf')openExport(4,yearY===new Date().getFullYear()?todayStr():yearY+'-01-01')};
   ({cal:yrCal,me:yrMe,goal:yrGoal,ref:yrRef})[yearTab](o,$('#yrBody'));
 };
 
@@ -2240,7 +2448,7 @@ async function renderTopbar(){
   $('#syncDot').dataset.s=Cloud.status;
 }
 async function pickAvatar(file){
-  try{const b=await compressImg(file,512,.86);const id='avatar_'+uid();await DB.put('blobs',id,b);const p=getProfile();if(p.avatar)dropBlob(p.avatar);p.avatar=id;save('settings');renderTopbar();accountHook&&accountHook()}
+  try{const b=await cropImage(file,{aspect:1,circle:true,max:512,title:'裁剪頭像'});if(!b)return;const id='avatar_'+uid();await DB.put('blobs',id,b);const p=getProfile();if(p.avatar)dropBlob(p.avatar);p.avatar=id;save('settings');renderTopbar();accountHook&&accountHook()}
   catch(e){toast('圖片無法讀取')}
 }
 
@@ -2264,6 +2472,7 @@ function openAccount(){
           <button class="set-row" data-a="avatarDel"><span>頭像</span><em>${getProfile().avatar?'移除自訂頭像':'點上方頭像更換'}</em></button>
           <button class="set-row" data-a="metrics"><span>每日指數</span><em>${getMetrics().map(m=>m.name).join('、')||'未設定'}</em>${icon('chevR')}</button>
           <button class="set-row" data-a="layout"><span>封面預設版型</span><em>${(LAYOUTS.find(l=>l[0]===(S.settings.coverLayout||'frame'))||LAYOUTS[0])[1]}</em>${icon('chevR')}</button>
+          <button class="set-row" data-a="pdf"><span>匯出 PDF</span>${icon('chevR')}</button>
           <button class="set-row" data-a="backup"><span>備份與匯出</span>${icon('chevR')}</button>
         </div>
         <div class="sec-h mt"><h2>${icon('sliders')}帳號</h2></div>
@@ -2323,6 +2532,7 @@ function openAccount(){
     if(k==='sync')Cloud.sync();
     else if(k==='metrics')openMetricManager();
     else if(k==='backup')openSettings();
+    else if(k==='pdf')openExport(2,diaryDate);
     else if(k==='layout')openLayoutDefault(draw);
     else if(k==='avatarDel'){const p=getProfile();if(p.avatar){dropBlob(p.avatar);delete p.avatar;save('settings');renderTopbar();draw()}else $('#avIn',B).click()}
     else if(k==='pw')openNewPassword();
@@ -2361,7 +2571,7 @@ function openNewPassword(){
 function openLayoutDefault(onDone){
   const s=openSheet({title:'封面預設版型',onClose:onDone});
   const draw=()=>{const curL=S.settings.coverLayout||'frame';s.body.innerHTML=`<p class="hint" style="margin-bottom:12px">沒有個別設定版型的月份，會使用這個版型。</p><div class="cp-grid three">${LAYOUTS.map(([id,l])=>`<button class="cp-l ${curL===id?'on':''}" data-l="${id}">${coverHTML(calY,calM,id)}<span>${l}</span></button>`).join('')}</div>`;
-    $$('.cp-l .cv-art',s.body).forEach(a=>applyArt(a,coverCfg(calY,calM).art,calM));requestAnimationFrame(()=>fitCover(s.body))};
+    $$('.cp-l',s.body).forEach(l=>paintCover(l,coverCfg(calY,calM),calM));requestAnimationFrame(()=>fitCover(s.body))};
   s.body.onclick=e=>{const b=e.target.closest('[data-l]');if(!b)return;S.settings.coverLayout=b.dataset.l;save('settings');draw();if(cur==='cal')renders.cal()};
   draw();
 }
@@ -2379,6 +2589,122 @@ function openOnboarding(){
 }
 
 /* =========================================================
+   匯出 PDF：用瀏覽器列印產生 A5 版面（封面 / 日記 / 月結 / 年度）
+   ========================================================= */
+const PDF_LEVELS=[[1,'封面','只有這個月的封面'],[2,'封面＋日記','加上選定日期的日記'],[3,'＋本月月結','再加上這個月的月結'],[4,'＋年度','再加上整年的年度頁']];
+const ppFoot=t=>`<div class="pp-foot"><span>MY JOURNAL</span><span>${t}</span></div>`;
+const pblk=(t,inner,cls='')=>`<div class="pp-blk ${cls}"><h3>${t}</h3>${inner}</div>`;
+const ptxt=s=>`<div class="pp-text">${esc((s||'').trim())}</div>`;
+const has=s=>!!(s&&String(s).trim());
+
+function pdfCover(y,m){return `<section class="pp pp-cover">${coverHTML(y,m,coverCfg(y,m).layout)}</section>`}
+
+function pdfDiary(date){
+  const e=S.diary[date]||{},dt=parseYmd(date),evs=eventsOn(date),todos=e.todos||[],imgs=e.images||[];
+  const ms=getMetrics().filter(m=>metricVal(e,m.id)!=null);
+  let b='';
+  const left=evs.length?pblk('今日時間表',`<ul class="pp-tl">${evs.map(v=>`<li><time>${v.allDay?'全天':`${v.start}–${v.end}`}</time><i style="background:${v.color}"></i><span>${esc(v.title)}${v.location?`<small>${esc(v.location)}</small>`:''}</span></li>`).join('')}</ul>`):'';
+  const right=todos.length?pblk('今日待辦',`<ul class="pp-todo">${todos.map(t=>`<li class="${t.done?'done':''}"><i></i><span>${esc(t.text)}</span></li>`).join('')}</ul>`):'';
+  if(left&&right)b+=`<div class="pp-2">${left}${right}</div>`;else b+=left+right;
+  if(ms.length)b+=pblk('今日指數',`<div class="pp-metrics">${ms.map(m=>{const v=metricVal(e,m.id);return `<div><span>${esc(m.name)}</span><span class="pp-dots">${[...Array(10)].map((_,i)=>`<i class="${i<v?'on':''}"></i>`).join('')}</span><b>${v}</b></div>`}).join('')}</div>`);
+  if(has(e.text))b+=`<div class="pp-blk flow"><h3>日記</h3><div class="pp-journal">${esc(e.text.trim())}</div></div>`;
+  if(imgs.length)b+=pblk('照片',`<div class="pp-photos n${Math.min(imgs.length,4)}">${imgs.map(id=>`<img data-blob="${id}" alt="">`).join('')}</div>`,'flow');
+  if(has(e.keep)||has(e.problem)||has(e.try))b+=pblk('KPT 反思',`<div class="pp-kpt"><div style="--kc:#7f9a6a"><b>Keep</b>${ptxt(e.keep)}</div><div style="--kc:#c0675f"><b>Problem</b>${ptxt(e.problem)}</div><div style="--kc:#b5724a"><b>Try</b>${ptxt(e.try)}</div></div>`);
+  if(has(e.compromise))b+=pblk('妥協，但結果還不錯',ptxt(e.compromise));
+  if(has(e.upset))b+=pblk('今天最讓我心煩的一句話',`<div class="pp-quote">${esc(e.upset.trim())}</div>`);
+  if(has(e.remember))b+=pblk('要記得的事',ptxt(e.remember));
+  if(!b)b='<p class="pp-empty">這一天還沒有寫下什麼。</p>';
+  const mood=e.mood?`<div class="pp-mood" style="color:${MOODS[e.mood-1].c}">${moodIcon(e.mood-1)}<span>${MOODS[e.mood-1].l}</span></div>`:'';
+  return `<section class="pp pp-diary"><header class="pp-h"><b class="pp-big">${pad(dt.getDate())}</b><div><span class="pp-eyebrow">${MONTH_EN[dt.getMonth()].toUpperCase()} ${dt.getFullYear()}</span><span class="pp-sub">${wd(date)} · 日記</span></div>${mood}</header>${b}${ppFoot(date.replace(/-/g,'.'))}</section>`;
+}
+
+function pdfMonth(y,m){
+  const k=ym(y,m),o=getMonthly(k),dim=daysIn(y,m),el2=elapsedDays(y,m),axes=S.settings.radarAxes||DEFAULT_AXES;
+  const moods=[],photos=[];let days=0;
+  for(let d=1;d<=dim;d++){const e=S.diary[`${k}-${pad(d)}`];moods.push(e&&e.mood?e.mood:null);if(isDiaryFilled(e))days++;if(e&&e.images)photos.push(...e.images)}
+  const mv=moods.filter(Boolean),am=mv.length?mv.reduce((a,b)=>a+b,0)/mv.length:null;
+  const rows=S.habits.map(h=>{let c=0;for(let d=1;d<=el2;d++)if((S.habitLog[`${k}-${pad(d)}`]||[]).includes(h.id))c++;return{label:h.name,value:el2?c/el2:0,color:h.color}});
+  let b=`<div class="pp-stats"><div><small>寫日記</small><b>${days}</b> 天</div><div><small>照片</small><b>${photos.length}</b> 張</div><div style="color:${am?MOODS[Math.round(am)-1].c:'#c9bcae'}"><small>平均心情</small>${am?moodIcon(Math.round(am)-1):'<b>—</b>'}</div></div>`;
+  const pn=photos.length>=6?6:photos.length>=3?3:photos.length;
+  if(pn)b+=`<div class="pp-recap n${pn}">${photos.slice(0,pn).map(id=>`<img data-blob="${id}" alt="">`).join('')}</div>`;
+  const charts=[];
+  if(mv.length)charts.push(pblk('心情趨勢',lineChart(moods,{min:1,max:6,ticks:[1,2,3,4,5,6],fmt:t=>MOODS[t-1].l,color:'#b5724a',h:170})));
+  if(rows.length)charts.push(pblk('習慣完成率',hbarChart(rows)));
+  for(const mt of getMetrics()){const ser=[];for(let d=1;d<=dim;d++)ser.push(metricVal(S.diary[`${k}-${pad(d)}`],mt.id));if(ser.some(v=>v!=null))charts.push(pblk(esc(mt.name)+'趨勢',lineChart(ser,{min:1,max:10,ticks:[1,4,7,10],color:'#6b8bab',h:170})))}
+  for(let i=0;i<charts.length;i+=2)b+=charts[i+1]?`<div class="pp-2">${charts[i]}${charts[i+1]}</div>`:charts[i];
+  const tags=(arr,c)=>arr.length?`<div class="pp-tags">${arr.map(t=>`<span style="background:${c}1f;color:${c}">${esc(t.text)}</span>`).join('')}</div>`:'<p class="pp-empty sm">—</p>';
+  b+=`<div class="pp-2">${pblk('固執雷達',radarChart(o.radar,axes)+(has(o.radarNote)?ptxt(o.radarNote):''))}${pblk('能量盤點',`<p class="pp-lbl" style="color:#c0675f">耗電</p>${tags(o.drain,'#c0675f')}<p class="pp-lbl" style="color:#7f9a6a">充電</p>${tags(o.charge,'#7f9a6a')}`)}</div>`;
+  if(o.wins.length)b+=pblk('做得好的事',tags(o.wins,'#b5724a'));
+  if(o.breaks.length)b+=pblk('原來我也可以',`<div class="pp-notes">${o.breaks.map((t,i)=>`<div style="--nc:${NOTE_COLORS[i%5]};--rot:${[-1.5,1,-.8,1.4,-1][i%5]}deg">${esc(t.text)}</div>`).join('')}</div>`);
+  if(has(o.selfNote))b+=pblk('給自己的話',`<div class="pp-quote">${esc(o.selfNote.trim())}</div>`);
+  if(has(o.pattern))b+=pblk('模式識別',ptxt(o.pattern));
+  if(has(o.change))b+=pblk('下個月想改變的一件事',ptxt(o.change));
+  if(has(o.journal))b+=`<div class="pp-blk flow"><h3>本月日記</h3><div class="pp-journal">${esc(o.journal.trim())}</div></div>`;
+  return `<section class="pp pp-month"><header class="pp-h"><b class="pp-big">${pad(m+1)}</b><div><span class="pp-eyebrow">${MONTH_EN[m].toUpperCase()} ${y}</span><span class="pp-sub">月結 · Monthly Review</span></div></header>${b}${ppFoot(`${y}.${pad(m+1)}`)}</section>`;
+}
+
+function pdfYear(y){
+  const o=getYearly(y),t=todayStr(),evDays=new Set(S.events.map(e=>e.date));
+  let mm='';
+  for(let m=0;m<12;m++){
+    const sw=new Date(y,m,1).getDay(),dim=daysIn(y,m),mk=ym(y,m);
+    let g=WD.map(w=>`<span class="w">${w}</span>`).join('');for(let i=0;i<sw;i++)g+='<span></span>';
+    for(let d=1;d<=dim;d++){const k=`${mk}-${pad(d)}`;g+=`<span class="${k===t?'td':evDays.has(k)?'ev':''} ${isDiaryFilled(S.diary[k])?'di':''}">${d}</span>`}
+    mm+=`<div class="mm"><div class="mm-h"><b>${m+1}月</b></div><div class="mm-g">${g}</div></div>`;
+  }
+  let b=`<div class="pp-mm">${mm}</div>`;
+  const ans=QUESTIONS.map((q,i)=>has(o.answers['q'+i])?`<p class="q">${esc(q)}</p>${ptxt(o.answers['q'+i])}`:'').join('');
+  if(ans||o.values.length)b+=pblk('我想成為的人',`${o.values.length?`<div class="pp-vals">${o.values.map(v=>`<span>${esc(v)}</span>`).join('')}</div>`:''}<div class="pp-answers">${ans}</div>`);
+  if(o.goals.length){const dn=o.goals.filter(g=>g.done).length;b+=pblk(`今年目標 <em>${dn} / ${o.goals.length}</em>`,`<ul class="pp-todo">${o.goals.map(g=>`<li class="${g.done?'done':''}"><i></i><span>${esc(g.text)}</span></li>`).join('')}</ul>`)}
+  if(o.plans.length)b+=pblk('大計劃 / 小計劃',o.plans.map(p=>{const tot=p.items.length,dn=p.items.filter(x=>x.done).length,pc=tot?Math.round(dn/tot*100):0;return `<div class="pp-plan"><span><b>${esc(p.name)}</b><small>${p.size==='big'?'大計劃':'小計劃'} · ${p.fromM}–${p.toM}月</small></span><span class="pp-bar"><i style="width:${pc}%"></i></span><em>${pc}%</em></div>`}).join(''));
+  if(o.surprises.length)b+=pblk('計劃趕不上變化大賞',`<ul class="pp-star">${o.surprises.map(s=>`<li>${esc(s.text)}</li>`).join('')}</ul>`);
+  if(o.permits.length)b+=pblk('不完美許可證',`<div class="pp-cert"><ul>${o.permits.map(s=>`<li>${esc(s.text)}</li>`).join('')}</ul></div>`);
+  if(has(o.summary))b+=`<div class="pp-blk flow"><h3>年度總結</h3><div class="pp-journal">${esc(o.summary.trim())}</div></div>`;
+  return `<section class="pp pp-year"><header class="pp-h"><b class="pp-big">${y}</b><div><span class="pp-eyebrow">YEAR IN REVIEW</span><span class="pp-sub">年度</span></div></header>${b}${ppFoot(String(y))}</section>`;
+}
+
+async function buildPrint(level,date){
+  let root=$('#printRoot');if(!root){root=document.createElement('div');root.id='printRoot';document.body.append(root)}
+  const d=parseYmd(date),y=d.getFullYear(),m=d.getMonth();
+  const parts=[pdfCover(y,m)];
+  if(level>=2)parts.push(pdfDiary(date));
+  if(level>=3)parts.push(pdfMonth(y,m));
+  if(level>=4)parts.push(pdfYear(y));
+  root.innerHTML=parts.join('');
+  document.documentElement.classList.add('printing');
+  await paintCover($('.pp-cover',root),coverCfg(y,m),m);
+  await Promise.all($$('img[data-blob]',root).map(async im=>{im.src=await blobUrl(im.dataset.blob);try{await im.decode()}catch(e){}}));
+  fitCover(root);
+  try{await document.fonts.ready}catch(e){}
+  return parts.length;
+}
+function cleanupPrint(){document.documentElement.classList.remove('printing');const r=$('#printRoot');if(r)r.innerHTML=''}
+function openExport(level=2,date=diaryDate){
+  const s=openSheet({title:'匯出 PDF',onClose:cleanupPrint});
+  const draw=()=>{
+    s.body.innerHTML=`<div class="field"><span class="label">日期（決定封面月份、日記、月結與年度）</span><input type="date" class="inp" id="pdfDate" value="${date}"></div>
+      <span class="label">內容</span>
+      <div class="pdf-opts">${PDF_LEVELS.map(([n,l,dsc])=>`<button class="pdf-opt ${level===n?'on':''}" data-lv="${n}"><span class="pdf-stack">${'<i></i>'.repeat(n)}</span><b>${l}</b><small>${dsc}</small></button>`).join('')}</div>
+      <p class="hint mt">A5 直式版面，會用手帳裡現有的封面、照片與文字排版。</p>
+      <button class="btn btn-p btn-block mt" data-go>${icon('file')}產生 PDF</button>`;
+    $('#pdfDate',s.el).onchange=e=>{if(e.target.value)date=e.target.value};
+  };
+  s.body.onclick=async e=>{
+    const o=e.target.closest('[data-lv]');if(o){level=+o.dataset.lv;draw();return}
+    const go=e.target.closest('[data-go]');
+    if(go){go.disabled=true;go.textContent='排版中…';
+      try{const n=await buildPrint(level,date);
+        s.body.innerHTML=`<div class="pdf-ready">${icon('check')}<b>已排好 ${n} 個章節</b><p class="hint">按下方按鈕開啟列印畫面，目的地選「儲存為 PDF」。<br>iPhone：列印畫面右上角的分享按鈕 →「儲存到檔案」。</p></div>
+          <button class="btn btn-p btn-block" data-print>${icon('download')}儲存為 PDF／列印</button><button class="btn btn-g btn-block mt" data-back>重新選擇</button>`;
+      }catch(err){toast('排版失敗：'+(err.message||err));draw()}
+      return}
+    if(e.target.closest('[data-print]')){window.print();return}
+    if(e.target.closest('[data-back]')){cleanupPrint();draw()}
+  };
+  draw();
+}
+
+/* =========================================================
    設定 / 備份
    ========================================================= */
 const blobToDataURL=b=>new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>res(r.result);r.onerror=rej;r.readAsDataURL(b)});
@@ -2387,12 +2713,14 @@ function openSettings(){
     <div class="set-info">${Cloud.uid?'已登入：資料會自動同步到你的雲端帳號，也可以另外匯出一份備份檔。':`資料只儲存在這台裝置的瀏覽器${DB.db?'':'（<b>目前無法使用本機資料庫，關閉頁面後資料會遺失</b>）'}。登入後可同步到雲端；換手機或清除瀏覽器資料前，請先匯出備份。`}</div>
     <div class="set-btns">
       <button class="btn btn-p" data-s="exp">${icon('download')}匯出備份（JSON）</button>
+      <button class="btn btn-g" data-s="pdf">${icon('file')}匯出 PDF（封面／日記／月結／年度）</button>
       <label class="btn btn-g">${icon('upload')}匯入備份<input type="file" accept="application/json,.json" hidden id="impIn"></label>
       <button class="btn btn-d" data-s="clr">${icon('trash')}清除所有資料</button>
     </div>`});
   s.body.onclick=async e=>{
     const b=e.target.closest('[data-s]');if(!b)return;
     if(b.dataset.s==='exp')exportData();
+    if(b.dataset.s==='pdf'){s.close();openExport(2,diaryDate);return}
     if(b.dataset.s==='clr'){
       const cl=Cloud.on();
       if(!await confirmSheet(cl?'確定清除所有資料？會同時刪除雲端上的日記、照片與音樂，無法復原。':'確定清除所有日記、事項、圖片與音樂？這無法復原。','全部清除'))return;
