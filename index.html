@@ -11,7 +11,7 @@
 <title>我的手帳</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700&family=Noto+Serif+HK:wght@400;600;700&family=Caveat:wght@500;700&family=Patrick+Hand&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+HK:wght@400;500;700&family=Noto+Serif+HK:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f7f3ee; --card:#fffdfa; --ink:#3a2e25; --ink2:#5f5045; --muted:#9a8b7e;
@@ -362,7 +362,7 @@ html.kb .tabbar,html.kb .player{display:none}
 .en-h{display:flex;align-items:center;gap:6px;color:var(--ec);font-family:var(--serif);font-weight:600;font-size:16px;margin-bottom:2px}
 .en-h .ic{width:18px;height:18px}
 
-/* ---------- cover（6 種版型，共用同一組元素，以 em 縮放） ---------- */
+/* ---------- cover（13 種版型，共用同一組元素，以 em 縮放） ---------- */
 .cover{border-radius:6px;overflow:hidden;box-shadow:0 2px 4px rgba(60,40,25,.06),0 16px 36px rgba(60,40,25,.15);margin:2px 10px 0;touch-action:pan-y}
 .cover.anim-1{animation:slideL .3s ease}
 .cover.anim--1{animation:slideR .3s ease}
@@ -409,40 +409,116 @@ html.kb .tabbar,html.kb .player{display:none}
 .L-card .cv-cal{left:40%;right:6%;top:63%;font-size:1.05em;font-family:Georgia,serif;color:#3a332c}
 .L-card .cv-cal span{line-height:1.6}
 .L-card .cv-cal .su{color:#c0653a}
-/* 5 圓點格（手繪）：牛皮紙底、手撕邊圖片、手寫字、每個日期是手繪圈圈 */
-.L-dots{background:#f1e8da;color:#2e2a26}
-.L-dots::after{content:'';position:absolute;inset:0;pointer-events:none;opacity:.35;mix-blend-mode:multiply;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.7' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 .45 0 0 0 0 .38 0 0 0 0 .3 0 0 0 .5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.L-dots .cv-art{left:0;right:0;top:0;height:47%;clip-path:polygon(0 0,100% 0,100% 92%,96% 95%,91% 91.5%,85% 96%,79% 92%,72% 97%,66% 93%,59% 97.5%,52% 93%,45% 96.5%,38% 92%,31% 96%,24% 91.5%,17% 95.5%,10% 92%,5% 96%,0 93%)}
-.L-dots .cv-num{left:5.5%;top:43%;font-family:'Caveat',cursive;font-weight:700;font-size:4.4em;line-height:1;transform:rotate(-6deg);color:#2e2a26}
-.L-dots .cv-name{left:31%;top:51%;font-family:'Caveat',cursive;font-size:1.75em;font-weight:500;color:#5a4f45}
-.L-dots .cv-year{right:7%;top:53%;font-family:'Patrick Hand',cursive;font-size:.62em;letter-spacing:.12em;color:#8d8172}
-.L-dots .cv-cal{left:5%;right:5%;top:63%;row-gap:.14em}
-.L-dots .cv-cal span{font-family:'Patrick Hand',cursive;font-size:.64em;width:1.95em;height:1.95em;line-height:1.9em;margin:0 auto;border:1.4px solid rgba(46,42,38,.5);border-radius:52% 48% 55% 45%/47% 55% 45% 53%}
-.L-dots .cv-cal span:nth-child(3n){border-radius:45% 55% 48% 52%/55% 45% 53% 47%;transform:rotate(-5deg)}
-.L-dots .cv-cal span:nth-child(3n+1){border-radius:58% 42% 50% 50%/45% 52% 48% 55%;transform:rotate(4deg)}
-.L-dots .cv-cal .w{border:0;font-family:'Caveat',cursive;font-size:.78em;font-weight:700;color:#8d8172;height:auto;line-height:1.3}
-.L-dots .cv-cal span:empty{border:0}
-.L-dots .cv-cal .su{color:#b4553a;border-color:rgba(180,85,58,.55)}
-.L-dots .cv-cal .td{background:#e8a873;border-color:#2e2a26;color:#2e2a26;font-weight:700}
-.L-dots .cv-doodle{right:6%;top:38%;width:3.4em;color:#2e2a26;transform:rotate(8deg)}
-
-/* 6 貼紙（手繪）：紙膠帶、手畫框線、手寫數字、圈起今天 */
-.L-sticker .cv-art{inset:0}
-.L-sticker .cv-txt{display:block;position:absolute;left:6%;bottom:5.5%;width:63%;padding:1em 1.05em .85em;background:#fffaf0;transform:rotate(-3deg);box-shadow:0 .25em .7em rgba(0,0,0,.22);border-radius:.2em .45em .25em .4em}
-.L-sticker .cv-txt::after{content:'';position:absolute;inset:.38em;border:1.5px solid rgba(46,42,38,.5);border-radius:.7em .25em .8em .3em/.3em .8em .25em .7em;pointer-events:none}
-.L-sticker .cv-txt::before{content:'';position:absolute;top:-.75em;left:30%;width:3.8em;height:1.35em;background:rgba(236,200,140,.8);transform:rotate(6deg);clip-path:polygon(4% 0,96% 6%,100% 22%,95% 42%,100% 62%,96% 82%,98% 100%,4% 95%,0 78%,5% 58%,0 38%,4% 18%);z-index:1}
-.L-sticker .cv-txt>*{position:static}
-.L-sticker .cv-txt>.cv-doodle{position:absolute;right:-1.6em;top:-1.9em;width:3em;color:#c0563c;transform:rotate(14deg)}
-.L-sticker .cv-num{display:inline-block;font-family:'Caveat',cursive;font-weight:700;font-size:3em;line-height:.85;margin-right:.12em;color:#2e2a26}
-.L-sticker .cv-name{display:inline-block;font-family:'Caveat',cursive;font-size:1.4em;font-weight:500;color:#6b5d50}
-.L-sticker .cv-year{display:none}
-.L-sticker .cv-cal{margin-top:.35em;font-size:.95em;color:#3a332c}
-.L-sticker .cv-cal span{font-family:'Patrick Hand',cursive;font-size:.62em;line-height:1.65}
-.L-sticker .cv-cal .w{font-family:'Caveat',cursive;font-size:.75em;font-weight:700;color:#8d8172}
-.L-sticker .cv-cal .su{color:#b4553a}
-.L-sticker .cv-cal .td{color:#b4553a;font-weight:700;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 30'%3E%3Cpath d='M7 17C4 9 13 3.5 22 4.2s13.5 5.6 12 12.6-11.5 10-20 9.4S4.5 21 9 11.5' fill='none' stroke='%23c0563c' stroke-width='2.2' stroke-linecap='round'/%3E%3C/svg%3E") center/115% 115% no-repeat}
-.cv-doodle{position:absolute}
-.cv-doodle svg{width:100%;height:auto;display:block;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.cv-cal .w b{display:none;font-weight:inherit}
+.cv-deco{position:absolute}
+.cv-deco svg{width:100%;height:auto;display:block}
+/* 5 方窗：方形留白圖 + 左下大數字 + 右側小月曆，週日圓點 */
+.L-square{background:#fdfcfa;color:#3a3a3a}
+.L-square .cv-art{left:6%;right:6%;top:4.5%;height:62%}
+.L-square .cv-num{left:6.5%;top:70.5%;font-family:Georgia,'Noto Serif HK',serif;font-size:3.5em;color:#4a4a4a}
+.L-square .cv-name{left:7%;top:84.5%;font-size:.42em;letter-spacing:.08em;text-transform:capitalize;color:#666}
+.L-square .cv-year{left:7%;top:87.5%;font-size:.42em;letter-spacing:.08em;color:#9a9a9a}
+.L-square .cv-cal{left:44%;right:5.5%;top:70.5%;row-gap:.1em}
+.L-square .cv-cal span{font-size:.4em;width:1.8em;height:1.8em;line-height:1.8em;margin:0 auto}
+.L-square .cv-cal .w{color:#777;font-weight:400}
+.L-square .cv-cal .su:not(:empty){background:#3f6dbf;color:#fff;border-radius:50%}
+.L-square .cv-cal .sa{color:#3f6dbf}
+.L-square .cv-cal .td{background:#c0653a;color:#fff;border-radius:50%}
+/* 6 底片：米色紙、置中照片、大襯線數字、週日粉紅 */
+.L-film{background:#efebe4;color:#3a3a3a}
+.L-film .cv-art{left:12%;right:12%;top:6%;height:46%}
+.L-film .cv-num{left:0;right:0;top:55%;text-align:center;font-family:Georgia,'Noto Serif HK',serif;font-size:2.1em;color:#2f2f2f}
+.L-film .cv-name{left:0;right:0;top:63.3%;text-align:center;font-size:.4em;letter-spacing:.5em;padding-left:.5em;text-transform:uppercase;color:#8a837b}
+.L-film .cv-cal{left:13%;right:13%;top:67.5%;font-family:Georgia,serif}
+.L-film .cv-cal span{font-size:.48em;line-height:2.05}
+.L-film .cv-cal .w{font-family:'Helvetica Neue',Arial,sans-serif;font-size:.32em;line-height:3;letter-spacing:.06em;color:#777;font-weight:400}
+.L-film .cv-cal .w i{display:none}.L-film .cv-cal .w b{display:inline;text-transform:uppercase}
+.L-film .cv-cal .su{color:#d0587e}
+.L-film .cv-year{left:0;right:0;bottom:3.2%;text-align:center;font-size:.34em;letter-spacing:.4em;padding-left:.4em;color:#b0a89f}
+/* 7 線圈掛曆：頂部線圈、置中大寫月份、粗體大日期 */
+.L-spiral{background:#f4efe6;color:#2f4a6d}
+.L-spiral .cv-deco{left:5%;right:5%;top:.8%}
+.L-spiral .cv-art{left:7%;right:7%;top:7.5%;height:50%}
+.L-spiral .cv-num{display:none}
+.L-spiral .cv-name{left:0;right:0;top:61%;text-align:center;font-family:Georgia,'Noto Serif HK',serif;font-size:1.2em;letter-spacing:.14em;padding-left:.14em;text-transform:uppercase;color:#4d6a8c}
+.L-spiral .cv-year{right:7%;top:58.6%;font-size:.36em;letter-spacing:.3em;color:#9aa8b8}
+.L-spiral .cv-cal{left:8%;right:8%;top:68.5%;font-family:Georgia,serif;font-weight:700}
+.L-spiral .cv-cal span{font-size:.72em;line-height:1.5}
+.L-spiral .cv-cal .w{font-size:.34em;line-height:2.6;font-weight:400;letter-spacing:.1em;color:#7a8ea6}
+.L-spiral .cv-cal .su{color:#d8574b}
+/* 8 長尾夾：灰紙、黑色長尾夾、字距月份、方圖、右下大數字 */
+.L-clip{background:#dddad4;color:#2b2b2b}
+.L-clip .cv-deco{left:40%;width:20%;top:.6%}
+.L-clip .cv-name{left:0;right:0;top:12.2%;text-align:center;font-size:.46em;letter-spacing:.62em;padding-left:.62em;text-transform:uppercase;color:#4a4a4a}
+.L-clip .cv-art{left:20%;right:20%;top:17%;height:42.86%}
+.L-clip .cv-cal{left:13%;right:13%;top:63%}
+.L-clip .cv-cal span{font-size:.46em;line-height:1.95}
+.L-clip .cv-cal .w{color:#6d6d6d;font-weight:500}
+.L-clip .cv-num{right:12%;bottom:3.6%;font-size:2.6em;font-weight:300;letter-spacing:-.02em;color:#1f1f1f}
+.L-clip .cv-year{left:13.5%;bottom:5.5%;font-size:.38em;letter-spacing:.3em;color:#7d7d7d}
+/* 9 橫幅：寬幅圖片、字距標題、大月曆 */
+.L-banner{background:#fbf8ef;color:#3d3d3d}
+.L-banner .cv-art{left:8%;right:8%;top:7%;height:31%}
+.L-banner .cv-num,.L-banner .cv-name,.L-banner .cv-year{display:none}
+.L-banner .cv-ttl{left:0;right:0;top:44.5%;text-align:center;font-size:.92em;font-weight:700;letter-spacing:.3em;padding-left:.3em;text-transform:uppercase;color:#6c9fb7}
+.L-banner .cv-cal{left:10%;right:10%;top:53%}
+.L-banner .cv-cal span{font-size:.54em;line-height:2.85}
+.L-banner .cv-cal .w{font-size:.46em;line-height:2.3;color:#333;border-bottom:1px solid #b9b5ad;margin-bottom:.5em}
+.L-banner .cv-cal .su{color:#6c9fb7}
+/* 10 直條：右側直條圖、左側粗數字與週末色帶 */
+.L-split{background:#f7f5f0;color:#3b302a}
+.L-split .cv-art{right:0;top:0;bottom:0;width:44%}
+.L-split .cv-num{left:7%;top:5%;font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:4.2em;letter-spacing:-.04em}
+.L-split .cv-abbr{display:block;left:8%;top:22.5%;font-size:.5em;letter-spacing:.42em;text-transform:uppercase;color:#8a7d72}
+.L-split .cv-name{display:none}
+.L-split .cv-cal{left:6%;width:46%;top:29%}
+.L-split .cv-cal span{font-size:.42em;line-height:2.65;font-weight:600}
+.L-split .cv-cal .w{font-weight:400;color:#9a8e84}
+.L-split .cv-cal .su:not(:empty),.L-split .cv-cal .sa:not(:empty){background:#efe3b8}
+.L-split .cv-lines{left:7%;width:43%;top:68%}
+.L-split .cv-lines i{display:block;height:1.35em;border-bottom:1px solid #ddd3c6}
+.L-split .cv-year{left:7%;bottom:5%;font-size:.4em;letter-spacing:.3em;color:#9a8e84}
+/* 11 格子：粗框圖片、壓在框上的大寫月份、完整格線月曆 */
+.L-grid{background:#f3ede2;color:#1f1f1f}
+.L-grid .cv-art{left:6%;right:6%;top:4%;height:43%;border:.16em solid #1f1f1f}
+.L-grid .cv-name{right:7.5%;top:42.2%;font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;font-size:1.75em;letter-spacing:.01em;text-transform:uppercase;color:#f3ede2;-webkit-text-stroke:.045em #1f1f1f;paint-order:stroke}
+.L-grid .cv-num{display:none}
+.L-grid .cv-year{left:0;right:0;bottom:1.6%;text-align:center;font-size:.36em;letter-spacing:.4em;padding-left:.4em;color:#6d665c}
+.L-grid .cv-cal{left:6%;right:6%;top:51%}
+.L-grid .cv-cal span{font-size:.36em;height:5.3em;line-height:1.5;text-align:right;padding:.25em .45em;border-right:1px solid #1f1f1f;border-bottom:1px solid #1f1f1f}
+.L-grid .cv-cal span:nth-child(7n+8){border-left:1px solid #1f1f1f}
+.L-grid .cv-cal span:nth-child(-n+14):not(.w){border-top:1px solid #1f1f1f}
+.L-grid .cv-cal .w{height:auto;border:0;text-align:left;padding:0 .2em .3em;font-size:.3em;letter-spacing:.06em}
+.L-grid .cv-cal .w i{display:none}.L-grid .cv-cal .w b{display:inline;text-transform:uppercase}
+.L-grid .cv-cal .td{background:#efc9a4;color:#1f1f1f}
+/* 12 打字機：牛皮紙、打字機字體、標籤式標題 */
+.L-type{background:#e9ded2;color:#8b4a4a;font-family:'Courier New',Courier,monospace}
+.L-type .cv-num{left:8%;top:4.6%;font-family:Georgia,serif;font-size:1.5em}
+.L-type .cv-name{left:18%;top:6.2%;font-size:.62em}
+.L-type .cv-year{right:8%;top:6.2%;font-size:.46em;letter-spacing:.2em;color:#ad7d75}
+.L-type .cv-art{left:9%;right:9%;top:12.5%;height:46%}
+.L-type .cv-cal{left:8%;right:8%;top:62.5%;font-weight:700}
+.L-type .cv-cal span{font-size:.52em;line-height:1.75}
+.L-type .cv-cal .w{font-size:.36em;line-height:2.5;font-weight:400;color:#a7746e}
+.L-type .cv-cal .w i{display:none}.L-type .cv-cal .w b{display:inline}
+.L-type .cv-cal .su{color:#c79a92}
+.L-type .cv-cap{left:8%;right:8%;bottom:6.5%;padding-top:.5em;border-top:1px solid #a7746e;font-size:.4em;letter-spacing:.15em;color:#a7746e}
+/* 13 活頁：上半圖片配膠囊日期、中間活頁環、下半便條 */
+.L-binder{background:#ece8e1;color:#2c2c2c}
+.L-binder .cv-art{left:4%;right:4%;top:3%;height:48%}
+.L-binder .cv-num,.L-binder .cv-name,.L-binder .cv-year{display:none}
+.L-binder .cv-cal{left:9%;right:9%;top:9.5%}
+.L-binder .cv-cal span{font-size:.42em;font-weight:800;line-height:1.7;margin:.26em .32em;background:#fff;color:#2c2c2c;border-radius:1em}
+.L-binder .cv-cal .w{background:#2c2c2c;color:#fff;font-weight:700;letter-spacing:.06em}
+.L-binder .cv-cal .w i{display:none}.L-binder .cv-cal .w b{display:inline;text-transform:uppercase}
+.L-binder .cv-cal span:empty{background:none}
+.L-binder .cv-cal .td{background:#2c2c2c;color:#fff}
+.L-binder .cv-ttl{right:9%;top:42%;padding:.22em .5em;background:#2c2c2c;color:#fff;font-weight:900;font-size:.95em;letter-spacing:.06em;text-transform:uppercase;border-radius:.2em}
+.L-binder .cv-deco{left:4%;right:4%;top:47.2%}
+.L-binder .cv-big{left:7%;top:60%;font-family:'Courier New',monospace;font-weight:700;font-size:3.6em;color:#2c2c2c}
+.L-binder .cv-memo{left:36%;right:7%;top:59%;padding:.9em 1em;background:#cfe2d3;transform:rotate(-2deg);font-family:'Courier New',monospace;font-size:.44em;line-height:1.75;color:#2c2c2c;white-space:normal}
+.L-binder .cv-memo p{white-space:nowrap}
+.L-binder .cv-memo i{display:block;height:1.75em;border-bottom:1px solid #9fb8a6}
 
 
 .cover-tools{display:flex;align-items:center;justify-content:space-between;margin:14px 10px 12px;gap:10px}
@@ -500,11 +576,6 @@ html.kb .tabbar,html.kb .player{display:none}
 
 /* ---------- diary additions ---------- */
 .carry-todo{margin-bottom:6px;color:var(--accent-d);background:var(--accent-soft2);box-shadow:none}
-.imgs{grid-template-columns:1fr 1fr;gap:8px}
-.img-t{aspect-ratio:4/5;border-radius:14px}
-.imgs .img-t:first-child:nth-last-child(odd){grid-column:1/-1;aspect-ratio:4/3}
-.imgs.n1 .img-t:first-child:nth-last-child(odd){aspect-ratio:auto}
-.imgs.n1 img{height:auto;max-height:520px}
 .img-del{width:32px;height:32px;top:8px;right:8px}
 .metric-ed{margin-bottom:10px;padding:12px}
 .chip .ic{width:14px;height:14px}
@@ -726,102 +797,205 @@ html.kb .tabbar,html.kb .player{display:none}
 .pdf-ready>.ic{width:46px;height:46px;margin:0 auto 10px;color:#fff;background:var(--accent);border-radius:50%;padding:11px;stroke-width:2.4}
 .pdf-ready b{display:block;font-family:var(--serif);font-size:18px;margin-bottom:6px}
 
-/* ---------- 列印版面（A5） ---------- */
+/* ---------- 列印版面（A4 滿版，含畫面預覽） ---------- */
 #printRoot{display:none}
-html.printing #printRoot{display:block;position:fixed;left:-30000px;top:0;width:148mm;z-index:-1}
-.pp{width:148mm;min-height:210mm;box-sizing:border-box;padding:13mm 12mm 9mm;background:#fbf8f3;color:#3a2e25;font-family:var(--sans);font-size:9.5pt;line-height:1.65;position:relative;break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+html.printing body>*:not(#printRoot){display:none!important}
+html.printing,html.printing body{overflow:visible!important;height:auto!important;min-height:0!important;background:#e6dfd5!important}
+html.printing #printRoot{display:block}
+.pp-tools{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:calc(var(--st) + 10px) 14px 10px;background:#f7f3ee;border-bottom:1px solid var(--line);box-shadow:0 2px 10px rgba(60,40,25,.08)}
+.pp-tools .grow{flex:1;min-width:0;font-size:12px;color:var(--muted);line-height:1.35}
+.pp-tools .grow b{display:block;font-size:15px;color:var(--ink);font-family:var(--serif)}
+.pp-tools .pill{flex-shrink:0;padding:0 12px 0 8px}
+.pp-tools .btn{height:40px;padding:0 14px;font-size:14px;border-radius:12px;flex-shrink:0}
+.pp-pages{padding:18px 12px calc(var(--sb) + 30px);display:flex;flex-direction:column;align-items:center;gap:16px}
+.pp{zoom:var(--ppz,1);width:210mm;height:296.8mm;overflow:hidden;flex-shrink:0;box-sizing:border-box;padding:20mm 18mm 0;background:#fbf8f3;color:#3a2e25;font-family:var(--sans);font-size:10.5pt;line-height:1.7;position:relative;box-shadow:0 6px 22px rgba(60,40,25,.16);break-after:page;page-break-after:always;-webkit-print-color-adjust:exact;print-color-adjust:exact}
 .pp:last-child{break-after:auto;page-break-after:auto}
 .pp *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-.pp-cover{padding:0;height:210mm;min-height:0;overflow:hidden;background:#fbf9f5}
-.pp-cover .cvr{width:148mm;height:210mm;aspect-ratio:auto}
-.pp-h{display:flex;align-items:flex-end;gap:4mm;padding-bottom:3.5mm;border-bottom:.45mm solid #3a2e25;margin-bottom:6mm}
-.pp-h>div{display:flex;flex-direction:column;gap:.5mm;padding-bottom:1.2mm}
-.pp-big{font-family:var(--serif);font-size:42pt;line-height:.9;font-weight:600;color:#2e2620;letter-spacing:-.02em}
-.pp-eyebrow{font-size:7.5pt;letter-spacing:.32em;color:#9a8b7e}
-.pp-sub{font-family:var(--serif);font-size:12pt;font-weight:600}
-.pp-mood{margin-left:auto;display:flex;flex-direction:column;align-items:center;font-size:7.5pt;gap:1mm}
-.pp-mood .ic{width:11mm;height:11mm;stroke-width:1.5}
-.pp-blk{break-inside:avoid;page-break-inside:avoid;margin-bottom:5.5mm}
-.pp-blk.flow{break-inside:auto;page-break-inside:auto}
-.pp-blk h3{font-family:var(--serif);font-size:10.5pt;font-weight:600;margin-bottom:2.2mm;display:flex;align-items:center;gap:2mm;color:#2e2620;break-after:avoid}
-.pp-blk h3::before{content:'';width:2mm;height:2mm;border-radius:50%;background:#b5724a;flex-shrink:0}
-.pp-blk h3 em{font-style:normal;font-family:var(--sans);font-size:8pt;color:#9a8b7e;font-weight:400;margin-left:auto}
-.pp-2{display:grid;grid-template-columns:1fr 1fr;gap:6mm}
-.pp-2>.pp-blk{min-width:0}
-.pp-tl,.pp-todo,.pp-star,.pp-cert ul{list-style:none}
-.pp-tl li{display:grid;grid-template-columns:18mm 2mm 1fr;gap:2mm;align-items:baseline;padding:1mm 0;border-bottom:.2mm dashed #e2d8cc}
-.pp-tl time{font-size:7.5pt;color:#8a7b6e;font-variant-numeric:tabular-nums}
-.pp-tl i{width:2mm;height:2mm;border-radius:50%;align-self:center}
-.pp-tl small{display:block;font-size:7pt;color:#9a8b7e}
-.pp-todo li{display:flex;gap:2mm;align-items:baseline;padding:.6mm 0}
-.pp-todo i{width:3mm;height:3mm;border:.3mm solid #8a7b6e;border-radius:.8mm;flex-shrink:0;position:relative;top:.4mm}
+.pp-in{height:251mm;overflow:hidden}
+.pp-stage{position:absolute;visibility:hidden;left:0;top:0}
+.pp-foot{position:absolute;left:18mm;right:18mm;bottom:11mm;display:flex;justify-content:space-between;font-size:7.5pt;letter-spacing:.28em;color:#b3a698;padding-top:2.5mm;border-top:.25mm solid #e6ddd1}
+.pp-foot i{font-style:normal}
+.pp-cover{padding:0;background:#fbf9f5}
+.pp-cover .cvr{width:210mm;height:296.8mm;aspect-ratio:auto;font-size:10.5mm!important}
+#printRoot .cv-art::after{display:none}
+#printRoot .L-full .cv-txt::before{background:rgba(0,0,0,.14)}
+.pp-h{display:flex;align-items:flex-end;gap:5mm;padding-bottom:4.5mm;border-bottom:.5mm solid #3a2e25;margin-bottom:8mm}
+.pp-h>div{display:flex;flex-direction:column;gap:.8mm;padding-bottom:1.5mm}
+.pp-big{font-family:var(--serif);font-size:56pt;line-height:.9;font-weight:600;color:#2e2620;letter-spacing:-.02em}
+.pp-eyebrow{font-size:8.5pt;letter-spacing:.34em;color:#9a8b7e}
+.pp-sub{font-family:var(--serif);font-size:14pt;font-weight:600}
+.pp-mood{margin-left:auto;display:flex;flex-direction:column;align-items:center;font-size:8.5pt;gap:1.2mm}
+.pp-mood .ic{width:14mm;height:14mm;stroke-width:1.5}
+.pp-blk{margin-bottom:7mm}
+.pp-blk h3{font-family:var(--serif);font-size:12pt;font-weight:600;margin-bottom:3mm;display:flex;align-items:center;gap:2.5mm;color:#2e2620}
+.pp-blk h3::before{content:'';width:2.4mm;height:2.4mm;border-radius:50%;background:#b5724a;flex-shrink:0}
+.pp-blk h3 em{font-style:normal;font-family:var(--sans);font-size:9pt;color:#9a8b7e;font-weight:400;margin-left:auto}
+.pp-cont>h3::after{content:'（續）';font-size:9pt;font-weight:400;color:#9a8b7e;margin-left:-1.5mm}
+.pp-2{display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-bottom:7mm}
+.pp-2>.pp-blk{min-width:0;margin-bottom:0}
+.pp-tl,.pp-todo,.pp-star{list-style:none}
+.pp-tl li{display:grid;grid-template-columns:23mm 2.4mm 1fr;gap:2.5mm;align-items:baseline;padding:1.4mm 0;border-bottom:.25mm dashed #e2d8cc}
+.pp-tl time{font-size:8.5pt;color:#8a7b6e;font-variant-numeric:tabular-nums}
+.pp-tl i{width:2.4mm;height:2.4mm;border-radius:50%;align-self:center}
+.pp-tl small{display:block;font-size:8pt;color:#9a8b7e}
+.pp-todo li{display:flex;gap:2.5mm;align-items:baseline;padding:.9mm 0}
+.pp-todo i{width:3.6mm;height:3.6mm;border:.35mm solid #8a7b6e;border-radius:1mm;flex-shrink:0;position:relative;top:.5mm}
 .pp-todo .done i{background:#b5724a;border-color:#b5724a}
 .pp-todo .done span{text-decoration:line-through;color:#9a8b7e}
-.pp-metrics div{display:grid;grid-template-columns:24mm 1fr 6mm;align-items:center;gap:2mm;padding:.7mm 0}
-.pp-dots{display:flex;gap:1.2mm}
-.pp-dots i{width:2.8mm;height:2.8mm;border-radius:50%;background:#ece3d8}
+.pp-metrics>div{display:grid;grid-template-columns:34mm 1fr 8mm;align-items:center;gap:3mm;padding:1mm 0}
+.pp-dots{display:flex;gap:1.8mm}
+.pp-dots i{width:3.6mm;height:3.6mm;border-radius:50%;background:#ece3d8}
 .pp-dots i.on{background:#b5724a}
 .pp-metrics b{text-align:right;font-family:var(--serif)}
-.pp-journal{font-family:var(--serif);font-size:10.5pt;line-height:7.4mm;white-space:pre-wrap;word-break:break-word;background-image:linear-gradient(transparent 7.1mm,#e6ddd1 7.1mm,#e6ddd1 7.3mm,transparent 7.3mm);background-size:100% 7.4mm}
+.pp-journal{font-family:var(--serif);font-size:12pt;line-height:9.4mm;white-space:pre-wrap;word-break:break-word;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 10 94' preserveAspectRatio='none'%3E%3Crect y='90' width='10' height='2.4' fill='%23e3d9cc'/%3E%3C/svg%3E") 0 0/100% 9.4mm repeat}
 .pp-text{white-space:pre-wrap;word-break:break-word}
-.pp-photos{display:grid;grid-template-columns:1fr 1fr;gap:2.5mm}
-.pp-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:1.5mm;display:block;break-inside:avoid}
+.pp-photos{display:grid;grid-template-columns:1fr 1fr;gap:3.5mm}
+.pp-photos img{width:100%;aspect-ratio:4/3;object-fit:cover;border-radius:2mm;display:block;background:#efe7dc}
 .pp-photos.n1{grid-template-columns:1fr}
-.pp-photos.n1 img{aspect-ratio:auto;max-height:95mm;object-fit:contain;background:#efe7dc}
+.pp-photos.n1 img{aspect-ratio:3/2;object-fit:contain}
 .pp-photos.n3 img:first-child{grid-column:1/-1;aspect-ratio:16/9}
-.pp-kpt{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm}
-.pp-kpt>div{border-top:.8mm solid var(--kc);background:#fff;border-radius:1.5mm;padding:2.5mm;font-size:8.5pt;min-height:22mm}
-.pp-kpt b{display:block;font-family:var(--serif);color:var(--kc);font-size:10pt;margin-bottom:1mm}
-.pp-quote{font-family:var(--serif);font-size:11.5pt;line-height:1.7;text-align:center;padding:3mm 8mm;position:relative;color:#4a3d33;white-space:pre-wrap}
-.pp-quote::before,.pp-quote::after{position:absolute;font-size:26pt;line-height:1;color:#b5724a;font-family:Georgia,serif}
+.pp-kpt{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm}
+.pp-kpt>div{border-top:1mm solid var(--kc);background:#fff;border-radius:2mm;padding:3.5mm;font-size:9.5pt;min-height:30mm}
+.pp-kpt b{display:block;font-family:var(--serif);color:var(--kc);font-size:11pt;margin-bottom:1.5mm}
+.pp-quote{font-family:var(--serif);font-size:13pt;line-height:1.75;text-align:center;padding:4mm 12mm;position:relative;color:#4a3d33;white-space:pre-wrap}
+.pp-quote::before,.pp-quote::after{position:absolute;font-size:32pt;line-height:1;color:#b5724a;font-family:Georgia,serif}
 .pp-quote::before{content:'\201C';left:0;top:0}
-.pp-quote::after{content:'\201D';right:0;bottom:-3mm}
-.pp-empty{color:#9a8b7e;font-family:var(--serif);text-align:center;padding:30mm 0}
+.pp-quote::after{content:'\201D';right:0;bottom:-4mm}
+.pp-empty{color:#9a8b7e;font-family:var(--serif);text-align:center;padding:40mm 0}
 .pp-empty.sm{padding:0;text-align:left}
-.pp-foot{display:flex;justify-content:space-between;font-size:6.5pt;letter-spacing:.28em;color:#b3a698;margin-top:6mm;padding-top:2mm;border-top:.2mm solid #e6ddd1}
-.pp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin-bottom:5mm}
-.pp-stats div{background:#fff;border-radius:2mm;padding:2.5mm 3mm;font-size:8pt;color:#8a7b6e}
-.pp-stats small{display:block;font-size:7pt;color:#9a8b7e;letter-spacing:.1em}
-.pp-stats b{font-family:var(--serif);font-size:15pt;color:#2e2620}
-.pp-stats .ic{width:8mm;height:8mm;stroke-width:1.6}
-.pp-recap{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:19mm;gap:1.5mm;margin-bottom:6mm;border-radius:2mm;overflow:hidden;break-inside:avoid}
+.pp-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-bottom:7mm}
+.pp-stats div{background:#fff;border-radius:2.5mm;padding:3.5mm 4mm;font-size:9pt;color:#8a7b6e}
+.pp-stats small{display:block;font-size:8pt;color:#9a8b7e;letter-spacing:.1em}
+.pp-stats b{font-family:var(--serif);font-size:19pt;color:#2e2620}
+.pp-stats .ic{width:10mm;height:10mm;stroke-width:1.6}
+.pp-recap{display:grid;grid-template-columns:repeat(3,1fr);grid-auto-rows:40mm;gap:2mm;margin-bottom:8mm;border-radius:2.5mm;overflow:hidden}
 .pp-recap img{width:100%;height:100%;object-fit:cover;display:block}
 .pp-recap.n3 img:first-child,.pp-recap.n6 img:first-child{grid-column:span 2;grid-row:span 2}
-.pp-recap.n1{grid-template-columns:1fr;grid-auto-rows:55mm}
-.pp-recap.n2{grid-template-columns:1fr 1fr;grid-auto-rows:38mm}
+.pp-recap.n1{grid-template-columns:1fr;grid-auto-rows:90mm}
+.pp-recap.n2{grid-template-columns:1fr 1fr;grid-auto-rows:60mm}
 .pp .chart{max-height:62mm}
-.pp-2 .pp-blk{margin-bottom:4mm}
-.pp-lbl{font-size:8pt;font-weight:600;margin:1mm 0 1.5mm}
-.pp-tags{display:flex;flex-wrap:wrap;gap:1.5mm;margin-bottom:2mm}
-.pp-tags span{padding:.5mm 2.6mm;border-radius:3mm;font-size:8.5pt}
-.pp-notes{display:grid;grid-template-columns:repeat(3,1fr);gap:3.5mm;padding:1mm}
-.pp-notes div{background:var(--nc);padding:3mm;font-family:var(--serif);font-size:9pt;min-height:20mm;transform:rotate(var(--rot));box-shadow:0 .5mm 1.5mm rgba(80,55,35,.12);border-radius:.5mm .5mm 3mm .5mm}
-.pp-mm{display:grid;grid-template-columns:repeat(4,1fr);gap:2.5mm;margin-bottom:6mm}
-.pp-mm .mm{box-shadow:none;border:.2mm solid #e6ddd1;padding:2mm 1.2mm 1.5mm;border-radius:2mm;background:#fff}
-.pp-mm .mm-h{padding:0 1mm 1mm}
-.pp-mm .mm-h b{font-size:8.5pt}
-.pp-mm .mm-g{font-size:5.6pt}
-.pp-mm .mm-g span{height:3.3mm;line-height:3.3mm;width:3.3mm}
-.pp-mm .mm-g .w{font-size:5pt}
-.pp-vals{display:flex;flex-wrap:wrap;gap:2mm;margin-bottom:3mm}
-.pp-vals span{font-family:var(--serif);padding:.8mm 3mm;border-radius:3mm;background:#f3e4d7;color:#985c39}
-.pp-answers .q{font-family:var(--serif);font-weight:600;font-size:9pt;margin-top:2mm}
-.pp-plan{display:grid;grid-template-columns:1fr 32mm 9mm;gap:3mm;align-items:center;padding:1.3mm 0;border-bottom:.2mm dashed #e2d8cc}
-.pp-plan small{display:block;font-size:7pt;color:#9a8b7e}
+.pp-lbl{font-size:9pt;font-weight:600;margin:1mm 0 2mm}
+.pp-tags{display:flex;flex-wrap:wrap;gap:2mm;margin-bottom:2.5mm}
+.pp-tags span{padding:.7mm 3.2mm;border-radius:4mm;font-size:9.5pt}
+.pp-notes{display:grid;grid-template-columns:repeat(4,1fr);gap:4.5mm;padding:1.5mm}
+.pp-notes div{background:var(--nc);padding:3.5mm;font-family:var(--serif);font-size:10pt;min-height:26mm;transform:rotate(var(--rot));border:.25mm solid rgba(80,55,35,.12);border-radius:.6mm .6mm 3.5mm .6mm}
+.pp-mm{display:grid;grid-template-columns:repeat(4,1fr);gap:3.5mm;margin-bottom:8mm}
+.pp-mm .mm{box-shadow:none;border:.25mm solid #e6ddd1;padding:2.5mm 1.8mm 2mm;border-radius:2.5mm;background:#fff}
+.pp-mm .mm-h{padding:0 1mm 1.2mm}
+.pp-mm .mm-h b{font-size:10pt}
+.pp-mm .mm-g{font-size:7.5pt}
+.pp-mm .mm-g span{height:4.6mm;line-height:4.6mm;width:4.6mm}
+.pp-mm .mm-g .w{font-size:6.5pt}
+.pp-vals{display:flex;flex-wrap:wrap;gap:2.5mm}
+.pp-vals span{font-family:var(--serif);padding:1mm 4mm;border-radius:4mm;background:#f3e4d7;color:#985c39}
+.pp-answers>div{margin-bottom:3mm}
+.pp-answers .q{font-family:var(--serif);font-weight:600;font-size:10pt;margin-bottom:.5mm}
+.pp-plan{display:grid;grid-template-columns:1fr 46mm 11mm;gap:4mm;align-items:center;padding:1.8mm 0;border-bottom:.25mm dashed #e2d8cc}
+.pp-plan small{display:block;font-size:8pt;color:#9a8b7e}
 .pp-plan em{font-style:normal;font-family:var(--serif);color:#b5724a;text-align:right}
-.pp-bar{height:2mm;border-radius:1mm;background:#ece3d8;overflow:hidden;display:block}
+.pp-bar{height:2.6mm;border-radius:1.3mm;background:#ece3d8;overflow:hidden;display:block}
 .pp-bar i{display:block;height:100%;background:#b5724a}
-.pp-star li{padding:.8mm 0 .8mm 5mm;position:relative}
+.pp-star li{padding:1mm 0 1mm 6mm;position:relative}
 .pp-star li::before{content:'\2726';position:absolute;left:0;color:#b5724a}
-.pp-cert{border:.4mm solid #e2cdb7;border-radius:3mm;padding:4mm 5mm;background:#fffaf3}
-.pp-cert li{padding:.8mm 0;border-bottom:.2mm dashed #e2cdb7}
-.pp-cert li::before{content:'我允許自己　';color:#985c39;font-family:var(--serif);font-size:8pt}
+.pp-cert{border:.45mm solid #e2cdb7;border-radius:3.5mm;padding:5mm 6mm;background:#fffaf3}
+.pp-cert p{padding:1.1mm 0;border-bottom:.25mm dashed #e2cdb7}
+.pp-cert p::before{content:'我允許自己　';color:#985c39;font-family:var(--serif);font-size:9pt}
 @media print{
-  @page{size:148mm 210mm;margin:0}
-  html.printing body>*:not(#printRoot){display:none!important}
-  html.printing,html.printing body{overflow:visible!important;height:auto!important;min-height:0!important;background:#fbf8f3!important}
-  html.printing #printRoot{position:static;left:auto;width:auto;z-index:auto}
+  @page{size:A4 portrait;margin:0}
+  html.printing,html.printing body{background:#fff!important}
+  .pp-tools{display:none!important}
+  .pp-pages{display:block;padding:0}
+  .pp{zoom:1;box-shadow:none;margin:0}
 }
+/* ---------- 日記圖片：固定大小，橫向滑動 ---------- */
+.imgs{display:flex;gap:10px;overflow-x:auto;overscroll-behavior-x:contain;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;margin:12px -16px 0;padding:2px 16px 6px;scroll-padding:0 16px;scrollbar-width:none}
+.imgs::-webkit-scrollbar{display:none}
+.imgs .img-t{flex:0 0 auto;width:min(62vw,236px);aspect-ratio:4/5;border-radius:14px;scroll-snap-align:start;box-shadow:0 1px 3px rgba(60,40,25,.08)}
+.imgs .img-t img{width:100%;height:100%;object-fit:cover}
+.imgs .img-more{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;background:transparent;border:1.5px dashed #d7c8b9;box-shadow:none;color:var(--accent-d);font-size:13px;cursor:pointer;width:min(36vw,132px)}
+.img-more .ic{width:26px;height:26px}
+/* ---------- 字型 ---------- */
+.font-list{display:grid;gap:8px}
+.font-opt{display:flex;align-items:center;gap:12px;background:var(--card);border-radius:14px;box-shadow:var(--shadow);padding:12px 14px;text-align:left;border:1.5px solid transparent}
+.font-opt.on{border-color:var(--accent);background:var(--accent-soft2)}
+.fo-s{font-family:var(--ff);font-size:19px;flex:1;min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:var(--ink)}
+.fo-n{display:flex;flex-direction:column;align-items:flex-end;flex-shrink:0;line-height:1.35}
+.fo-n b{font-family:var(--ff);font-size:14px;font-weight:400;color:var(--ink2)}
+.fo-n small{font-size:11px;color:var(--muted)}
+.font-opt>.ic{width:18px;height:18px;color:var(--accent);flex-shrink:0}
+/* ---------- 不完美許可證 ---------- */
+.slip{position:relative;background:#fffaf1;border-radius:18px;box-shadow:0 1px 2px rgba(80,55,35,.05),0 8px 24px rgba(80,55,35,.09)}
+.slip-top{display:flex;justify-content:space-between;background:var(--accent);color:#fff;font-size:10.5px;letter-spacing:.3em;padding:9px 18px;border-radius:18px 18px 0 0}
+.slip-h{text-align:center;padding:20px 18px 16px}
+.slip-h b{font-family:var(--serif);font-size:24px;font-weight:600;letter-spacing:.3em;padding-left:.3em;color:var(--ink);display:block;line-height:1.3}
+.slip-h p{font-size:12.5px;color:var(--muted);margin-top:6px}
+.slip-cut{position:relative;border-top:1.5px dashed #e6d5c3;margin:0 16px}
+.slip-cut::before,.slip-cut::after{content:'';position:absolute;top:-12px;width:24px;height:24px;border-radius:50%;background:var(--bg)}
+.slip-cut::before{left:-28px}.slip-cut::after{right:-28px}
+.slip-body{padding:8px 18px 2px}
+.slip .le-item{align-items:flex-start;gap:8px;border-bottom:1px dashed #ecdfd1}
+.le-num{font-family:Georgia,serif;font-size:13px;color:var(--accent);width:20px;flex-shrink:0;margin-top:7px;letter-spacing:.04em}
+.le-pre{flex-shrink:0;font-family:var(--serif);font-size:15px;color:var(--accent-d);margin-top:4px}
+.slip .le-empty{padding:10px 0}
+.slip .le-add .inp{background:#fff}
+.slip-sign{position:relative;display:flex;gap:20px;align-items:flex-end;padding:20px 18px 20px;min-height:96px}
+.slip-sign>div{display:flex;flex-direction:column;gap:3px;min-width:0}
+.slip-sign small{font-size:10px;letter-spacing:.22em;color:var(--muted)}
+.slip-sign span{font-family:var(--serif);font-size:16px;color:var(--ink);border-bottom:1px solid #cdbba8;padding:0 2px 2px;min-width:84px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slip .stamp{position:absolute;right:16px;bottom:12px;width:80px;height:80px;transform:rotate(-14deg);color:#c0563c;opacity:.85}
+/* ---------- 匯出：年度封面選項 / JPG ---------- */
+.pdf-opt[data-lv="0"]{grid-column:1/-1;flex-direction:row;align-items:center;gap:12px}
+.pdf-opt[data-lv="0"] .pdf-stack{width:30px;margin:0;flex-shrink:0}
+.pdf-opt>span:last-child{display:flex;flex-direction:column;gap:3px}
+.pdf-stack i.yc{left:0;background:#fff linear-gradient(90deg,transparent 0 3px,#f6e0a6 3px 9px,transparent 9px 11px,#c9a3c4 11px 17px,transparent 17px 19px,#94c6ab 19px 25px,transparent 25px) 0 4px/100% 8px repeat-y}
+.pp-tools .btn-g{background:var(--card);box-shadow:var(--shadow);padding:0 12px}
+.pp-busy{position:fixed;inset:0;z-index:20;background:rgba(40,30,22,.45);display:grid;place-items:center}
+.pp-busy>div{background:var(--card);border-radius:16px;padding:18px 22px;display:flex;align-items:center;gap:12px;font-size:14px;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.spin{width:20px;height:20px;border-radius:50%;border:2.5px solid var(--accent-soft);border-top-color:var(--accent);animation:spin .8s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pp-jpg{position:fixed;inset:0;z-index:20;background:rgba(40,30,22,.45);display:flex;align-items:flex-end;justify-content:center}
+.pj-in{background:var(--bg);width:100%;max-width:520px;border-radius:22px 22px 0 0;padding:20px 16px calc(var(--sb) + 18px)}
+.pj-in>b{font-family:var(--serif);font-size:18px;display:block}
+.pj-in .hint{margin:4px 0 12px}
+.pj-th{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 12px;scrollbar-width:none}
+.pj-th a{flex:0 0 auto;width:78px;aspect-ratio:210/297;border-radius:4px;overflow:hidden;box-shadow:var(--shadow)}
+.pj-th img{width:100%;height:100%;object-fit:cover;display:block}
+/* 年度封面頁 */
+.yc-t span,.yc-f span,.pp-foot span,.pp-eyebrow,.slip-top span,.yc-l span{white-space:nowrap}
+.pp-ycover{padding:16mm 16mm 0;background:#fbf8f3}
+.yc-h{display:flex;align-items:flex-end;justify-content:space-between;border-bottom:.5mm solid #2e2620;padding-bottom:4mm;margin-bottom:7mm}
+.yc-y{font-family:var(--serif);font-size:76pt;line-height:.85;font-weight:600;letter-spacing:-.03em;color:#2e2620}
+.yc-t{display:flex;flex-direction:column;align-items:flex-end;gap:1.5mm;padding-bottom:2mm}
+.yc-t span:first-child{font-size:8.5pt;letter-spacing:.42em;color:#9a8b7e}
+.yc-t span:last-child{font-family:var(--serif);font-size:13pt;font-weight:600;color:#3a2e25}
+.yc-g{display:grid;grid-template-columns:repeat(4,1fr);gap:8mm 5mm}
+.yc-m{min-width:0}
+.yc-art{height:34mm;border-radius:1.6mm;background:#e8e1d8}
+.yc-l{display:flex;align-items:baseline;gap:2mm;margin:2.2mm 0 1.2mm}
+.yc-l b{font-family:var(--serif);font-size:12pt;font-weight:600;color:#2e2620}
+.yc-l span{font-size:7pt;letter-spacing:.24em;text-transform:uppercase;color:#9a8b7e}
+.yc-cal{display:grid;grid-template-columns:repeat(7,1fr);text-align:center;font-family:'Helvetica Neue',Arial,sans-serif;font-size:6.2pt;line-height:1.8;color:#4a3d33;font-variant-numeric:tabular-nums}
+.yc-cal .w{color:#a59585;font-size:5.8pt}
+.yc-cal .w b{display:none}.yc-cal .w i{font-style:normal}
+.yc-cal .su{color:#c0653a}
+.yc-cal .td{background:#b5724a;color:#fff;border-radius:50%}
+.yc-f{position:absolute;left:16mm;right:16mm;bottom:11mm;display:flex;justify-content:space-between;font-size:7.5pt;letter-spacing:.3em;color:#b3a698;border-top:.25mm solid #e6ddd1;padding-top:2.5mm}
+/* PDF 的許可證 */
+.pp-slip{background:#fffaf1;border:.3mm solid #ead9c6;border-radius:3.5mm;overflow:hidden;position:relative}
+.pp-slip .slip-top{border-radius:0;font-size:7.5pt;padding:2mm 5mm;background:#b5724a}
+.pp-slip .slip-h{padding:5mm 5mm 4mm}
+.pp-slip .slip-h b{font-size:17pt}
+.pp-slip .slip-h p{font-size:8.5pt;color:#9a8b7e;margin-top:1.5mm}
+.pp-slip .slip-cut{margin:0 5mm;border-top:.35mm dashed #e2cdb7}
+.pp-slip .slip-cut::before,.pp-slip .slip-cut::after{display:none}
+.pp-slip .ps-list{padding:2mm 6mm 0}
+.pp-slip .ps-list p{display:flex;gap:3mm;padding:1.6mm 0;border-bottom:.25mm dashed #ecdfd1}
+.pp-slip .ps-list em{font-style:normal;font-family:Georgia,serif;color:#b5724a;width:6mm;flex-shrink:0}
+.pp-slip .ps-list i{font-style:normal;font-family:var(--serif);color:#985c39;flex-shrink:0}
+.pp-slip .slip-sign{padding:5mm 6mm 5mm;min-height:24mm;gap:8mm}
+.pp-slip .slip-sign small{font-size:6.5pt}
+.pp-slip .slip-sign span{font-size:11pt;min-width:26mm;border-bottom-color:#cdbba8}
+.pp-slip .stamp{position:absolute;width:24mm;height:24mm;right:8mm;bottom:4mm;transform:rotate(-14deg);color:#c0563c;opacity:.85}
 </style>
 </head>
 <body>
@@ -1058,10 +1232,12 @@ function bindFields(root,obj,key,onChange){
 
 /* 可新增 / 刪除 / 勾選的清單 */
 function listEditor(box,arr,key,opt={}){
+  const strip=v=>opt.prefix?v.replace(new RegExp('^\\s*'+opt.prefix+'[，,、:：\\s]*'),''):v;
+  if(opt.prefix)arr.forEach(it=>{const t=strip(it.text);if(t!==it.text&&t){it.text=t;save(key)}});
   const render=()=>{
-    box.innerHTML=`<div class="le ${opt.compact?'compact':''} ${opt.star?'star':''}">${arr.map(it=>`<div class="le-item ${it.done?'done':''}" data-id="${it.id}">
-      ${opt.check?`<button class="chk ${it.done?'on':''}" data-le="tog" aria-label="完成">${icon('check')}</button>`:opt.star?`<span class="le-bullet">${icon('sparkle')}</span>`:'<span class="le-bullet"></span>'}
-      <textarea class="grow" rows="1" data-le="txt" aria-label="項目">${esc(it.text)}</textarea>
+    box.innerHTML=`<div class="le ${opt.compact?'compact':''} ${opt.star?'star':''}">${arr.map((it,i)=>`<div class="le-item ${it.done?'done':''}" data-id="${it.id}">
+      ${opt.num?`<span class="le-num">${pad(i+1)}</span>`:opt.check?`<button class="chk ${it.done?'on':''}" data-le="tog" aria-label="完成">${icon('check')}</button>`:opt.star?`<span class="le-bullet">${icon('sparkle')}</span>`:'<span class="le-bullet"></span>'}
+      ${opt.prefix?`<span class="le-pre">${esc(opt.prefix)}</span>`:''}<textarea class="grow" rows="1" data-le="txt" aria-label="項目">${esc(it.text)}</textarea>
       <button class="del" data-le="del" aria-label="刪除">${icon('trash')}</button></div>`).join('')}
       ${arr.length?'':`<div class="le-empty">${esc(opt.empty||'還沒有項目')}</div>`}</div>
       <form class="le-add"><input class="inp" placeholder="${esc(opt.ph||'新增…')}" enterkeyhint="done" aria-label="新增項目"><button class="ibtn" type="submit" aria-label="新增">${icon('plus')}</button></form>`;
@@ -1075,7 +1251,7 @@ function listEditor(box,arr,key,opt={}){
     if(b.dataset.le==='tog'){it.done=!it.done;save(key);render()}
     else if(b.dataset.le==='del'){arr.splice(i,1);save(key);render();toast('已刪除',()=>{arr.splice(i,0,it);save(key);render()})}
   };
-  box.onsubmit=e=>{e.preventDefault();const inp=$('.le-add input',box);const v=inp.value.trim();if(!v)return;arr.push({id:uid(),text:v,done:false});save(key);render();$('.le-add input',box).focus()};
+  box.onsubmit=e=>{e.preventDefault();const inp=$('.le-add input',box);const v=strip(inp.value.trim());if(!v)return;arr.push({id:uid(),text:v,done:false});save(key);render();$('.le-add input',box).focus()};
   render();
 }
 
@@ -1098,7 +1274,7 @@ function go(p){
   renders[p]();window.scrollTo(0,0);
   try{localStorage.setItem('techou.tab',p)}catch(e){}
 }
-function refresh(){const y=window.scrollY;renders[cur]();window.scrollTo(0,y)}
+function refresh(){applyFonts();const y=window.scrollY;renders[cur]();window.scrollTo(0,y)}
 
 /* =========================================================
    事項（月曆與時間表共用同一份 S.events → 雙向同步）
@@ -1185,7 +1361,7 @@ function shiftCal(d){calM+=d;if(calM<0){calM=11;calY--}if(calM>11){calM=0;calY++
 function isDiaryFilled(e){return !!(e&&(e.text||(e.images&&e.images.length)||e.mood||e.keep||e.problem||e.try||e.compromise||e.anxiety!=null||(e.metrics&&Object.keys(e.metrics).length)||(e.todos&&e.todos.length)||e.upset||e.remember))}
 
 const MONTH_EN=['january','february','march','april','may','june','july','august','september','october','november','december'];
-/* 封面漸層：前 12 款是每月 magic hour，之後是更多款式 */
+/* 封面漸層：每月一款 magic hour */
 const GRADS=[
   ['jan','linear-gradient(180deg,#eef0f3 0%,#d5dceb 45%,#aebfd8 75%,#8ea5c6 100%)'],
   ['feb','linear-gradient(180deg,#f8e1da 0%,#efbfc0 45%,#c9a3c4 75%,#9b93c2 100%)'],
@@ -1199,35 +1375,17 @@ const GRADS=[
   ['oct','linear-gradient(180deg,#f7dfba 0%,#e8ab7d 40%,#b8744c 68%,#6f5b70 100%)'],
   ['nov','linear-gradient(180deg,#ece2d6 0%,#cdb6aa 40%,#9089a6 70%,#4f5d7f 100%)'],
   ['dec','linear-gradient(180deg,#f5dcb3 0%,#da9e7d 35%,#7e6c9c 66%,#2f3f66 100%)'],
-  ['霧粉','radial-gradient(at 15% 20%,#f7cfd8 0,transparent 55%),radial-gradient(at 85% 25%,#d9d2f2 0,transparent 55%),radial-gradient(at 50% 90%,#fde2c8 0,transparent 60%),linear-gradient(#f6eee9,#f6eee9)'],
-  ['薄荷','radial-gradient(at 20% 15%,#cdeee0 0,transparent 55%),radial-gradient(at 85% 40%,#d6e6f7 0,transparent 55%),radial-gradient(at 40% 90%,#fff2c9 0,transparent 60%),linear-gradient(#eef5ef,#eef5ef)'],
-  ['晚霞','radial-gradient(120% 90% at 50% 100%,#ff9a62 0%,#f4677a 35%,#7a5ea8 70%,#2c3866 100%)'],
-  ['晨曦','radial-gradient(130% 100% at 50% 0%,#fff6d8 0%,#ffd6a5 40%,#f7a8a1 75%,#c7a3c9 100%)'],
-  ['海岸','linear-gradient(180deg,#e8f1f2 0%,#bfe0e3 35%,#6fb3c2 70%,#2f6f8f 100%)'],
-  ['森林','linear-gradient(180deg,#eef0dc 0%,#c7d6a8 40%,#7fa070 70%,#3f5d45 100%)'],
-  ['沙丘','linear-gradient(160deg,#f6e7cf 0%,#e9c79d 45%,#c98f63 75%,#8a5a44 100%)'],
-  ['奶茶','linear-gradient(180deg,#f5ece2 0%,#e3cdb5 50%,#b99579 100%)'],
-  ['櫻桃','linear-gradient(180deg,#ffe3e3 0%,#ff9fb2 45%,#d64161 80%,#7a1f3d 100%)'],
-  ['檸檬','linear-gradient(180deg,#fffbe0 0%,#fff2a8 40%,#f9d65c 70%,#9fcf7f 100%)'],
-  ['糖果','linear-gradient(135deg,#ff9a9e 0%,#fad0c4 30%,#a1c4fd 70%,#c2e9fb 100%)'],
-  ['極光','linear-gradient(200deg,#0f2a3d 0%,#1e5f74 35%,#3fb39a 62%,#c6f1c9 100%)'],
-  ['夜空','radial-gradient(at 30% 20%,#3d4f8a 0,transparent 50%),radial-gradient(at 75% 70%,#6b4f8f 0,transparent 55%),linear-gradient(#141a33,#141a33)'],
-  ['紙月','radial-gradient(circle at 70% 28%,#fff8e7 0 13%,transparent 13.5%),linear-gradient(180deg,#d9c8b4,#a99482)'],
-  ['日落','radial-gradient(circle at 50% 62%,#fff1c9 0 11%,transparent 11.5%),linear-gradient(180deg,#f9c58d 0%,#f28f6b 45%,#c75b62 75%,#6a3f5f 100%)'],
-  ['雙色','linear-gradient(180deg,#f4b183 0%,#f4b183 44%,#7aa6c2 56%,#7aa6c2 100%)'],
-  ['水墨','radial-gradient(at 30% 40%,#bdbdbd 0,transparent 50%),radial-gradient(at 70% 72%,#8a8a8a 0,transparent 45%),linear-gradient(#ececec,#ececec)'],
-  ['條紋','repeating-linear-gradient(90deg,#f3e6d6 0 14px,#e8d3bb 14px 28px)'],
-  ['格紋','repeating-linear-gradient(0deg,rgba(181,114,74,.2) 0 2px,transparent 2px 22px),repeating-linear-gradient(90deg,rgba(181,114,74,.2) 0 2px,transparent 2px 22px),linear-gradient(#f7efe4,#f7efe4)'],
-  ['波點','radial-gradient(circle,#e8a873 0 4px,transparent 4.5px) 0 0/26px 26px,linear-gradient(#f6eadb,#f6eadb)'],
 ];
 const COVERS=GRADS.map(g=>g[1]);
-const LAYOUTS=[['frame','留白框'],['numeral','大數字'],['full','滿版'],['card','相片卡'],['dots','圓點格'],['sticker','貼紙']];
+const LAYOUTS=[['frame','留白框'],['numeral','大數字'],['full','滿版'],['card','相片卡'],['square','方窗'],['film','底片'],['spiral','線圈掛曆'],['clip','長尾夾'],['banner','橫幅'],['split','直條'],['grid','格子'],['type','打字機'],['binder','活頁']];
+const LAYOUT_IDS=LAYOUTS.map(l=>l[0]);
 
 function coverCfg(y,m){
   const c=(S.settings.covers||{})[ym(y,m)]||{};
   let art=c.art||(c.img?{t:'img',id:c.img}:c.g!=null?{t:'g',i:c.g}:{t:'g',i:m});
   if(art.t!=='img'&&art.t!=='g'||art.t==='g'&&!COVERS[art.i])art={t:'g',i:m};
-  return{layout:c.layout||S.settings.coverLayout||'frame',art,bw:!!c.bw};
+  let layout=c.layout||S.settings.coverLayout||'frame';if(!LAYOUT_IDS.includes(layout))layout='frame';
+  return{layout,art,bw:!!c.bw};
 }
 async function applyArt(el,art,m){
   if(!el)return;
@@ -1241,16 +1399,35 @@ function paintCover(root,cfg,m){
   return Promise.all($$('.cv-art',root).map(a=>applyArt(a,cfg.art,m)));
 }
 
+const WD_EN=['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
 function miniCal(y,m){
   const sw=new Date(y,m,1).getDay(),dim=daysIn(y,m),t=todayStr();
-  let g=['S','M','T','W','T','F','S'].map(w=>`<span class="w">${w}</span>`).join('');
-  for(let i=0;i<sw;i++)g+='<span></span>';
-  for(let d=1;d<=dim;d++){const k=`${ym(y,m)}-${pad(d)}`;g+=`<span class="${k===t?'td':''}${(sw+d-1)%7===0?' su':''}">${d}</span>`}
+  let g=WD_EN.map(w=>`<span class="w"><i>${w[0]}</i><b>${w}</b></span>`).join('');
+  g+='<span></span>'.repeat(sw);
+  for(let d=1;d<=dim;d++){const k=`${ym(y,m)}-${pad(d)}`,c=(sw+d-1)%7;g+=`<span class="${k===t?'td':''}${c===0?' su':c===6?' sa':''}">${d}</span>`}
+  g+='<span></span>'.repeat((7-(sw+dim)%7)%7);
   return g;
 }
-const DOODLE={dots:'<svg viewBox="0 0 60 44"><path d="M14 4c1 6 2.5 9.5 8 11-5.5 1.6-7 5-8 11-1-6-2.6-9.4-8-11 5.4-1.5 7-5 8-11z"/><path d="M28 34c3-5 6 3 9-1s5-6 8-1 4 3 7 0"/><circle cx="46" cy="10" r="2.2"/><circle cx="53" cy="20" r="1.3"/></svg>',sticker:'<svg viewBox="0 0 44 40"><path d="M20 34c-6-4.5-13-9.5-12.2-16C8.4 12.5 15 10.6 20 16.5c4.6-6 11.6-4.5 12.3.6.8 6.6-6.3 11.8-12.3 16.9z"/><path d="M35 8l3.5-3.5M38 14l4.5-1M31 4l.8-3.5"/></svg>'};
-const coverHTML=(y,m,layout)=>`<div class="cvr L-${layout}"><div class="cv-art"></div><div class="cv-txt">${DOODLE[layout]?`<div class="cv-doodle">${DOODLE[layout]}</div>`:''}<div class="cv-num">${layout==='card'||layout==='dots'?pad(m+1):m+1}</div><div class="cv-abbr">${MONTH_EN[m][0].toUpperCase()+MONTH_EN[m].slice(1,3)}.</div><div class="cv-name">${MONTH_EN[m]}</div><div class="cv-year">${y}</div><div class="cv-cal">${miniCal(y,m)}</div></div></div>`;
-function fitCover(root){$$('.cvr',root||document).forEach(c=>{const w=c.clientWidth;if(w)c.style.fontSize=(w/20)+'px'})}
+/* 版型裝飾：線圈、長尾夾、活頁環等，用 SVG 畫，列印也清楚 */
+const SPIRAL_SVG=(()=>{let s='<svg viewBox="0 0 180 13"><path d="M84 0a6 5.4 0 0 0 12 0z" fill="#d9d2c6"/>';
+  for(let x=3;x<176;x+=6.2){if(x>78&&x<98)continue;s+=`<circle cx="${(x+1.6).toFixed(1)}" cy="11" r="1.15" fill="#4a4540"/><path d="M${x.toFixed(1)} 11V4.4a1.6 1.6 0 0 1 3.2 0V11" fill="none" stroke="#5d5852" stroke-width=".85"/>`}
+  return s+'</svg>'})();
+const CLIP_SVG='<svg viewBox="0 0 60 44"><path d="M19 23L14.5 5.5Q13.8 2 17.5 2h25q3.7 0 3 3.5L41 23" fill="none" stroke="#9c9c9c" stroke-width="2.4" stroke-linejoin="round"/><path d="M9 21h42l-3.5 22h-35z" fill="#1c1c1c"/><path d="M12 24h36" stroke="#4a4a4a" stroke-width="1.2"/></svg>';
+const RINGS_SVG=(()=>{let s='<svg viewBox="0 0 184 22"><rect x="0" y="10" width="184" height="1.8" rx=".9" fill="#c9b5ab"/>';
+  for(const x of [24,48,72,106,130,154])s+=`<circle cx="${x+2.6}" cy="4.2" r="2.3" fill="#5b4a44"/><rect x="${x}" y="2" width="5.2" height="19" rx="2.6" fill="none" stroke="#a3a3a3" stroke-width="1.7"/>`;
+  return s+'</svg>'})();
+const ABBR=m=>MONTH_EN[m].slice(0,3).toUpperCase();
+const DECO={
+  spiral:()=>`<div class="cv-deco">${SPIRAL_SVG}</div>`,
+  clip:()=>`<div class="cv-deco">${CLIP_SVG}</div>`,
+  banner:(y,m)=>`<div class="cv-ttl">${y} ${MONTH_EN[m]}</div>`,
+  split:()=>'<div class="cv-lines"><i></i><i></i><i></i><i></i><i></i></div>',
+  type:y=>`<div class="cv-cap">${y} · MY JOURNAL</div>`,
+  binder:(y,m)=>`<div class="cv-ttl">${ABBR(m)} ${y}</div><div class="cv-deco">${RINGS_SVG}</div><div class="cv-big">${pad(m+1)}</div><div class="cv-memo"><p>FROM: ME</p><p>TO: ME</p><p>DATE: ${ABBR(m)} 01 – ${daysIn(y,m)}</p><p>NOTE:</p><i></i><i></i></div>`,
+};
+const PAD_NUM=['card','clip'];
+const coverHTML=(y,m,layout)=>`<div class="cvr L-${layout}"><div class="cv-art"></div><div class="cv-txt">${DECO[layout]?DECO[layout](y,m):''}<div class="cv-num">${PAD_NUM.includes(layout)?pad(m+1):m+1}</div><div class="cv-abbr">${MONTH_EN[m][0].toUpperCase()+MONTH_EN[m].slice(1,3)}.</div><div class="cv-name">${MONTH_EN[m]}</div><div class="cv-year">${y}</div><div class="cv-cal">${miniCal(y,m)}</div></div></div>`;
+function fitCover(root){$$('.cvr',root||document).forEach(c=>{if(!root&&c.closest('#printRoot'))return;const w=c.clientWidth;if(w)c.style.fontSize=(w/20)+'px'})}
 window.addEventListener('resize',()=>fitCover());
 
 renders.cal=function renderCal(anim){
@@ -1311,8 +1488,7 @@ function openCoverPicker(){
       <div class="cp-layouts noswipe">${LAYOUTS.map(([id,l])=>`<button class="cp-l ${cfg.layout===id?'on':''}" data-l="${id}">${coverHTML(y,m,id)}<span>${l}</span></button>`).join('')}</div>
       <div class="sec-h mt"><h2>素材</h2><div class="bw-toggle"><span>黑白</span><button type="button" class="switch ${cfg.bw?'on':''}" data-bw role="switch" aria-checked="${cfg.bw}" aria-label="黑白"></button></div></div>
       <div class="wtabs">${[['g','漸層'],['img','照片']].map(([t,l])=>`<button class="${artTab===t?'on':''}" data-tab="${t}">${l}</button>`).join('')}</div>
-      ${artTab==='g'?`<p class="cp-cap">每月漸層</p><div class="cp-grid">${[...Array(12).keys()].map(sw).join('')}</div>
-         <p class="cp-cap">更多款式</p><div class="cp-grid">${COVERS.slice(12).map((_,j)=>sw(j+12)).join('')}</div>`
+      ${artTab==='g'?`<div class="cp-grid">${COVERS.map((_,i)=>sw(i)).join('')}</div>`
        :`<div class="cp-photo"><p class="hint">用自己的照片當封面，上傳後可以裁剪範圍。</p><label class="btn btn-p btn-block">${icon('upload')}${cfg.art.t==='img'?'換一張照片':'上傳照片'}<input type="file" accept="image/*" hidden id="cvIn"></label></div>`}
       <button class="btn btn-g btn-block mt" data-reset>恢復預設</button>`;
     paintCover($('.cp-preview',B),cfg,m);$$('.cp-l',B).forEach(l=>paintCover(l,cfg,m));
@@ -1471,7 +1647,7 @@ renders.diary=function renderDiary(){
     <section class="sec"><div class="sec-h"><h2>${icon('checkSq')}今日待辦</h2><span class="hint" id="dTodoC"></span></div><div class="card"><div id="carryTodo"></div><div id="dTodo"></div></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('feather')}日記</h2><span class="hint" id="wc"></span></div>
       <div class="card journal-card"><textarea class="journal grow" data-f="text" placeholder="今天發生了什麼？慢慢寫就好。"></textarea>
-      <div class="imgs" id="imgs"></div><label class="img-add">${icon('image')}加入圖片<input type="file" accept="image/*" multiple hidden id="imgIn"></label></div></section>
+      <div class="imgs noswipe" id="imgs"></div><label class="img-add" id="imgAdd">${icon('image')}加入圖片<input type="file" accept="image/*" multiple hidden id="imgIn"></label></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('heart')}今天的心情</h2><span class="hint" id="moodL"></span></div><div class="card moods" id="moods"></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('compass')}KPT 反思</h2></div><div class="kpt">
       <div class="kpt-c" style="--kc:#7f9a6a"><div class="kpt-h">${icon('leaf')}Keep</div><div class="kpt-s">今天做得好的事</div><textarea class="ta-plain grow" data-f="keep" placeholder="值得保留的…"></textarea></div>
@@ -1506,7 +1682,7 @@ renders.diary=function renderDiary(){
     const m=e.target.closest('[data-mood]');if(m){const v=Number(m.dataset.mood);d.mood=d.mood===v?null:v;save('diary');renderMoods();return}
     const di=e.target.closest('[data-del-img]');
     if(di){if(await confirmSheet('刪除這張圖片？')){d.images=d.images.filter(x=>x!==di.dataset.delImg);dropBlob(di.dataset.delImg);save('diary');renderImgs()}return}
-    const it=e.target.closest('.img-t');if(it)openViewer(d.images,Number(it.dataset.i),{onCrop:recropImage});
+    const it=e.target.closest('.img-t[data-i]');if(it)openViewer(d.images,Number(it.dataset.i),{onCrop:recropImage});
   };
   onSwipe($('.dh',el),dir=>{diaryDate=addDays(diaryDate,dir);renders.diary()});
   onSwipe($('#tl',el),dir=>{diaryDate=addDays(diaryDate,dir);renders.diary()});
@@ -1573,11 +1749,13 @@ function renderMoods(){
   $('#moodL').textContent=d.mood?MOODS[d.mood-1].l:'';
 }
 
-async function renderImgs(){
-  const box=$('#imgs');if(!box)return;const d=getDiary(diaryDate);
-  box.className='imgs n'+Math.min(d.images.length,3);
-  box.innerHTML=d.images.map((id,i)=>`<div class="img-t" data-i="${i}"><img alt="" data-id="${id}"><button class="img-del" data-del-img="${id}" aria-label="刪除圖片">${icon('x')}</button></div>`).join('');
+async function renderImgs(toEnd){
+  const box=$('#imgs');if(!box)return;const d=getDiary(diaryDate),n=d.images.length;
+  box.innerHTML=d.images.map((id,i)=>`<div class="img-t" data-i="${i}"><img alt="" data-id="${id}"><button class="img-del" data-del-img="${id}" aria-label="刪除圖片">${icon('x')}</button></div>`).join('')
+    +(n?`<label class="img-t img-more" for="imgIn">${icon('plus')}<span>加入圖片</span></label>`:'');
+  const add=$('#imgAdd');if(add)add.classList.toggle('hide',n>0);
   for(const img of $$('img',box))img.src=await blobUrl(img.dataset.id);
+  if(toEnd)requestAnimationFrame(()=>box.scrollTo({left:box.scrollWidth,behavior:'smooth'}));
 }
 function compressImg(file,max=1600,q=.85){return new Promise((res,rej)=>{
   const url=URL.createObjectURL(file);const im=new Image();
@@ -1653,7 +1831,7 @@ async function addImages(files){
   for(let i=0;i<files.length;i++){
     const b=await cropImage(files[i],{aspects:CROP_RATIOS,allowOriginal:true,title:files.length>1?`裁剪圖片（${i+1}/${files.length}）`:'裁剪圖片'});
     if(!b)continue;
-    const id='img_'+uid();await DB.put('blobs',id,b);d.images.push(id);save('diary');if(diaryDate===date)renderImgs();
+    const id='img_'+uid();await DB.put('blobs',id,b);d.images.push(id);save('diary');if(diaryDate===date)renderImgs(true);
   }
 }
 function openViewer(ids,idx,opts={}){
@@ -2227,10 +2405,13 @@ function openPlanForm(o,p,size,onDone){
 
 function yrRef(o,box){
   box.innerHTML=`<section class="sec" style="margin-top:18px"><div class="sec-h"><h2>${icon('sparkle')}計劃趕不上變化大賞</h2></div><p class="hint" style="margin:-4px 2px 10px">今年那些意料之外、卻很美好的事</p><div class="card" id="rSur"></div></section>
-    <section class="sec"><div class="cert"><div class="cert-h"><small>PERMISSION SLIP · ${yearY}</small><b>不完美許可證</b><small>持證人：我</small></div><p class="hint center" style="margin-bottom:6px">我允許自己做不到這些事，也依然值得被愛。</p><div id="rPer"></div></div></section>
+    <section class="sec"><div class="slip"><div class="slip-top"><span>PERMISSION SLIP</span><span>NO. ${yearY}</span></div>
+      <div class="slip-h"><b>不完美許可證</b><p>我允許自己做不到這些事，也依然值得被愛。</p></div><div class="slip-cut"></div>
+      <div class="slip-body" id="rPer"></div>
+      <div class="slip-sign"><div><small>持證人</small><span>${esc(displayName()||'我')}</span></div><div><small>有效期限</small><span>${yearY}</span></div>${STAMP_SVG}</div></div></section>
     <section class="sec"><div class="sec-h"><h2>${icon('feather')}年度總結</h2></div><div class="card journal-card" id="rSum"><textarea class="journal grow" data-f="summary" placeholder="這一年，我…"></textarea></div></section>`;
   listEditor($('#rSur',box),o.surprises,'yearly',{star:true,ph:'沒想到…',empty:'記下計劃之外的驚喜'});
-  listEditor($('#rPer',box),o.permits,'yearly',{ph:'我允許自己…',empty:'例如：我允許自己有時候偷懶'});
+  listEditor($('#rPer',box),o.permits,'yearly',{num:true,prefix:'我允許自己',ph:'寫下允許自己的事，例如：休息一天',empty:'還沒有許可。例如：有時候偷懶、不回訊息'});
   bindFields($('#rSum',box),o,'yearly');
 }
 
@@ -2471,6 +2652,7 @@ function openAccount(){
           <div class="set-row"><span>顯示名稱</span><input class="inp sm" id="pfName" placeholder="你的名字" maxlength="20"></div>
           <button class="set-row" data-a="avatarDel"><span>頭像</span><em>${getProfile().avatar?'移除自訂頭像':'點上方頭像更換'}</em></button>
           <button class="set-row" data-a="metrics"><span>每日指數</span><em>${getMetrics().map(m=>m.name).join('、')||'未設定'}</em>${icon('chevR')}</button>
+          <button class="set-row" data-a="fonts"><span>字型</span><em>${fontLabel()}</em>${icon('chevR')}</button>
           <button class="set-row" data-a="layout"><span>封面預設版型</span><em>${(LAYOUTS.find(l=>l[0]===(S.settings.coverLayout||'frame'))||LAYOUTS[0])[1]}</em>${icon('chevR')}</button>
           <button class="set-row" data-a="pdf"><span>匯出 PDF</span>${icon('chevR')}</button>
           <button class="set-row" data-a="backup"><span>備份與匯出</span>${icon('chevR')}</button>
@@ -2534,6 +2716,7 @@ function openAccount(){
     else if(k==='backup')openSettings();
     else if(k==='pdf')openExport(2,diaryDate);
     else if(k==='layout')openLayoutDefault(draw);
+    else if(k==='fonts'){openFonts();const sh=sheets[sheets.length-1],oc=sh.close;sh.close=()=>{oc();draw()}}
     else if(k==='avatarDel'){const p=getProfile();if(p.avatar){dropBlob(p.avatar);delete p.avatar;save('settings');renderTopbar();draw()}else $('#avIn',B).click()}
     else if(k==='pw')openNewPassword();
     else if(k==='logout')Cloud.logout();
@@ -2589,33 +2772,32 @@ function openOnboarding(){
 }
 
 /* =========================================================
-   匯出 PDF：用瀏覽器列印產生 A5 版面（封面 / 日記 / 月結 / 年度）
+   匯出 PDF：A4 版面，先在畫面上預覽，再用瀏覽器列印存成 PDF
+   內容會自動分頁，每一頁上方都留白；長文字與清單可以跨頁接續
    ========================================================= */
-const PDF_LEVELS=[[1,'封面','只有這個月的封面'],[2,'封面＋日記','加上選定日期的日記'],[3,'＋本月月結','再加上這個月的月結'],[4,'＋年度','再加上整年的年度頁']];
-const ppFoot=t=>`<div class="pp-foot"><span>MY JOURNAL</span><span>${t}</span></div>`;
+const PDF_LEVELS=[[1,'封面','只有這個月的封面'],[2,'封面＋日記','加上選定日期的日記'],[3,'＋本月月結','再加上這個月的月結'],[4,'＋年度','再加上年度封面與年度頁'],[0,'年度封面','只匯出今年的年度封面：12 個月的封面拼成一頁']];
 const pblk=(t,inner,cls='')=>`<div class="pp-blk ${cls}"><h3>${t}</h3>${inner}</div>`;
-const ptxt=s=>`<div class="pp-text">${esc((s||'').trim())}</div>`;
+const ptxt=s=>`<div class="pp-text" data-split="text">${esc((s||'').trim())}</div>`;
+const pjournal=s=>`<div class="pp-journal" data-split="text">${esc((s||'').trim())}</div>`;
 const has=s=>!!(s&&String(s).trim());
-
-function pdfCover(y,m){return `<section class="pp pp-cover">${coverHTML(y,m,coverCfg(y,m).layout)}</section>`}
 
 function pdfDiary(date){
   const e=S.diary[date]||{},dt=parseYmd(date),evs=eventsOn(date),todos=e.todos||[],imgs=e.images||[];
   const ms=getMetrics().filter(m=>metricVal(e,m.id)!=null);
-  let b='';
-  const left=evs.length?pblk('今日時間表',`<ul class="pp-tl">${evs.map(v=>`<li><time>${v.allDay?'全天':`${v.start}–${v.end}`}</time><i style="background:${v.color}"></i><span>${esc(v.title)}${v.location?`<small>${esc(v.location)}</small>`:''}</span></li>`).join('')}</ul>`):'';
-  const right=todos.length?pblk('今日待辦',`<ul class="pp-todo">${todos.map(t=>`<li class="${t.done?'done':''}"><i></i><span>${esc(t.text)}</span></li>`).join('')}</ul>`):'';
-  if(left&&right)b+=`<div class="pp-2">${left}${right}</div>`;else b+=left+right;
-  if(ms.length)b+=pblk('今日指數',`<div class="pp-metrics">${ms.map(m=>{const v=metricVal(e,m.id);return `<div><span>${esc(m.name)}</span><span class="pp-dots">${[...Array(10)].map((_,i)=>`<i class="${i<v?'on':''}"></i>`).join('')}</span><b>${v}</b></div>`}).join('')}</div>`);
-  if(has(e.text))b+=`<div class="pp-blk flow"><h3>日記</h3><div class="pp-journal">${esc(e.text.trim())}</div></div>`;
-  if(imgs.length)b+=pblk('照片',`<div class="pp-photos n${Math.min(imgs.length,4)}">${imgs.map(id=>`<img data-blob="${id}" alt="">`).join('')}</div>`,'flow');
-  if(has(e.keep)||has(e.problem)||has(e.try))b+=pblk('KPT 反思',`<div class="pp-kpt"><div style="--kc:#7f9a6a"><b>Keep</b>${ptxt(e.keep)}</div><div style="--kc:#c0675f"><b>Problem</b>${ptxt(e.problem)}</div><div style="--kc:#b5724a"><b>Try</b>${ptxt(e.try)}</div></div>`);
-  if(has(e.compromise))b+=pblk('妥協，但結果還不錯',ptxt(e.compromise));
-  if(has(e.upset))b+=pblk('今天最讓我心煩的一句話',`<div class="pp-quote">${esc(e.upset.trim())}</div>`);
-  if(has(e.remember))b+=pblk('要記得的事',ptxt(e.remember));
-  if(!b)b='<p class="pp-empty">這一天還沒有寫下什麼。</p>';
   const mood=e.mood?`<div class="pp-mood" style="color:${MOODS[e.mood-1].c}">${moodIcon(e.mood-1)}<span>${MOODS[e.mood-1].l}</span></div>`:'';
-  return `<section class="pp pp-diary"><header class="pp-h"><b class="pp-big">${pad(dt.getDate())}</b><div><span class="pp-eyebrow">${MONTH_EN[dt.getMonth()].toUpperCase()} ${dt.getFullYear()}</span><span class="pp-sub">${wd(date)} · 日記</span></div>${mood}</header>${b}${ppFoot(date.replace(/-/g,'.'))}</section>`;
+  const B=[`<header class="pp-h"><b class="pp-big">${pad(dt.getDate())}</b><div><span class="pp-eyebrow">${MONTH_EN[dt.getMonth()].toUpperCase()} ${dt.getFullYear()}</span><span class="pp-sub">${wd(date)} · 日記</span></div>${mood}</header>`];
+  const left=evs.length?pblk('今日時間表',`<ul class="pp-tl" data-split="list">${evs.map(v=>`<li><time>${v.allDay?'全天':`${v.start}–${v.end}`}</time><i style="background:${v.color}"></i><span>${esc(v.title)}${v.location?`<small>${esc(v.location)}</small>`:''}</span></li>`).join('')}</ul>`):'';
+  const right=todos.length?pblk('今日待辦',`<ul class="pp-todo" data-split="list">${todos.map(t=>`<li class="${t.done?'done':''}"><i></i><span>${esc(t.text)}</span></li>`).join('')}</ul>`):'';
+  if(left&&right&&evs.length+todos.length<=24)B.push(`<div class="pp-2">${left}${right}</div>`);else{if(left)B.push(left);if(right)B.push(right)}
+  if(ms.length)B.push(pblk('今日指數',`<div class="pp-metrics" data-split="list">${ms.map(m=>{const v=metricVal(e,m.id);return `<div><span>${esc(m.name)}</span><span class="pp-dots">${[...Array(10)].map((_,i)=>`<i class="${i<v?'on':''}"></i>`).join('')}</span><b>${v}</b></div>`}).join('')}</div>`));
+  if(has(e.text))B.push(pblk('日記',pjournal(e.text)));
+  if(imgs.length)B.push(pblk('照片',`<div class="pp-photos n${Math.min(imgs.length,4)}" data-split="list">${imgs.map(id=>`<img data-blob="${id}" alt="">`).join('')}</div>`));
+  if(has(e.keep)||has(e.problem)||has(e.try))B.push(pblk('KPT 反思',`<div class="pp-kpt"><div style="--kc:#7f9a6a"><b>Keep</b>${ptxt(e.keep)}</div><div style="--kc:#c0675f"><b>Problem</b>${ptxt(e.problem)}</div><div style="--kc:#b5724a"><b>Try</b>${ptxt(e.try)}</div></div>`));
+  if(has(e.compromise))B.push(pblk('妥協，但結果還不錯',ptxt(e.compromise)));
+  if(has(e.upset))B.push(pblk('今天最讓我心煩的一句話',`<div class="pp-quote" data-split="text">${esc(e.upset.trim())}</div>`));
+  if(has(e.remember))B.push(pblk('要記得的事',ptxt(e.remember)));
+  if(B.length===1)B.push('<p class="pp-empty">這一天還沒有寫下什麼。</p>');
+  return{foot:date.replace(/-/g,'.'),blocks:B};
 }
 
 function pdfMonth(y,m){
@@ -2624,23 +2806,24 @@ function pdfMonth(y,m){
   for(let d=1;d<=dim;d++){const e=S.diary[`${k}-${pad(d)}`];moods.push(e&&e.mood?e.mood:null);if(isDiaryFilled(e))days++;if(e&&e.images)photos.push(...e.images)}
   const mv=moods.filter(Boolean),am=mv.length?mv.reduce((a,b)=>a+b,0)/mv.length:null;
   const rows=S.habits.map(h=>{let c=0;for(let d=1;d<=el2;d++)if((S.habitLog[`${k}-${pad(d)}`]||[]).includes(h.id))c++;return{label:h.name,value:el2?c/el2:0,color:h.color}});
-  let b=`<div class="pp-stats"><div><small>寫日記</small><b>${days}</b> 天</div><div><small>照片</small><b>${photos.length}</b> 張</div><div style="color:${am?MOODS[Math.round(am)-1].c:'#c9bcae'}"><small>平均心情</small>${am?moodIcon(Math.round(am)-1):'<b>—</b>'}</div></div>`;
+  const B=[`<header class="pp-h"><b class="pp-big">${pad(m+1)}</b><div><span class="pp-eyebrow">${MONTH_EN[m].toUpperCase()} ${y}</span><span class="pp-sub">月結 · Monthly Review</span></div></header>`];
+  B.push(`<div class="pp-stats"><div><small>寫日記</small><b>${days}</b> 天</div><div><small>照片</small><b>${photos.length}</b> 張</div><div style="color:${am?MOODS[Math.round(am)-1].c:'#c9bcae'}"><small>平均心情</small>${am?moodIcon(Math.round(am)-1):'<b>—</b>'}</div></div>`);
   const pn=photos.length>=6?6:photos.length>=3?3:photos.length;
-  if(pn)b+=`<div class="pp-recap n${pn}">${photos.slice(0,pn).map(id=>`<img data-blob="${id}" alt="">`).join('')}</div>`;
+  if(pn)B.push(`<div class="pp-recap n${pn}">${photos.slice(0,pn).map(id=>`<img data-blob="${id}" alt="">`).join('')}</div>`);
   const charts=[];
-  if(mv.length)charts.push(pblk('心情趨勢',lineChart(moods,{min:1,max:6,ticks:[1,2,3,4,5,6],fmt:t=>MOODS[t-1].l,color:'#b5724a',h:170})));
+  if(mv.length)charts.push(pblk('心情趨勢',lineChart(moods,{min:1,max:6,ticks:[1,2,3,4,5,6],fmt:t=>MOODS[t-1].l,color:'#b5724a',h:150})));
   if(rows.length)charts.push(pblk('習慣完成率',hbarChart(rows)));
-  for(const mt of getMetrics()){const ser=[];for(let d=1;d<=dim;d++)ser.push(metricVal(S.diary[`${k}-${pad(d)}`],mt.id));if(ser.some(v=>v!=null))charts.push(pblk(esc(mt.name)+'趨勢',lineChart(ser,{min:1,max:10,ticks:[1,4,7,10],color:'#6b8bab',h:170})))}
-  for(let i=0;i<charts.length;i+=2)b+=charts[i+1]?`<div class="pp-2">${charts[i]}${charts[i+1]}</div>`:charts[i];
-  const tags=(arr,c)=>arr.length?`<div class="pp-tags">${arr.map(t=>`<span style="background:${c}1f;color:${c}">${esc(t.text)}</span>`).join('')}</div>`:'<p class="pp-empty sm">—</p>';
-  b+=`<div class="pp-2">${pblk('固執雷達',radarChart(o.radar,axes)+(has(o.radarNote)?ptxt(o.radarNote):''))}${pblk('能量盤點',`<p class="pp-lbl" style="color:#c0675f">耗電</p>${tags(o.drain,'#c0675f')}<p class="pp-lbl" style="color:#7f9a6a">充電</p>${tags(o.charge,'#7f9a6a')}`)}</div>`;
-  if(o.wins.length)b+=pblk('做得好的事',tags(o.wins,'#b5724a'));
-  if(o.breaks.length)b+=pblk('原來我也可以',`<div class="pp-notes">${o.breaks.map((t,i)=>`<div style="--nc:${NOTE_COLORS[i%5]};--rot:${[-1.5,1,-.8,1.4,-1][i%5]}deg">${esc(t.text)}</div>`).join('')}</div>`);
-  if(has(o.selfNote))b+=pblk('給自己的話',`<div class="pp-quote">${esc(o.selfNote.trim())}</div>`);
-  if(has(o.pattern))b+=pblk('模式識別',ptxt(o.pattern));
-  if(has(o.change))b+=pblk('下個月想改變的一件事',ptxt(o.change));
-  if(has(o.journal))b+=`<div class="pp-blk flow"><h3>本月日記</h3><div class="pp-journal">${esc(o.journal.trim())}</div></div>`;
-  return `<section class="pp pp-month"><header class="pp-h"><b class="pp-big">${pad(m+1)}</b><div><span class="pp-eyebrow">${MONTH_EN[m].toUpperCase()} ${y}</span><span class="pp-sub">月結 · Monthly Review</span></div></header>${b}${ppFoot(`${y}.${pad(m+1)}`)}</section>`;
+  for(const mt of getMetrics()){const ser=[];for(let d=1;d<=dim;d++)ser.push(metricVal(S.diary[`${k}-${pad(d)}`],mt.id));if(ser.some(v=>v!=null))charts.push(pblk(esc(mt.name)+'趨勢',lineChart(ser,{min:1,max:10,ticks:[1,4,7,10],color:'#6b8bab',h:150})))}
+  for(let i=0;i<charts.length;i+=2)B.push(charts[i+1]?`<div class="pp-2">${charts[i]}${charts[i+1]}</div>`:charts[i]);
+  const tags=(arr,c)=>arr.length?`<div class="pp-tags" data-split="list">${arr.map(t=>`<span style="background:${c}1f;color:${c}">${esc(t.text)}</span>`).join('')}</div>`:'<p class="pp-empty sm">—</p>';
+  B.push(`<div class="pp-2">${pblk('固執雷達',radarChart(o.radar,axes)+(has(o.radarNote)?ptxt(o.radarNote):''))}${pblk('能量盤點',`<p class="pp-lbl" style="color:#c0675f">耗電</p>${tags(o.drain,'#c0675f')}<p class="pp-lbl" style="color:#7f9a6a">充電</p>${tags(o.charge,'#7f9a6a')}`)}</div>`);
+  if(o.wins.length)B.push(pblk('做得好的事',tags(o.wins,'#b5724a')));
+  if(o.breaks.length)B.push(pblk('原來我也可以',`<div class="pp-notes" data-split="list">${o.breaks.map((t,i)=>`<div style="--nc:${NOTE_COLORS[i%5]};--rot:${[-1.5,1,-.8,1.4,-1][i%5]}deg">${esc(t.text)}</div>`).join('')}</div>`));
+  if(has(o.selfNote))B.push(pblk('給自己的話',`<div class="pp-quote" data-split="text">${esc(o.selfNote.trim())}</div>`));
+  if(has(o.pattern))B.push(pblk('模式識別',ptxt(o.pattern)));
+  if(has(o.change))B.push(pblk('下個月想改變的一件事',ptxt(o.change)));
+  if(has(o.journal))B.push(pblk('本月日記',pjournal(o.journal)));
+  return{foot:`${y}.${pad(m+1)}`,blocks:B};
 }
 
 function pdfYear(y){
@@ -2652,57 +2835,260 @@ function pdfYear(y){
     for(let d=1;d<=dim;d++){const k=`${mk}-${pad(d)}`;g+=`<span class="${k===t?'td':evDays.has(k)?'ev':''} ${isDiaryFilled(S.diary[k])?'di':''}">${d}</span>`}
     mm+=`<div class="mm"><div class="mm-h"><b>${m+1}月</b></div><div class="mm-g">${g}</div></div>`;
   }
-  let b=`<div class="pp-mm">${mm}</div>`;
-  const ans=QUESTIONS.map((q,i)=>has(o.answers['q'+i])?`<p class="q">${esc(q)}</p>${ptxt(o.answers['q'+i])}`:'').join('');
-  if(ans||o.values.length)b+=pblk('我想成為的人',`${o.values.length?`<div class="pp-vals">${o.values.map(v=>`<span>${esc(v)}</span>`).join('')}</div>`:''}<div class="pp-answers">${ans}</div>`);
-  if(o.goals.length){const dn=o.goals.filter(g=>g.done).length;b+=pblk(`今年目標 <em>${dn} / ${o.goals.length}</em>`,`<ul class="pp-todo">${o.goals.map(g=>`<li class="${g.done?'done':''}"><i></i><span>${esc(g.text)}</span></li>`).join('')}</ul>`)}
-  if(o.plans.length)b+=pblk('大計劃 / 小計劃',o.plans.map(p=>{const tot=p.items.length,dn=p.items.filter(x=>x.done).length,pc=tot?Math.round(dn/tot*100):0;return `<div class="pp-plan"><span><b>${esc(p.name)}</b><small>${p.size==='big'?'大計劃':'小計劃'} · ${p.fromM}–${p.toM}月</small></span><span class="pp-bar"><i style="width:${pc}%"></i></span><em>${pc}%</em></div>`}).join(''));
-  if(o.surprises.length)b+=pblk('計劃趕不上變化大賞',`<ul class="pp-star">${o.surprises.map(s=>`<li>${esc(s.text)}</li>`).join('')}</ul>`);
-  if(o.permits.length)b+=pblk('不完美許可證',`<div class="pp-cert"><ul>${o.permits.map(s=>`<li>${esc(s.text)}</li>`).join('')}</ul></div>`);
-  if(has(o.summary))b+=`<div class="pp-blk flow"><h3>年度總結</h3><div class="pp-journal">${esc(o.summary.trim())}</div></div>`;
-  return `<section class="pp pp-year"><header class="pp-h"><b class="pp-big">${y}</b><div><span class="pp-eyebrow">YEAR IN REVIEW</span><span class="pp-sub">年度</span></div></header>${b}${ppFoot(String(y))}</section>`;
+  const B=[`<header class="pp-h"><b class="pp-big">${y}</b><div><span class="pp-eyebrow">YEAR IN REVIEW</span><span class="pp-sub">年度</span></div></header>`,`<div class="pp-mm">${mm}</div>`];
+  const ans=QUESTIONS.map((q,i)=>has(o.answers['q'+i])?`<div><p class="q">${esc(q)}</p><div class="pp-text">${esc(o.answers['q'+i].trim())}</div></div>`:'').join('');
+  if(o.values.length)B.push(pblk('核心價值觀',`<div class="pp-vals">${o.values.map(v=>`<span>${esc(v)}</span>`).join('')}</div>`));
+  if(ans)B.push(pblk('我想成為的人',`<div class="pp-answers" data-split="list">${ans}</div>`));
+  if(o.goals.length){const dn=o.goals.filter(g=>g.done).length;B.push(pblk(`今年目標 <em>${dn} / ${o.goals.length}</em>`,`<ul class="pp-todo" data-split="list">${o.goals.map(g=>`<li class="${g.done?'done':''}"><i></i><span>${esc(g.text)}</span></li>`).join('')}</ul>`))}
+  if(o.plans.length)B.push(pblk('大計劃 / 小計劃',`<div data-split="list">${o.plans.map(p=>{const tot=p.items.length,dn=p.items.filter(x=>x.done).length,pc=tot?Math.round(dn/tot*100):0;return `<div class="pp-plan"><span><b>${esc(p.name)}</b><small>${p.size==='big'?'大計劃':'小計劃'} · ${p.fromM}–${p.toM}月</small></span><span class="pp-bar"><i style="width:${pc}%"></i></span><em>${pc}%</em></div>`}).join('')}</div>`));
+  if(o.surprises.length)B.push(pblk('計劃趕不上變化大賞',`<ul class="pp-star" data-split="list">${o.surprises.map(s=>`<li>${esc(s.text)}</li>`).join('')}</ul>`));
+  if(o.permits.length){const nm=displayName()||'我';B.push(`<div class="pp-blk"><div class="pp-slip"><div class="slip-top"><span>PERMISSION SLIP</span><span>NO. ${y}</span></div><div class="slip-h"><b>不完美許可證</b><p>我允許自己做不到這些事，也依然值得被愛。</p></div><div class="slip-cut"></div><div class="ps-list">${o.permits.map((p,i)=>`<p><em>${pad(i+1)}</em><i>我允許自己</i><span>${esc(p.text.replace(/^\s*我允許自己[，,、:：\s]*/,''))}</span></p>`).join('')}</div><div class="slip-sign"><div><small>持證人</small><span>${esc(nm)}</span></div><div><small>有效期限</small><span>${y}</span></div>${STAMP_SVG}</div></div></div>`)}
+  if(has(o.summary))B.push(pblk('年度總結',pjournal(o.summary)));
+  return{foot:String(y),blocks:B};
 }
 
+/* ---------- 黑白：列印不吃 CSS 濾鏡，所以先把漸層與照片轉成灰階 ---------- */
+const grayHex=h=>{if(h.length===4)h='#'+[...h.slice(1)].map(c=>c+c).join('');
+  const r=parseInt(h.slice(1,3),16),g=parseInt(h.slice(3,5),16),b=parseInt(h.slice(5,7),16);
+  const l=Math.round(Math.max(0,Math.min(255,(.299*r+.587*g+.114*b-128)*1.06+128))).toString(16).padStart(2,'0');return '#'+l+l+l};
+const grayCss=s=>s.replace(/#[0-9a-f]{6}\b|#[0-9a-f]{3}\b/gi,grayHex);
+const printUrls=[];
+function grayImg(url){return new Promise(res=>{const im=new Image();
+  im.onload=()=>{try{const sc=Math.min(1,2000/Math.max(im.naturalWidth,im.naturalHeight)),c=document.createElement('canvas');
+    c.width=Math.max(1,Math.round(im.naturalWidth*sc));c.height=Math.max(1,Math.round(im.naturalHeight*sc));
+    const x=c.getContext('2d');x.drawImage(im,0,0,c.width,c.height);const d=x.getImageData(0,0,c.width,c.height),p=d.data;
+    for(let i=0;i<p.length;i+=4)p[i]=p[i+1]=p[i+2]=(.299*p[i]+.587*p[i+1]+.114*p[i+2]-128)*1.06+128;
+    x.putImageData(d,0,0);c.toBlob(b=>{if(!b)return res(url);const u=URL.createObjectURL(b);printUrls.push(u);res(u)},'image/jpeg',.92)}catch(e){res(url)}};
+  im.onerror=()=>res(url);im.src=url})}
+/* ---------- 年度封面：12 個月的封面拼成一張 ---------- */
+function pdfYearCover(y){
+  const tiles=[...Array(12).keys()].map(m=>`<div class="yc-m"><div class="yc-art" data-m="${m}"></div><div class="yc-l"><b>${pad(m+1)}</b><span>${MONTH_EN[m]}</span></div><div class="yc-cal">${miniCal(y,m)}</div></div>`).join('');
+  const nm=displayName();
+  return `<section class="pp pp-ycover"><div class="yc-h"><b class="yc-y">${y}</b><div class="yc-t"><span>MY JOURNAL</span><span>${nm?esc(nm)+' 的一年':'這一年'}</span></div></div><div class="yc-g">${tiles}</div><div class="yc-f"><span>YEAR BOOK</span><span>${y}.01 — ${y}.12</span></div></section>`;
+}
+async function paintArtEl(a,cfg,m){
+  const grad=COVERS[cfg.art.t==='g'?cfg.art.i:m]||COVERS[m];
+  if(cfg.art.t==='img'){const u=await blobUrl(cfg.art.id);if(u){a.style.background=`center/cover no-repeat url("${cfg.bw?await grayImg(u):u}")`;return}}
+  a.style.background=cfg.bw?grayCss(grad):grad;
+}
+const STAMP_SVG='<svg class="stamp" viewBox="0 0 100 100" aria-hidden="true"><defs><path id="stR" d="M50 50m-34 0a34 34 0 1 1 68 0a34 34 0 1 1-68 0"/></defs><g fill="none" stroke="currentColor"><circle cx="50" cy="50" r="46" stroke-width="3"/><circle cx="50" cy="50" r="40" stroke-width="1.2"/><circle cx="50" cy="50" r="23" stroke-width="1.2"/></g><text font-size="9.5" letter-spacing="2.6" fill="currentColor" font-family="Georgia,serif" font-weight="700"><textPath href="#stR">APPROVED · IT\'S OKAY · APPROVED ·</textPath></text><text x="50" y="59" text-anchor="middle" font-size="26" fill="currentColor" font-family="\'Noto Serif HK\',serif" font-weight="700">准</text></svg>';
+
+/* ---------- 匯出 JPG：每一頁存成一張圖片 ---------- */
+let msLib=null;
+const loadShot=()=>msLib||(msLib=new Promise((res,rej)=>{const s=document.createElement('script');s.src='https://cdn.jsdelivr.net/npm/modern-screenshot@4.7.0/dist/index.js';
+  s.onload=()=>window.modernScreenshot?res(window.modernScreenshot):rej(new Error('圖片工具載入失敗'));s.onerror=()=>{msLib=null;rej(new Error('無法載入圖片工具，請確認網路連線'))};document.head.append(s)}));
+const toDataUrl=b=>new Promise(r=>{const fr=new FileReader();fr.onload=()=>r(fr.result);fr.onerror=()=>r('');fr.readAsDataURL(b)});
+// 只下載頁面上用到的字（Google Fonts 的 text= 子集），轉成 data URL 內嵌進圖片
+async function shotFontCss(root){
+  const c=fontChoice(),fams=[...new Set([c.ui,c.head])];
+  const chars=[...new Set([...(root.textContent+'我允許自己（續）APPROVED准')].filter(ch=>/\S/.test(ch)))];
+  let css='';
+  for(const f of fams)for(let i=0;i<chars.length;i+=350){
+    const chunk=chars.slice(i,i+350),range=chunk.map(ch=>'U+'+ch.codePointAt(0).toString(16)).join(',');
+    let t='';try{const r=await fetch(gfUrl([f],chunk.join('')));if(r.ok)t=await r.text()}catch(e){}
+    for(const blk of t.match(/@font-face\s*{[^}]*}/g)||[]){
+      const m=blk.match(/url\(([^)]+)\)/);if(!m)continue;
+      let du='';try{const r=await fetch(m[1].replace(/['"]/g,''));if(r.ok)du=await toDataUrl(await r.blob())}catch(e){}
+      if(!du)continue;
+      let b=blk.replace(m[0],`url(${du})`);if(!/unicode-range/.test(b))b=b.replace(/}\s*$/,`unicode-range:${range};}`);
+      css+=b+'\n';
+    }
+  }
+  return css;
+}
+const ppBusy=t=>{const r=$('#printRoot');let b=$('.pp-busy',r);if(!t){if(b)b.remove();return}if(!b){r.insertAdjacentHTML('beforeend','<div class="pp-busy"><div><i class="spin"></i><span></span></div></div>');b=$('.pp-busy',r)}$('span',b).textContent=t};
+let jpgFiles=[];
+async function exportJpg(){
+  const root=$('#printRoot'),pages=$$('.pp-pages>.pp',root);if(!pages.length)return;
+  try{
+    ppBusy('準備中…');const ms=await loadShot();
+    ppBusy('下載字型…');const css=await shotFontCss($('.pp-pages',root));
+    root.style.setProperty('--ppz','1');
+    jpgFiles.forEach(f=>URL.revokeObjectURL(f.url));jpgFiles=[];
+    const base='journal-'+($('#printRoot').dataset.date||todayStr());
+    for(let i=0;i<pages.length;i++){
+      ppBusy(`產生圖片 ${i+1} / ${pages.length}`);
+      const blob=await ms.domToBlob(pages[i],{type:'image/jpeg',quality:.92,scale:2,backgroundColor:'#fbf8f3',font:css?{cssText:css}:undefined,
+        onCloneNode:n=>{if(n.style){n.style.boxShadow='none';n.style.zoom='1'}}});
+      const file=new File([blob],`${base}-${pad(i+1)}.jpg`,{type:'image/jpeg'});jpgFiles.push({file,url:URL.createObjectURL(file)});
+    }
+    ppZoom();ppBusy();
+    root.insertAdjacentHTML('beforeend',`<div class="pp-jpg"><div class="pj-in"><b>已產生 ${jpgFiles.length} 張圖片</b><p class="hint">${canShareFiles()?'按「儲存圖片」後選「儲存影像」就會存到相簿。':'按「下載全部」，或點單張圖片下載。'}</p>
+      <div class="pj-th noswipe">${jpgFiles.map(f=>`<a href="${f.url}" download="${f.file.name}"><img src="${f.url}" alt=""></a>`).join('')}</div>
+      <button class="btn btn-p btn-block" data-pp="saveJpg">${icon('download')}${canShareFiles()?'儲存圖片':'下載全部'}</button><button class="btn btn-g btn-block mt" data-pp="closeJpg">完成</button></div></div>`);
+  }catch(err){ppZoom();ppBusy();toast('圖片產生失敗：'+(err.message||err))}
+}
+function canShareFiles(){try{return matchMedia('(pointer:coarse)').matches&&!!navigator.canShare&&jpgFiles.length&&navigator.canShare({files:jpgFiles.map(f=>f.file)})}catch(e){return false}}
+async function saveJpgs(){
+  if(canShareFiles()){try{await navigator.share({files:jpgFiles.map(f=>f.file)})}catch(e){}return}
+  for(const f of jpgFiles){const a=document.createElement('a');a.href=f.url;a.download=f.file.name;document.body.append(a);a.click();a.remove();await new Promise(r=>setTimeout(r,350))}
+}
+
+async function paintPrintCover(root,cfg,m){
+  const c=$('.cvr',root),a=$('.cv-art',root);if(!a)return;c.classList.remove('bw');return paintArtEl(a,cfg,m);
+}
+
+/* ---------- 自動分頁 ---------- */
+function ppPage(P,foot){
+  P.insertAdjacentHTML('beforeend',`<section class="pp pp-doc"><div class="pp-in"></div><div class="pp-foot"><span>MY JOURNAL</span><span>${foot}<i class="pp-no"></i></span></div></section>`);
+  return P.lastElementChild.firstElementChild;
+}
+function ppFits(inner){const l=inner.lastElementChild;return !l||l.getBoundingClientRect().bottom<=inner.getBoundingClientRect().bottom+.5}
+// 把放不下的區塊切成「這頁放得下的部分」和「剩下的部分」；完全切不了回傳 false，其實放得下回傳 null
+function ppSplit(node,inner){
+  const t=[...node.children].find(c=>c.dataset&&c.dataset.split);if(!t)return false;
+  const fits=()=>ppFits(inner),after=[];
+  for(let s=t.nextElementSibling;s;s=s.nextElementSibling)after.push(s);
+  after.forEach(a=>a.remove());
+  const rest=node.cloneNode(false),h=node.querySelector(':scope>h3'),tc=t.cloneNode(false);
+  rest.classList.add('pp-cont');if(h)rest.append(h.cloneNode(true));rest.append(tc);
+  const undo=()=>{after.forEach(a=>node.append(a));return false};
+  if(t.dataset.split==='text'){
+    const full=t.textContent;let lo=0,hi=full.length;
+    while(lo<hi){const mid=(lo+hi+1)>>1;t.textContent=full.slice(0,mid);if(fits())lo=mid;else hi=mid-1}
+    let k=lo;
+    if(k<full.length){const nl=full.lastIndexOf('\n',k);if(nl>k-80&&nl>0)k=nl;else if(/[A-Za-z0-9]/.test(full[k]||'')){const sp=full.lastIndexOf(' ',k);if(sp>k-30&&sp>0)k=sp}}
+    if(k<full.length&&k<12){t.textContent=full;return undo()}
+    t.textContent=full.slice(0,k).replace(/\s+$/,'');tc.textContent=full.slice(k).replace(/^\s+/,'');
+  }else{
+    const items=[...t.children];let n=items.length;
+    while(n>0&&!fits()){t.lastElementChild.remove();n--}
+    if(n===0){items.forEach(i=>t.append(i));return undo()}
+    items.slice(n).forEach(i=>tc.append(i));
+  }
+  if(!tc.textContent.trim()&&!tc.children.length)tc.remove();
+  after.forEach(a=>rest.append(a));
+  if(rest.children.length<=(h?1:0))return null;
+  return rest;
+}
+function paginate(P,sec){
+  let inner=ppPage(P,sec.foot);
+  const tpl=document.createElement('template');
+  for(const html of sec.blocks){
+    tpl.innerHTML=html.trim();let node=tpl.content.firstElementChild;if(!node)continue;
+    inner.append(node);
+    for(let guard=0;guard<80&&!ppFits(inner);guard++){
+      const rest=ppSplit(node,inner);
+      if(rest===null)break;
+      if(rest===false){
+        if(inner.firstElementChild===node)break; // 一整頁都放不下又切不開：留在這頁
+        node.remove();inner=ppPage(P,sec.foot);inner.append(node);continue;
+      }
+      inner=ppPage(P,sec.foot);node=rest;inner.append(node);
+    }
+  }
+}
+
+/* ---------- 預覽與列印 ---------- */
+let ppScrollY=0;
 async function buildPrint(level,date){
   let root=$('#printRoot');if(!root){root=document.createElement('div');root.id='printRoot';document.body.append(root)}
-  const d=parseYmd(date),y=d.getFullYear(),m=d.getMonth();
-  const parts=[pdfCover(y,m)];
-  if(level>=2)parts.push(pdfDiary(date));
-  if(level>=3)parts.push(pdfMonth(y,m));
-  if(level>=4)parts.push(pdfYear(y));
-  root.innerHTML=parts.join('');
-  document.documentElement.classList.add('printing');
-  await paintCover($('.pp-cover',root),coverCfg(y,m),m);
-  await Promise.all($$('img[data-blob]',root).map(async im=>{im.src=await blobUrl(im.dataset.blob);try{await im.decode()}catch(e){}}));
-  fitCover(root);
-  try{await document.fonts.ready}catch(e){}
-  return parts.length;
+  const d=parseYmd(date),y=d.getFullYear(),m=d.getMonth(),cfg=coverCfg(y,m);
+  ppScrollY=window.scrollY;
+  root.style.removeProperty('--ppz');
+  root.innerHTML=`<div class="pp-tools"><button class="pill" data-pp="back">${icon('chevL')}返回</button><div class="grow"><b>預覽</b><span id="ppInfo">排版中…</span></div><button class="btn btn-g" data-pp="jpg">JPG</button><button class="btn btn-p" data-pp="print">${icon('download')}PDF</button></div><div class="pp-pages"></div>`;
+  document.documentElement.classList.add('printing');window.scrollTo(0,0);ppZoom();
+  const P=$('.pp-pages',root);root.dataset.date=date;
+  if(level===0||level>=4){P.insertAdjacentHTML('beforeend',pdfYearCover(y));await Promise.all($$('.yc-art',P.lastElementChild).map(a=>paintArtEl(a,coverCfg(y,+a.dataset.m),+a.dataset.m)))}
+  if(level>=1){
+    P.insertAdjacentHTML('beforeend',`<section class="pp pp-cover">${coverHTML(y,m,cfg.layout)}</section>`);
+    fitCover(P);
+    await paintPrintCover(P.lastElementChild,cfg,m);
+  }
+  const secs=[];if(level>=2)secs.push(pdfDiary(date));if(level>=3)secs.push(pdfMonth(y,m));if(level>=4)secs.push(pdfYear(y));
+  if(secs.length){
+    // 先整份排一次，讓瀏覽器載入需要的字型，量高度才準
+    const st=document.createElement('section');st.className='pp pp-doc pp-stage';st.innerHTML='<div class="pp-in">'+secs.map(s=>s.blocks.join('')).join('')+'</div>';
+    P.append(st);void st.offsetHeight;try{await document.fonts.ready}catch(e){}
+    st.remove();
+    for(const s of secs)paginate(P,s);
+  }
+  await Promise.all($$('img[data-blob]',P).map(async im=>{const u=await blobUrl(im.dataset.blob);if(u)im.src=u;try{await im.decode()}catch(e){}}));
+  // 列印時半透明漸層容易變成黑色，改成實色
+  $$('path[fill^="url(#"]',P).forEach(p=>{const id=p.getAttribute('fill').slice(5,-1),st=P.querySelector(`[id="${id}"] stop`);p.setAttribute('fill',st?st.getAttribute('stop-color'):'#b5724a');p.setAttribute('fill-opacity','.1')});
+  const pages=$$('.pp',P);pages.forEach((p,i)=>{const n=$('.pp-no',p);if(n)n.textContent=' · '+pad(i+1)});
+  $('#ppInfo').textContent=`A4 · 共 ${pages.length} 頁`;
+  ppZoom();
+  return pages.length;
 }
-function cleanupPrint(){document.documentElement.classList.remove('printing');const r=$('#printRoot');if(r)r.innerHTML=''}
+function ppZoom(){const r=$('#printRoot');if(r&&document.documentElement.classList.contains('printing'))r.style.setProperty('--ppz',Math.min(1,(window.innerWidth-24)/794).toFixed(4))}
+window.addEventListener('resize',ppZoom);
+function cleanupPrint(){
+  const was=document.documentElement.classList.contains('printing');
+  document.documentElement.classList.remove('printing');const r=$('#printRoot');if(r){r.innerHTML='';r.onclick=null}
+  while(printUrls.length)URL.revokeObjectURL(printUrls.pop());
+  jpgFiles.forEach(f=>URL.revokeObjectURL(f.url));jpgFiles=[];
+  if(was)window.scrollTo(0,ppScrollY);
+}
+async function openPrintPreview(level,date){
+  try{await buildPrint(level,date)}catch(err){cleanupPrint();toast('排版失敗：'+(err.message||err));return}
+  $('#printRoot').onclick=e=>{const b=e.target.closest('[data-pp]');if(!b)return;
+    const k=b.dataset.pp;
+    if(k==='print')window.print();else if(k==='jpg')exportJpg();else if(k==='saveJpg')saveJpgs();
+    else if(k==='closeJpg'){const j=$('.pp-jpg');if(j)j.remove()}else cleanupPrint()};
+}
 function openExport(level=2,date=diaryDate){
-  const s=openSheet({title:'匯出 PDF',onClose:cleanupPrint});
+  const s=openSheet({title:'匯出 PDF / JPG'});
   const draw=()=>{
     s.body.innerHTML=`<div class="field"><span class="label">日期（決定封面月份、日記、月結與年度）</span><input type="date" class="inp" id="pdfDate" value="${date}"></div>
       <span class="label">內容</span>
-      <div class="pdf-opts">${PDF_LEVELS.map(([n,l,dsc])=>`<button class="pdf-opt ${level===n?'on':''}" data-lv="${n}"><span class="pdf-stack">${'<i></i>'.repeat(n)}</span><b>${l}</b><small>${dsc}</small></button>`).join('')}</div>
-      <p class="hint mt">A5 直式版面，會用手帳裡現有的封面、照片與文字排版。</p>
-      <button class="btn btn-p btn-block mt" data-go>${icon('file')}產生 PDF</button>`;
+      <div class="pdf-opts">${PDF_LEVELS.map(([n,l,dsc])=>`<button class="pdf-opt ${level===n?'on':''}" data-lv="${n}"><span class="pdf-stack">${n?'<i></i>'.repeat(n):'<i class="yc"></i>'}</span><span><b>${l}</b><small>${dsc}</small></span></button>`).join('')}</div>
+      <p class="hint mt">A4 直式滿版。先看預覽，再選「PDF」或「JPG」。<br>PDF：列印畫面選「儲存為 PDF」，iPhone 按右上角分享 →「儲存到檔案」。<br>JPG：每一頁存成一張圖片，iPhone 可以直接存到相簿。</p>
+      <button class="btn btn-p btn-block mt" data-go>${icon('file')}產生預覽</button>`;
     $('#pdfDate',s.el).onchange=e=>{if(e.target.value)date=e.target.value};
   };
-  s.body.onclick=async e=>{
+  s.body.onclick=e=>{
     const o=e.target.closest('[data-lv]');if(o){level=+o.dataset.lv;draw();return}
-    const go=e.target.closest('[data-go]');
-    if(go){go.disabled=true;go.textContent='排版中…';
-      try{const n=await buildPrint(level,date);
-        s.body.innerHTML=`<div class="pdf-ready">${icon('check')}<b>已排好 ${n} 個章節</b><p class="hint">按下方按鈕開啟列印畫面，目的地選「儲存為 PDF」。<br>iPhone：列印畫面右上角的分享按鈕 →「儲存到檔案」。</p></div>
-          <button class="btn btn-p btn-block" data-print>${icon('download')}儲存為 PDF／列印</button><button class="btn btn-g btn-block mt" data-back>重新選擇</button>`;
-      }catch(err){toast('排版失敗：'+(err.message||err));draw()}
-      return}
-    if(e.target.closest('[data-print]')){window.print();return}
-    if(e.target.closest('[data-back]')){cleanupPrint();draw()}
+    if(e.target.closest('[data-go]')){s.close();setTimeout(()=>openPrintPreview(level,date),60)}
   };
   draw();
 }
+
+/* =========================================================
+   字型：Google Fonts 上免費開源的繁體中文字體
+   ========================================================= */
+const FONTS=[
+  ['noto-sans','思源黑體','Noto Sans HK','400;500;700','sans','清楚好讀，預設介面字體'],
+  ['noto-serif','思源宋體','Noto Serif HK','400;600;700','serif','典雅明體，預設標題字體'],
+  ['wenkai','霞鶩文楷','LXGW WenKai TC','400;700','serif','溫柔的楷書，像手寫筆記'],
+  ['iansui','芫荽','Iansui','400','sans','自然的手寫風格'],
+  ['huninn','粉圓','Huninn','400','sans','圓圓的，很可愛'],
+  ['chiron-hei','昭源黑體','Chiron Hei HK','400;500;700','sans','俐落的現代黑體'],
+  ['chiron-sung','昭源宋體','Chiron Sung HK','400;600;700','serif','清秀的現代明體'],
+  ['cactus','仙人掌明體','Cactus Classical Serif','400','serif','有古書味道的明體'],
+  ['chocolate','朱古力黑體','Chocolate Classical Sans','400','sans','復古印刷感的黑體'],
+];
+const FONT_SLOTS=[['ui','介面文字','按鈕、清單、內文','noto-sans'],['head','標題與日記','標題、日記本文、PDF 標題','noto-serif']];
+const FALLBACK={sans:"-apple-system,'PingFang HK','PingFang TC',sans-serif",serif:"'Songti TC',serif"};
+const fontById=id=>FONTS.find(f=>f[0]===id);
+const fontStack=f=>`'${f[2]}',${f[4]==='serif'?"'Noto Serif HK',":"'Noto Sans HK',"}${FALLBACK[f[4]]}`;
+function fontChoice(){const c=S.settings.fonts||{};return Object.fromEntries(FONT_SLOTS.map(([k,,,d])=>[k,fontById(c[k])||fontById(d)]))}
+const gfUrl=(fams,text)=>'https://fonts.googleapis.com/css2?'+fams.map(f=>`family=${f[2].replace(/ /g,'+')}${f[3]!=='400'?':wght@'+f[3]:''}`).join('&')+(text?'&text='+encodeURIComponent(text):'&display=swap');
+function ensureLink(id,href){let l=document.getElementById(id);if(!l){l=document.createElement('link');l.rel='stylesheet';l.id=id;document.head.append(l)}if(l.getAttribute('href')!==href)l.href=href}
+let fontKey='';
+function applyFonts(){
+  const c=fontChoice(),k=c.ui[0]+'|'+c.head[0];if(k===fontKey)return;fontKey=k;
+  const r=document.documentElement.style;r.setProperty('--sans',fontStack(c.ui));r.setProperty('--serif',fontStack(c.head));
+  const extra=[...new Set([c.ui,c.head])].filter(f=>!['noto-sans','noto-serif'].includes(f[0]));
+  if(extra.length)ensureLink('fontLink',gfUrl(extra));
+}
+const FONT_SAMPLE='今天也要好好生活';
+function openFonts(){
+  ensureLink('fontPrev',gfUrl(FONTS.filter(f=>!f[0].startsWith('noto')),FONT_SAMPLE+'Aa123'+FONTS.map(f=>f[1]).join('')));
+  const s=openSheet({title:'字型'});
+  const draw=()=>{const c=fontChoice();
+    s.body.innerHTML=`<p class="hint" style="margin:0 2px 12px">都是免費、開源的繁體中文字體（Google Fonts），第一次使用時會從網路下載。</p>`+FONT_SLOTS.map(([k,l,dsc],i)=>`<div class="sec-h ${i?'mt':''}"><h2>${l}</h2><span class="hint">${dsc}</span></div>
+      <div class="font-list">${FONTS.map(f=>`<button class="font-opt ${c[k][0]===f[0]?'on':''}" data-slot="${k}" data-font="${f[0]}" style="--ff:${fontStack(f).replace(/"/g,'&quot;')}"><span class="fo-s">${FONT_SAMPLE}</span><span class="fo-n"><b>${f[1]}</b><small>${f[5]}</small></span>${c[k][0]===f[0]?icon('check'):''}</button>`).join('')}</div>`).join('')
+      +`<button class="btn btn-g btn-block mt" data-reset>恢復預設字型</button>`;
+  };
+  s.body.onclick=e=>{
+    const b=e.target.closest('[data-font]');
+    if(b){S.settings.fonts=Object.assign({},S.settings.fonts,{[b.dataset.slot]:b.dataset.font});save('settings');applyFonts();draw();return}
+    if(e.target.closest('[data-reset]')){delete S.settings.fonts;save('settings');applyFonts();draw()}
+  };
+  draw();
+}
+const fontLabel=()=>{const c=fontChoice();return c.ui===c.head?c.ui[1]:`${c.ui[1]}・${c.head[1]}`};
 
 /* =========================================================
    設定 / 備份
@@ -2713,7 +3099,8 @@ function openSettings(){
     <div class="set-info">${Cloud.uid?'已登入：資料會自動同步到你的雲端帳號，也可以另外匯出一份備份檔。':`資料只儲存在這台裝置的瀏覽器${DB.db?'':'（<b>目前無法使用本機資料庫，關閉頁面後資料會遺失</b>）'}。登入後可同步到雲端；換手機或清除瀏覽器資料前，請先匯出備份。`}</div>
     <div class="set-btns">
       <button class="btn btn-p" data-s="exp">${icon('download')}匯出備份（JSON）</button>
-      <button class="btn btn-g" data-s="pdf">${icon('file')}匯出 PDF（封面／日記／月結／年度）</button>
+      <button class="btn btn-g" data-s="pdf">${icon('file')}匯出 PDF / JPG（封面／日記／月結／年度）</button>
+      <button class="btn btn-g" data-s="fonts">${icon('feather')}字型</button>
       <label class="btn btn-g">${icon('upload')}匯入備份<input type="file" accept="application/json,.json" hidden id="impIn"></label>
       <button class="btn btn-d" data-s="clr">${icon('trash')}清除所有資料</button>
     </div>`});
@@ -2721,6 +3108,7 @@ function openSettings(){
     const b=e.target.closest('[data-s]');if(!b)return;
     if(b.dataset.s==='exp')exportData();
     if(b.dataset.s==='pdf'){s.close();openExport(2,diaryDate);return}
+    if(b.dataset.s==='fonts'){openFonts();return}
     if(b.dataset.s==='clr'){
       const cl=Cloud.on();
       if(!await confirmSheet(cl?'確定清除所有資料？會同時刪除雲端上的日記、照片與音樂，無法復原。':'確定清除所有日記、事項、圖片與音樂？這無法復原。','全部清除'))return;
@@ -2789,6 +3177,7 @@ async function init(){
   window.addEventListener('pagehide',()=>flushAll());
   if(navigator.storage&&navigator.storage.persist)navigator.storage.persist().catch(()=>{});
 
+  applyFonts();
   let tab='cal';try{tab=localStorage.getItem('techou.tab')||'cal'}catch(e){}
   go(renders[tab]?tab:'cal');
   $('#avatarBtn').onclick=openAccount;
