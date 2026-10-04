@@ -436,9 +436,7 @@ html.kb .tabbar,html.kb .player{display:none}
 .L-film .cv-cal .su{color:#d0587e}
 .L-film .cv-year{left:0;right:0;bottom:3.2%;text-align:center;font-size:.34em;letter-spacing:.4em;padding-left:.4em;color:#b0a89f}
 /* ---------- 編輯風版型（雜誌 / 電影海報 / zine） ---------- */
-.L-ticket .cv-art,.L-polaroid .cv-art,.L-contact .cv-art,.L-diffuse .cv-art{z-index:1}
-.L-polaroid .cv-tape{z-index:2}
-.cvr .cv-l1,.cvr .cv-l2,.cvr .cv-l3,.cvr .cv-pg{font-size:.34em;letter-spacing:.3em;text-transform:uppercase}
+.L-ticket .cv-art,.cvr .cv-l1,.cvr .cv-l2,.cvr .cv-l3,.cvr .cv-pg{font-size:.34em;letter-spacing:.3em;text-transform:uppercase}
 .cvr .cv-zh{font-family:var(--serif);font-weight:900;letter-spacing:.02em}
 /* 7 樓梯詩：紙上的小窗 + 錯落的詩句 */
 .L-stair{background:#e9e3d8;color:#24211e}
@@ -549,43 +547,46 @@ html.kb .tabbar,html.kb .player{display:none}
 .L-vertical .cv-cal{left:12%;right:12%;top:81%;font-family:var(--serif)}
 .L-vertical .cv-cal .w{font-family:var(--sans);font-weight:400;color:#7d766c}
 .L-vertical .cv-cal .su{color:#b14b25}
-/* 15 拍立得 */
-.L-polaroid{background:#e5dfd4;color:#2b2622}
-.L-polaroid .cv-pol{left:12%;top:8%;width:76%;height:62%;background:#fbfaf6;border:.03em solid #d8d1c4;transform:rotate(-2.5deg)}
-.L-polaroid .cv-art{left:16.5%;top:11%;width:67%;height:46.5%;transform:rotate(-2.5deg)}
-.L-polaroid .cv-tape{left:42%;top:6%;width:16%;height:3.2%;background:rgba(226,211,178,.9);transform:rotate(3deg)}
-.L-polaroid .cv-cap{left:18%;top:61.5%;font-family:Georgia,serif;font-style:italic;font-size:.75em;transform:rotate(-2.5deg)}
-.L-polaroid .cv-zh{right:10%;top:76%;font-size:1.3em;font-weight:700}
-.L-polaroid .cv-num,.L-polaroid .cv-abbr,.L-polaroid .cv-name,.L-polaroid .cv-year{display:none}
-.L-polaroid .cv-cal{left:10%;width:52%;top:76%}
-.L-polaroid .cv-cal .su{color:#b5724a}
-/* 16 底片條：同一張照片三格 */
-.L-contact{background:#ece6db;color:#24211e}
-.L-contact .cv-film{left:0;right:0;top:9%;height:44%;background:#1d1b19}
-.L-contact .cv-film::before,.L-contact .cv-film::after{content:'';position:absolute;left:0;right:0;height:.42em;background:repeating-linear-gradient(90deg,#ece6db 0 .42em,#1d1b19 .42em 1.05em)}
-.L-contact .cv-film::before{top:.4em}.L-contact .cv-film::after{bottom:.4em}
-.L-contact .cv-art{left:3%;top:15%;width:30%;height:32%}
-.L-contact .cv-art2{left:35%;top:15%;width:30%;height:32%;background-size:220%!important;background-position:30% 40%!important}
-.L-contact .cv-art3{left:67%;top:15%;width:30%;height:32%;background-size:300%!important;background-position:80% 60%!important}
-.L-contact .cv-edge{left:3%;right:3%;top:47.4%;display:flex;justify-content:space-around;font-family:'Courier New',monospace;font-size:.3em;color:#e3a24a;letter-spacing:.1em}
-.L-contact .cv-zh{left:7%;top:60%;font-size:2.1em}
-.L-contact .cv-num,.L-contact .cv-abbr{display:none}
-.L-contact .cv-name{left:7.4%;top:69.5%;font-family:Georgia,serif;font-style:italic;font-size:.7em;text-transform:capitalize}
-.L-contact .cv-year{left:7.4%;top:73.5%;font-size:.34em;letter-spacing:.3em;color:#8a7f72}
-.L-contact .cv-cal{right:7%;width:44%;top:60%}
-.L-contact .cv-cal .su,.L-contact .cv-cal .sa{color:#c0653a}
-/* 17 雜誌：刊頭 + 封面標題 */
-.L-magazine{background:#f2ede4;color:#1c1a18}
-.L-magazine .cv-art{left:0;right:0;top:22%;bottom:0}
-.L-magazine .cv-mast{left:4%;top:5.8%;font-family:'Arial Black','Helvetica Neue',Arial,sans-serif;font-weight:900;line-height:.8;letter-spacing:-.04em}
-.L-magazine .cv-l1{left:4.6%;top:2.4%;font-weight:700;font-size:.3em}
-.L-magazine .cv-l2{right:4.6%;top:2.4%;font-weight:700;font-size:.3em}
-.L-magazine .cv-lines{left:5%;top:30%;display:flex;flex-direction:column;align-items:flex-start;gap:.4em}
-.L-magazine .cv-lines span{background:#f2ede4;padding:.2em .45em;font-family:var(--serif);font-weight:700;font-size:.55em}
-.L-magazine .cv-bar{left:5%;bottom:4%;width:3.2em;height:1.1em;background:#f2ede4 repeating-linear-gradient(90deg,#1c1a18 0 .06em,#f2ede4 .06em .13em,#1c1a18 .13em .16em,#f2ede4 .16em .26em);border:.25em solid #f2ede4}
-.L-magazine .cv-num,.L-magazine .cv-abbr,.L-magazine .cv-name,.L-magazine .cv-year{display:none}
-.L-magazine .cv-cal{right:5%;bottom:4%;width:40%;background:#f2ede4;padding:.5em .5em .35em}
-.L-magazine .cv-cal .su{color:#c0563c}
+/* 15 數字直欄：左邊大數字＋窄月曆，右邊直條圖片出血 */
+.L-column{background:#f7f4ee;color:#2b2622}
+.L-column .cv-art{right:0;top:0;bottom:0;width:41%}
+.L-column .cv-num{left:7%;top:4%;font-family:Georgia,'Noto Serif HK',serif;font-weight:700;font-size:4.6em;letter-spacing:-.04em;line-height:1}
+.L-column .cv-abbr,.L-column .cv-name{display:none}
+.L-column .cv-vname{left:auto;right:3.5%;top:5%;writing-mode:vertical-rl;font-size:.36em;letter-spacing:.5em;color:#fff;font-weight:700;text-shadow:0 0 .4em rgba(0,0,0,.25)}
+.L-column .cv-cal{left:6%;width:50%;top:26%;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:600;font-size:.92em;row-gap:.35em}
+.L-column .cv-cal .w{font-weight:400;color:#8a7f72;letter-spacing:.06em}
+.L-column .cv-cal .su:not(:empty),.L-column .cv-cal .sa:not(:empty){background:color-mix(in srgb,var(--acc,#e8803e) 32%,#f7f4ee)}
+.L-column .cv-cal .td{text-decoration:underline;text-underline-offset:.2em}
+.L-column .cv-poem{left:7%;top:62%;width:48%;white-space:normal;display:flex;flex-wrap:wrap;gap:.25em .7em;font-family:var(--serif);font-size:.5em;line-height:1.7;color:#4a3f36}
+.L-column .cv-l1{left:7%;bottom:4.5%;font-size:.32em;color:#8a7f72}
+.L-column .cv-year{left:7%;top:20%;font-size:.36em;letter-spacing:.32em;color:#8a7f72}
+/* 16 卡片分隔：圓角卡片、上方圖窗，下方月份｜直線｜月曆 */
+.L-divider{background:#e4ddd1;color:#3a2f27}
+.L-divider .cv-card{left:7%;right:7%;top:4.5%;bottom:4.5%;background:#f8f3ea;border-radius:.8em}
+.L-divider .cv-art{z-index:1;left:11.5%;right:11.5%;top:7.6%;height:54%;border-radius:.55em}
+.L-divider .cv-num,.L-divider .cv-abbr{display:none}
+.L-divider .cv-year{left:13%;top:66%;font-size:.36em;letter-spacing:.25em;color:#8a7f72}
+.L-divider .cv-name{left:12.6%;top:69%;font-family:Georgia,'Noto Serif HK',serif;font-size:.9em;letter-spacing:.06em;text-transform:uppercase}
+.L-divider .cv-sub{left:13%;top:74.5%;width:7.4em;white-space:normal;font-family:var(--serif);font-style:italic;font-size:.4em;line-height:1.7;color:#6b5d50}
+.L-divider .cv-l1{left:13%;bottom:8.5%;font-size:.28em;color:#8a7f72}
+.L-divider .cv-vr{left:47%;top:66%;height:24%;border-left:.05em solid #6b5d50}
+.L-divider .cv-cal{left:50.5%;right:12%;top:65.6%;font-family:Georgia,serif;font-size:.86em}
+.L-divider .cv-cal .w{font-family:var(--sans);color:#8a7f72}
+.L-divider .cv-cal .su{color:#b5724a}
+/* 17 圓點週末：上方滿版圖、左下大數字、週末填色圓點 */
+.L-badge{background:#fbf8f2;color:#22303f}
+.L-badge .cv-art{left:0;right:0;top:0;height:55%}
+.L-badge .cv-num{left:7%;top:59%;font-family:Georgia,serif;font-size:4em;line-height:1;color:var(--acc,#2f5fc4)}
+.L-badge .cv-abbr{display:none}
+.L-badge .cv-name{left:7.4%;top:75.5%;font-size:.4em;letter-spacing:.32em;text-transform:uppercase;font-weight:700}
+.L-badge .cv-year{left:7.4%;top:78.6%;font-size:.36em;letter-spacing:.32em;color:#7d8794}
+.L-badge .cv-zh{left:7%;top:84%;font-size:.95em;font-weight:700}
+.L-badge .cv-rule{left:7%;width:8%;top:82.4%;border-top:.08em solid var(--acc,#2f5fc4)}
+.L-badge .cv-cal{right:6%;width:55%;top:59.5%;font-family:'Helvetica Neue',Arial,sans-serif;font-weight:700;row-gap:.32em}
+.L-badge .cv-cal span{font-size:.5em;width:1.9em;height:1.9em;line-height:1.9em;margin:0 auto;border-radius:50%}
+.L-badge .cv-cal .w{font-weight:500;font-size:.36em;height:auto;color:#7d8794}
+.L-badge .cv-cal .su:not(:empty),.L-badge .cv-cal .sa:not(:empty){background:var(--acc,#2f5fc4);color:#fff}
+.L-badge .cv-cal .td{box-shadow:inset 0 0 0 .12em var(--acc,#2f5fc4)}
 /* 19 全景橫幅 + 一行月曆 */
 .L-band{background:#f4f0e8;color:#2a2622}
 .L-band .cv-quote{left:9%;right:9%;top:8%;white-space:normal;display:flex;flex-wrap:wrap;gap:0 .9em;font-family:var(--serif);font-size:1.05em;line-height:1.7;letter-spacing:.06em}
@@ -1478,7 +1479,7 @@ const GRADS=[
   ['dec','linear-gradient(180deg,#f5dcb3 0%,#da9e7d 35%,#7e6c9c 66%,#2f3f66 100%)'],
 ];
 const COVERS=GRADS.map(g=>g[1]);
-const LAYOUTS=[['frame','留白框'],['numeral','大數字'],['full','滿版'],['card','相片卡'],['square','方窗'],['film','底片'],['stair','樓梯詩'],['lettergrid','格子月曆'],['diffuse','彌散光'],['headline','地平線大字'],['spec','規格表'],['split','對開'],['ticket','票根'],['vertical','直排'],['polaroid','拍立得'],['contact','底片條'],['magazine','雜誌'],['band','全景橫幅'],['poster','電影海報']];
+const LAYOUTS=[['frame','留白框'],['numeral','大數字'],['full','滿版'],['card','相片卡'],['square','方窗'],['film','底片'],['stair','樓梯詩'],['lettergrid','格子月曆'],['diffuse','彌散光'],['headline','地平線大字'],['spec','規格表'],['split','對開'],['ticket','票根'],['vertical','直排'],['column','數字直欄'],['divider','卡片分隔'],['badge','圓點週末'],['band','全景橫幅'],['poster','電影海報']];
 const LAYOUT_IDS=LAYOUTS.map(l=>l[0]);
 
 function coverCfg(y,m){
@@ -1516,8 +1517,8 @@ const MONTH_POEM=['一年的 第一頁 慢慢 寫','冷空氣 裡 也有 光','�
 const ABBR=m=>MONTH_EN[m].slice(0,3).toUpperCase();
 /* 每個月可以自訂：一句話（限字數）、版型顏色 */
 const POEM_MAX=18;
-const POEM_LAYOUTS=['stair','diffuse','headline','spec','vertical','band','magazine'];
-const COLOR_OPTS={lettergrid:[['acc','格子顏色']],diffuse:[['d1','光暈一'],['d2','光暈二']],headline:[['hl','標題顏色']]};
+const POEM_LAYOUTS=['stair','diffuse','headline','spec','vertical','band','column','divider'];
+const COLOR_OPTS={lettergrid:[['acc','格子顏色']],diffuse:[['d1','光暈一'],['d2','光暈二']],headline:[['hl','標題顏色']],column:[['acc','週末色帶']],badge:[['acc','週末圓點']]};
 const gradHex=m=>(COVERS[m]||'').match(/#[0-9a-f]{6}/gi)||['#f2b48a','#7f8fb8'];
 function coverOpts(y,m){const c=(S.settings.covers||{})[ym(y,m)]||{},h=gradHex(m);
   return{poem:c.poem||'',acc:c.acc||'#e8803e',d1:c.d1||h[Math.min(1,h.length-1)],d2:c.d2||h[h.length-1],hl:c.hl||'#3f6d8c'}}
@@ -1551,13 +1552,13 @@ const DECO={
   split:(y,m)=>`<div class="cv-art cv-art2"></div><div class="cv-band"><span>${MONTH_EN[m].toUpperCase()}</span><b>${MONTH_ZH[m]}</b><span>${y}</span></div>`,
   ticket:(y,m)=>`<div class="cv-tk"></div><div class="cv-zh">${MONTH_ZH[m]}</div><div class="cv-l1">ADMIT ONE</div><div class="cv-stub"><b>${pad(m+1)}</b><span>${MONTH_EN[m].toUpperCase()} · ${y}</span></div><div class="cv-l2">NO. ${y}${pad(m+1)} · 持票人：我</div>`,
   vertical:(y,m)=>`<div class="cv-zh">${MONTH_ZH[m]}</div><div class="cv-vpoem">${poemText(y,m)}</div>`,
-  polaroid:(y,m)=>`<div class="cv-pol"></div><i class="cv-tape"></i><div class="cv-cap">${MONTH_EN[m][0].toUpperCase()+MONTH_EN[m].slice(1)}, ${y}</div><div class="cv-zh">${MONTH_ZH[m]}</div>`,
-  contact:(y,m)=>`<div class="cv-film"></div><div class="cv-art cv-art2"></div><div class="cv-art cv-art3"></div><div class="cv-edge">${[0,1,2].map(i=>`<span>${pad(m+1)}${'ABC'[i]} ▸ ${y}</span>`).join('')}</div><div class="cv-zh">${MONTH_ZH[m]}</div>`,
-  magazine:(y,m)=>{const n=MONTH_EN[m].toUpperCase();return `<div class="cv-mast" style="font-size:${fitEm(n,18.4,.86,5.2)}em">${n}</div><div class="cv-l1">VOL. ${pad(m+1)}</div><div class="cv-l2">${ABBR(m)} ${y} · THE QUIET ISSUE</div><div class="cv-lines">${poemOf(y,m).slice(0,3).map(w=>`<span>${w}</span>`).join('')}</div><i class="cv-bar"></i>`},
   band:(y,m)=>`<div class="cv-quote">${poemOf(y,m).map(w=>`<span>${w}</span>`).join('')}</div><div class="cv-zh">${MONTH_ZH[m]}</div>`,
-  poster:(y,m)=>{const n=MONTH_EN[m];return `<div class="cv-l1">IN MY DIARY · 01 ${n.toUpperCase()}</div><div class="cv-hl" style="font-size:${fitEm(n,15.5,.6,4.4)}em">${n}</div><div class="cv-cred"><span><small>WRITTEN &amp; KEPT BY</small>我</span><span><small>STARRING</small>${daysIn(y,m)} 個日子</span></div><div class="cv-l2">A ${y} DIARY PRODUCTION</div>`},
+  column:(y,m)=>`<div class="cv-vname">${MONTH_EN[m].toUpperCase()}</div><div class="cv-poem">${poemOf(y,m).map(w=>`<span>${w}</span>`).join('')}</div><div class="cv-l1">${MONTH_ZH[m]} · ${y}</div>`,
+  divider:(y,m)=>`<div class="cv-card"></div><i class="cv-vr"></i><div class="cv-sub">${poemText(y,m)}</div><div class="cv-l1">MY JOURNAL</div>`,
+  badge:(y,m)=>`<div class="cv-zh">${MONTH_ZH[m]}</div><i class="cv-rule"></i>`,
+  poster:(y,m)=>{const n=MONTH_EN[m];return `<div class="cv-l1">IN MY DIARY · 01 ${n.toUpperCase()}</div><div class="cv-hl" style="font-size:${fitEm(n,15.5,.6,4.4)}em">${n}</div><div class="cv-cred"><span><small>WRITTEN &amp; KEPT BY</small>${esc(displayName()||'我')}</span><span><small>STARRING</small>${daysIn(y,m)} 個日子</span></div><div class="cv-l2">A ${y} DIARY PRODUCTION</div>`},
 };
-const PAD_NUM=['card','stair','ticket'];
+const PAD_NUM=['card','stair','ticket','column'];
 const coverHTML=(y,m,layout)=>`<div class="cvr L-${layout}" style="${coverVars(y,m)}"><div class="cv-art"></div><div class="cv-txt">${DECO[layout]?DECO[layout](y,m):''}<div class="cv-num">${PAD_NUM.includes(layout)?pad(m+1):m+1}</div><div class="cv-abbr">${MONTH_EN[m][0].toUpperCase()+MONTH_EN[m].slice(1,3)}.</div><div class="cv-name">${MONTH_EN[m]}</div><div class="cv-year">${y}</div><div class="cv-cal">${miniCal(y,m)}</div></div></div>`;
 function fitCover(root){$$('.cvr',root||document).forEach(c=>{if(!root&&c.closest('#printRoot'))return;const w=c.clientWidth;if(w)c.style.fontSize=(w/20)+'px'})}
 window.addEventListener('resize',()=>fitCover());
@@ -1626,7 +1627,9 @@ function openCoverPicker(){
       if(out!==t.value)t.value=out;$('#cpPoemN',B).textContent=`${n} / ${POEM_MAX} 字`;setOpt({poem:out.trim()});return}
     if(t.dataset.col){t.previousElementSibling.textContent=t.value.toUpperCase();setOpt({[t.dataset.col]:t.value})}};
   const sw=i=>`<button class="cp-sw ${cfg.art.t==='g'&&cfg.art.i===i?'on':''}" data-g="${i}" style="background:${COVERS[i]}"><span>${GRADS[i][0]}</span></button>`;
+  let first=true;
   const draw=()=>{
+    const lx=$('.cp-layouts',B),sx=lx?lx.scrollLeft:0,sy=B.scrollTop;
     B.innerHTML=`<div class="cp-preview">${coverHTML(y,m,cfg.layout)}</div>
       <div class="sec-h"><h2>版型</h2><button class="pill" data-all>${icon('repeat')}套用到每個月</button></div>
       <div class="cp-layouts noswipe">${LAYOUTS.map(([id,l])=>`<button class="cp-l ${cfg.layout===id?'on':''}" data-l="${id}">${coverHTML(y,m,id)}<span>${l}</span></button>`).join('')}</div>
@@ -1637,6 +1640,8 @@ function openCoverPicker(){
       ${optHTML()}
       <button class="btn btn-g btn-block mt" data-reset>恢復預設</button>`;
     paintCover($('.cp-preview',B),cfg,m);$$('.cp-l',B).forEach(l=>paintCover(l,cfg,m));
+    const nl=$('.cp-layouts',B);
+    if(first){first=false;const on=$('.cp-l.on',nl);if(on)nl.scrollLeft=Math.max(0,on.offsetLeft-nl.clientWidth/2+on.clientWidth/2)}else{nl.scrollLeft=sx;B.scrollTop=sy}
     requestAnimationFrame(()=>fitCover(B));
     const fi=$('#cvIn',B);
     if(fi)fi.onchange=async e=>{const f=e.target.files[0];e.target.value='';if(!f)return;
